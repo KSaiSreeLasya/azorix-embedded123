@@ -31,7 +31,7 @@ export default function Index() {
               <h1 className="mt-2 text-3xl md:text-5xl font-extrabold tracking-tight">
                 Innovation. Quality. Reliability.
               </h1>
-              <p className="mt-4 text-lg text-muted-foreground max-w-xl">
+              <p className="mt-4 text-lg text-foreground/80 max-w-xl leading-relaxed">
                 Embedded systems, IoT, medical and automotive solutions
                 delivered by a senior team with 25+ years of experience.
               </p>
@@ -100,9 +100,9 @@ export default function Index() {
       </Section>
 
       {/* Domains */}
-      <Section className="bg-secondary/30">
+      <Section className="bg-secondary/40">
         <h2 className="text-2xl font-bold">Domains</h2>
-        <p className="mt-2 text-muted-foreground max-w-2xl">
+        <p className="mt-2 text-foreground/80 max-w-2xl leading-relaxed">
           Where we deliver the most impact across industries and technologies.
         </p>
         <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -232,7 +232,7 @@ function LinkCard({
     >
       <Link
         to={to}
-        className="group rounded-xl border bg-card/50 p-6 transition-all hover:bg-card hover:shadow-md hover:-translate-y-0.5"
+        className="group rounded-xl border bg-card/40 p-5 md:p-6 transition-all hover:bg-card hover:shadow-lg hover:-translate-y-0.5 ring-1 ring-transparent hover:ring-primary/30"
       >
         <div className="flex items-center gap-3 font-semibold">
         <span className="grid h-9 w-9 place-items-center rounded-md bg-primary/10 text-primary">
@@ -240,10 +240,10 @@ function LinkCard({
         </span>
         <span>{title}</span>
       </div>
-      <p className="mt-3 text-sm text-muted-foreground">{desc}</p>
-        <div className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-primary">
+      <p className="mt-3 text-sm text-foreground/70 leading-relaxed">{desc}</p>
+        <div className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary">
           <span className="group-hover:underline">Learn more</span>
-          <span aria-hidden>→</span>
+          <span aria-hidden className="transition-transform group-hover:translate-x-0.5">→</span>
         </div>
       </Link>
     </motion.div>

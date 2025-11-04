@@ -16,19 +16,22 @@ export default function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
-        <Link to="/" className="flex items-center gap-3">
-          <div className="grid place-items-center h-9 w-9 rounded-md bg-primary text-primary-foreground font-bold">
-            E
-          </div>
-          <div className="leading-tight">
-            <div className="text-lg font-extrabold tracking-tight">
-              Embinsys
+        <div className="flex items-center gap-3">
+          <BackButton className="hidden sm:inline-flex" />
+          <Link to="/" className="flex items-center gap-3">
+            <div className="grid place-items-center h-9 w-9 rounded-md bg-primary text-primary-foreground font-bold">
+              E
             </div>
-            <div className="text-xs text-muted-foreground -mt-1">
-              Engineering & Design Services
+            <div className="leading-tight">
+              <div className="text-lg font-extrabold tracking-tight">
+                Embinsys
+              </div>
+              <div className="text-xs text-muted-foreground -mt-1">
+                Engineering & Design Services
+              </div>
             </div>
-          </div>
-        </Link>
+          </Link>
+        </div>
         <nav className="hidden md:flex items-center gap-6">
           {nav.map((n) => (
             <NavLink

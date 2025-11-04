@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import BackButton from "@/components/BackButton";
 
 const nav = [
   { to: "/", label: "Home" },

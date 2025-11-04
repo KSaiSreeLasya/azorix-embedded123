@@ -3,6 +3,7 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import BackButton from "@/components/BackButton";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const nav = [
   { to: "/", label: "Home" },
@@ -55,6 +56,7 @@ export default function SiteHeader() {
           {location.pathname !== "/" && (
             <BackButton className="sm:hidden" />
           )}
+          <ThemeToggle />
           <Button asChild className="hidden md:inline-flex">
             <a href="mailto:info@embinsys.com">Get in touch</a>
           </Button>

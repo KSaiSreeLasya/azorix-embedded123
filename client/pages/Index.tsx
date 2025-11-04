@@ -113,40 +113,46 @@ export default function Index() {
         </p>
         <div className="mt-6 rounded-xl border bg-card/30 p-4 md:p-6">
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          <LinkCard
+          <DomainCard
             to="/domains/iot"
             title="IoT"
             desc="Device firmware, gateways, cloud integration"
+            image="https://images.pexels.com/photos/159304/network-cable-ethernet-computer-159304.jpeg"
             icon={<Wifi className="h-5 w-5" />}
           />
-          <LinkCard
+          <DomainCard
             to="/domains/medical"
             title="Medical"
             desc="Regulated devices, sensors, connectivity"
+            image="https://images.pexels.com/photos/7108177/pexels-photo-7108177.jpeg"
             icon={<Stethoscope className="h-5 w-5" />}
           />
-          <LinkCard
+          <DomainCard
             to="/domains/automotive"
             title="Automotive"
             desc="BSP, telematics, CAN/UDS/J1939"
+            image="https://images.pexels.com/photos/18968756/pexels-photo-18968756.jpeg"
             icon={<Car className="h-5 w-5" />}
           />
-          <LinkCard
+          <DomainCard
             to="/domains/soc"
             title="SoC"
             desc="BSP, bootloaders, silicon validation"
+            image="https://images.pexels.com/photos/3665442/pexels-photo-3665442.jpeg"
             icon={<Cpu className="h-5 w-5" />}
           />
-          <LinkCard
+          <DomainCard
             to="/domains/hardware"
             title="Hardware"
             desc="Schematics, layout, bring‑up"
+            image="https://images.pexels.com/photos/6755088/pexels-photo-6755088.jpeg"
             icon={<CircuitBoard className="h-5 w-5" />}
           />
-          <LinkCard
+          <DomainCard
             to="/domains/testing"
             title="Testing"
             desc="Automation, stability, verification"
+            image="https://images.pexels.com/photos/3913031/pexels-photo-3913031.jpeg"
             icon={<Wrench className="h-5 w-5" />}
           />
           </div>
@@ -252,6 +258,54 @@ function LinkCard({
         <div className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary">
           <span className="group-hover:underline">Learn more</span>
           <span aria-hidden className="transition-transform group-hover:translate-x-0.5">→</span>
+        </div>
+      </Link>
+    </motion.div>
+  );
+}
+
+function DomainCard({
+  to,
+  title,
+  desc,
+  image,
+  icon,
+}: {
+  to: string;
+  title: string;
+  desc: string;
+  image: string;
+  icon: React.ReactNode;
+}) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 16 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.45 }}
+    >
+      <Link
+        to={to}
+        className="group relative overflow-hidden rounded-xl border h-48"
+      >
+        <img
+          src={image}
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover opacity-70 transition-transform duration-500 group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/60 to-background/20" />
+        <div className="relative z-10 h-full p-5 md:p-6 flex flex-col justify-end">
+          <div className="flex items-center gap-3 font-semibold">
+            <span className="grid h-9 w-9 place-items-center rounded-md bg-primary/20 text-primary">
+              {icon}
+            </span>
+            <span>{title}</span>
+          </div>
+          <p className="mt-1 text-sm text-foreground/80 leading-relaxed">{desc}</p>
+          <div className="mt-3 inline-flex items-center gap-1 w-fit rounded-md bg-background/70 px-2 py-1 text-sm font-semibold text-primary">
+            <span className="group-hover:underline">Learn more</span>
+            <span aria-hidden className="transition-transform group-hover:translate-x-0.5">→</span>
+          </div>
         </div>
       </Link>
     </motion.div>

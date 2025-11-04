@@ -234,11 +234,13 @@ function LinkCard({
         to={to}
         className="group rounded-xl border p-6 transition-all hover:bg-accent/40 hover:shadow-md hover:-translate-y-0.5"
       >
-        <div className="flex items-center gap-2 font-semibold">
+        <div className="flex items-center gap-3 font-semibold">
+        <span className="grid h-9 w-9 place-items-center rounded-md bg-primary/10 text-primary">
           {icon}
-          {title}
-        </div>
-        <p className="mt-2 text-sm text-muted-foreground">{desc}</p>
+        </span>
+        <span>{title}</span>
+      </div>
+      <p className="mt-3 text-sm text-muted-foreground">{desc}</p>
         <div className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-primary">
           <span className="group-hover:underline">Learn more</span>
           <span aria-hidden>→</span>

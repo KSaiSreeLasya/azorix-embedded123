@@ -224,20 +224,27 @@ function LinkCard({
   icon: React.ReactNode;
 }) {
   return (
-    <Link
-      to={to}
-      className="group rounded-xl border p-6 transition-all hover:bg-accent/40 hover:shadow-md hover:-translate-y-0.5"
+    <motion.div
+      initial={{ opacity: 0, y: 16 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.45 }}
     >
-      <div className="flex items-center gap-2 font-semibold">
-        {icon}
-        {title}
-      </div>
-      <p className="mt-2 text-sm text-muted-foreground">{desc}</p>
-      <div className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-primary">
-        <span className="group-hover:underline">Learn more</span>
-        <span aria-hidden>→</span>
-      </div>
-    </Link>
+      <Link
+        to={to}
+        className="group rounded-xl border p-6 transition-all hover:bg-accent/40 hover:shadow-md hover:-translate-y-0.5"
+      >
+        <div className="flex items-center gap-2 font-semibold">
+          {icon}
+          {title}
+        </div>
+        <p className="mt-2 text-sm text-muted-foreground">{desc}</p>
+        <div className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-primary">
+          <span className="group-hover:underline">Learn more</span>
+          <span aria-hidden>→</span>
+        </div>
+      </Link>
+    </motion.div>
   );
 }
 

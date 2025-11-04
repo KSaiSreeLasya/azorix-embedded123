@@ -22,28 +22,19 @@ export default function Contact() {
 
     setIsLoading(true);
     try {
-      const payload: ContactFormRequest = {
+      const { error } = await supabase.from("contact_submissions").insert({
         name,
         email,
         message,
-      };
-
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload),
       });
 
-      const data: ContactFormResponse = await response.json();
-
-      if (!response.ok) {
-        toast.error(data.message || "Failed to submit form");
+      if (error) {
+        console.error("Supabase error:", error);
+        toast.error("Failed to submit form. Please try again.");
         return;
       }
 
-      toast.success(data.message);
+      toast.success("Thank you! We'll get back to you shortly.");
       setName("");
       setEmail("");
       setMessage("");

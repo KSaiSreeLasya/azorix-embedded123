@@ -111,7 +111,8 @@ export default function Index() {
         <p className="mt-2 text-foreground/80 max-w-2xl leading-relaxed">
           Where we deliver the most impact across industries and technologies.
         </p>
-        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-6 rounded-xl border bg-card/30 p-4 md:p-6">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           <LinkCard
             to="/domains/iot"
             title="IoT"
@@ -148,6 +149,7 @@ export default function Index() {
             desc="Automation, stability, verification"
             icon={<Wrench className="h-5 w-5" />}
           />
+          </div>
         </div>
       </Section>
 

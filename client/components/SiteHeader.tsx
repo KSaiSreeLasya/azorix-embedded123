@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import BackButton from "@/components/BackButton";
@@ -13,11 +13,14 @@ const nav = [
 
 export default function SiteHeader() {
   const [open, setOpen] = useState(false);
+  const location = useLocation();
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center gap-3">
-          <BackButton className="hidden sm:inline-flex" />
+          {location.pathname !== "/" && (
+            <BackButton className="hidden sm:inline-flex" />
+          )}
           <Link to="/" className="flex items-center gap-3">
             <div className="grid place-items-center h-9 w-9 rounded-md bg-primary text-primary-foreground font-bold">
               E
@@ -49,7 +52,9 @@ export default function SiteHeader() {
           ))}
         </nav>
         <div className="flex items-center gap-3">
-          <BackButton className="sm:hidden" />
+          {location.pathname !== "/" && (
+            <BackButton className="sm:hidden" />
+          )}
           <Button asChild className="hidden md:inline-flex">
             <a href="mailto:info@embinsys.com">Get in touch</a>
           </Button>

@@ -63,14 +63,12 @@ export default function Index() {
             </div>
             <div className="relative">
               <img
-                src="https://images.pexels.com/photos/7652069/pexels-photo-7652069.jpeg?auto=compress&cs=tinysrgb&w=900&h=600"
-                alt="Engineering and technology collaboration"
-                width="900"
-                height="600"
+                src="https://images.pexels.com/photos/3825581/pexels-photo-3825581.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800"
+                alt="Embedded device PCB and components"
                 loading="eager"
                 fetchpriority="high"
                 decoding="async"
-                className="rounded-xl border shadow-sm object-cover w-full h-[320px] md:h-[420px]"
+                className="rounded-xl border shadow-sm object-cover w-full h-[240px] md:h-[320px] lg:h-[420px]"
               />
             </div>
           </div>

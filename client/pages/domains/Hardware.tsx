@@ -4,11 +4,17 @@ import Section from "@/components/Section";
 import DomainHero from "@/components/DomainHero";
 import { CircuitBoard } from "lucide-react";
 import { motion } from "framer-motion";
+import SEO from "@/components/SEO";
 
 export default function Hardware() {
   return (
     <div className="min-h-screen flex flex-col">
       <SiteHeader />
+      <SEO
+        title="Embedded Hardware Design & Prototyping | Azorix Technologies"
+        description="Schematics, PCB layout, fabrication, bring-up, and manufacturing support."
+        canonicalPath="/domains/hardware"
+      />
       <Section container>
         <DomainHero
           title="Hardware"

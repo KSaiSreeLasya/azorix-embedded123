@@ -4,11 +4,17 @@ import Section from "@/components/Section";
 import DomainHero from "@/components/DomainHero";
 import { Cpu } from "lucide-react";
 import { motion } from "framer-motion";
+import SEO from "@/components/SEO";
 
 export default function Soc() {
   return (
     <div className="min-h-screen flex flex-col">
       <SiteHeader />
+      <SEO
+        title="Silicon and SoC Enablement | Azorix Technologies"
+        description="Bootloaders, BSPs, drivers, and silicon validation for x86/ARM/custom SoCs."
+        canonicalPath="/domains/soc"
+      />
       <Section container>
         <DomainHero
           title="Silicon & SoC"

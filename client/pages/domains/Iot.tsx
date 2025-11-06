@@ -4,11 +4,17 @@ import Section from "@/components/Section";
 import DomainHero from "@/components/DomainHero";
 import { Wifi } from "lucide-react";
 import { motion } from "framer-motion";
+import SEO from "@/components/SEO";
 
 export default function Iot() {
   return (
     <div className="min-h-screen flex flex-col">
       <SiteHeader />
+      <SEO
+        title="IoT Development Services | Azorix Technologies"
+        description="Firmware, gateways, and secure cloud integrations for connected products."
+        canonicalPath="/domains/iot"
+      />
       <Section container>
         <DomainHero
           title="Internet of Things (IoT)"

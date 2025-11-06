@@ -12,13 +12,13 @@ export default function DomainHero({
   icon?: React.ReactNode;
 }) {
   return (
-    <div className="relative overflow-hidden rounded-2xl border">
+    <div className="relative overflow-hidden rounded-2xl border shadow-sm">
       <img
         src={image}
         alt=""
         className="absolute inset-0 h-full w-full object-cover opacity-70"
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/50 to-background/20" />
+      <div className="absolute inset-0 bg-gradient-to-r from-background/85 via-background/55 to-background/25" />
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}

@@ -4,11 +4,17 @@ import Section from "@/components/Section";
 import DomainHero from "@/components/DomainHero";
 import { Car } from "lucide-react";
 import { motion } from "framer-motion";
+import SEO from "@/components/SEO";
 
 export default function Automotive() {
   return (
     <div className="min-h-screen flex flex-col">
       <SiteHeader />
+      <SEO
+        title="Automotive Embedded Software & Telematics | Azorix Technologies"
+        description="In-vehicle software, BSPs, telematics, diagnostics, and QA."
+        canonicalPath="/domains/automotive"
+      />
       <Section container>
         <DomainHero
           title="Automotive"

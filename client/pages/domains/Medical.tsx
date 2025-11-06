@@ -4,11 +4,17 @@ import Section from "@/components/Section";
 import DomainHero from "@/components/DomainHero";
 import { Stethoscope } from "lucide-react";
 import { motion } from "framer-motion";
+import SEO from "@/components/SEO";
 
 export default function Medical() {
   return (
     <div className="min-h-screen flex flex-col">
       <SiteHeader />
+      <SEO
+        title="Medical Device Software & Connectivity | Azorix Technologies"
+        description="Regulated firmware, connectivity, and data solutions for clinical devices."
+        canonicalPath="/domains/medical"
+      />
       <Section container>
         <DomainHero
           title="Medical Devices"

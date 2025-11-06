@@ -4,11 +4,17 @@ import Section from "@/components/Section";
 import DomainHero from "@/components/DomainHero";
 import { Wrench } from "lucide-react";
 import { motion } from "framer-motion";
+import SEO from "@/components/SEO";
 
 export default function Testing() {
   return (
     <div className="min-h-screen flex flex-col">
       <SiteHeader />
+      <SEO
+        title="Embedded Testing, QA & Automation | Azorix Technologies"
+        description="Automation, stability, verification, and CI pipelines for embedded systems."
+        canonicalPath="/domains/testing"
+      />
       <Section container>
         <DomainHero
           title="Testing & QA"

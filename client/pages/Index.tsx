@@ -4,6 +4,7 @@ import Section from "@/components/Section";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import SEO from "@/components/SEO";
 import {
   Award,
   Cpu,
@@ -19,6 +20,11 @@ export default function Index() {
   return (
     <div className="min-h-screen flex flex-col bg-background text-foreground">
       <SiteHeader />
+      <SEO
+        title="Leading Software & AI Development Company in Hyderabad | Azorix Technologies"
+        description="Azorix Technologies delivers cutting-edge digital solutions in AI, software development, IoT, and cloud computing. Empower your business with intelligent innovation and expert engineering."
+        canonicalPath="/"
+      />
 
       {/* Hero */}
       <Section container>

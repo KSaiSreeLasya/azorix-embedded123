@@ -5,6 +5,7 @@ import SiteFooter from "@/components/SiteFooter";
 import Section from "@/components/Section";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import SEO from "@/components/SEO";
 import { supabase } from "@/lib/supabase";
 
 export default function Contact() {
@@ -49,6 +50,11 @@ export default function Contact() {
   return (
     <div className="min-h-screen flex flex-col">
       <SiteHeader />
+      <SEO
+        title="Contact Azorix Technologies | Hyderabad | Software, AI & IoT Experts"
+        description="Get in touch with Azorix Technologies for software development, AI, IoT, and embedded engineering solutions."
+        canonicalPath="/contact"
+      />
       <Section container>
         <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight">
           Contact

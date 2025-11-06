@@ -2,11 +2,17 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import Section from "@/components/Section";
 import { motion } from "framer-motion";
+import SEO from "@/components/SEO";
 
 export default function Projects() {
   return (
     <div className="min-h-screen flex flex-col">
       <SiteHeader />
+      <SEO
+        title="Embedded Systems Projects & Case Studies | Azorix Technologies"
+        description="Explore real-world projects spanning IoT, medical, automotive, and silicon at Azorix Technologies."
+        canonicalPath="/projects"
+      />
       <Section container>
         <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight">
           Projects

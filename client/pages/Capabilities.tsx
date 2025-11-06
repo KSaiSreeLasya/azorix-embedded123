@@ -3,6 +3,7 @@ import SiteFooter from "@/components/SiteFooter";
 import Section from "@/components/Section";
 import { motion } from "framer-motion";
 import SEO from "@/components/SEO";
+import { Package, Code2, LifeBuoy, CheckCircle2 } from "lucide-react";
 
 export default function Capabilities() {
   return (
@@ -13,16 +14,31 @@ export default function Capabilities() {
         description="Discover innovative software, AI, and IoT services by Azorix Technologies. From web apps to enterprise automation — we build scalable, secure, and smart digital systems."
         canonicalPath="/capabilities"
       />
-      <Section container>
-        <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight">
-          Capabilities
-        </h1>
-        <p className="mt-3 text-muted-foreground max-w-3xl">
-          End‑to‑end embedded product engineering across hardware, software,
-          testing and support.
-        </p>
-        <div className="mt-8 grid gap-6 md:grid-cols-3">
+      <Section container className="pt-12 pb-8">
+        <div className="relative overflow-hidden rounded-2xl border bg-gradient-to-br from-teal-50 via-white to-emerald-50 dark:from-teal-950/30 dark:via-slate-950 dark:to-emerald-950/20">
+          <div className="grid gap-6 md:grid-cols-2 p-8 md:p-12 items-center">
+            <div>
+              <div className="inline-flex items-center gap-2 rounded-md bg-primary/10 px-3 py-1 text-primary font-semibold">
+                <span>What we do</span>
+              </div>
+              <h1 className="mt-3 text-3xl md:text-5xl font-extrabold tracking-tight">Capabilities</h1>
+              <p className="mt-3 text-muted-foreground max-w-2xl">
+                End‑to‑end embedded product engineering across hardware, software,
+                testing and support.
+              </p>
+            </div>
+            <img
+              className="rounded-xl border shadow-sm hidden md:block"
+              alt="Embedded engineering"
+              src="https://images.pexels.com/photos/3825581/pexels-photo-3825581.jpeg"
+            />
+          </div>
+        </div>
+      </Section>
+      <Section container className="pt-6 pb-8">
+        <div className="grid gap-6 md:grid-cols-3">
           <Card
+            icon={<Package className="h-5 w-5" />}
             title="Product"
             items={[
               "Requirements & reviews",
@@ -33,6 +49,7 @@ export default function Capabilities() {
             ]}
           />
           <Card
+            icon={<Code2 className="h-5 w-5" />}
             title="Software"
             items={[
               "Board bring‑up, bootloader, BSP, drivers",
@@ -44,6 +61,7 @@ export default function Capabilities() {
             ]}
           />
           <Card
+            icon={<LifeBuoy className="h-5 w-5" />}
             title="Testing & Support"
             items={[
               "Framework development & automation",
@@ -61,7 +79,7 @@ export default function Capabilities() {
   );
 }
 
-function Card({ title, items }: { title: string; items: string[] }) {
+function Card({ title, items, icon }: { title: string; items: string[]; icon?: React.ReactNode }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 16 }}
@@ -69,12 +87,18 @@ function Card({ title, items }: { title: string; items: string[] }) {
       viewport={{ once: true }}
       whileHover={{ y: -2, boxShadow: "0 8px 24px rgba(0,0,0,0.08)" }}
       transition={{ duration: 0.4 }}
-      className="rounded-lg border p-6"
+      className="rounded-lg border p-6 bg-card/60 backdrop-blur"
     >
-      <div className="font-semibold mb-2">{title}</div>
-      <ul className="list-disc pl-5 space-y-1 text-sm text-muted-foreground">
+      <div className="flex items-center gap-2 font-semibold mb-3 text-foreground">
+        <span className="grid h-8 w-8 place-items-center rounded-md bg-primary/15 text-primary">{icon}</span>
+        <span>{title}</span>
+      </div>
+      <ul className="space-y-2 text-sm text-muted-foreground">
         {items.map((i) => (
-          <li key={i}>{i}</li>
+          <li key={i} className="flex items-start gap-2">
+            <CheckCircle2 className="mt-0.5 h-4 w-4 text-primary" />
+            <span>{i}</span>
+          </li>
         ))}
       </ul>
     </motion.div>

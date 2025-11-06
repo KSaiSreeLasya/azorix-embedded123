@@ -20,9 +20,12 @@ export default function Projects() {
               <div className="inline-flex items-center gap-2 rounded-md bg-primary/10 px-3 py-1 text-primary font-semibold">
                 <span>Case studies</span>
               </div>
-              <h1 className="mt-3 text-3xl md:text-5xl font-extrabold tracking-tight">Projects</h1>
+              <h1 className="mt-3 text-3xl md:text-5xl font-extrabold tracking-tight">
+                Projects
+              </h1>
               <p className="mt-3 text-muted-foreground max-w-2xl">
-                Selected work across medical, industrial, consumer, automotive and silicon domains.
+                Selected work across medical, industrial, consumer, automotive
+                and silicon domains.
               </p>
             </div>
             <img

@@ -21,10 +21,12 @@ export default function Capabilities() {
               <div className="inline-flex items-center gap-2 rounded-md bg-primary/10 px-3 py-1 text-primary font-semibold">
                 <span>What we do</span>
               </div>
-              <h1 className="mt-3 text-3xl md:text-5xl font-extrabold tracking-tight">Capabilities</h1>
+              <h1 className="mt-3 text-3xl md:text-5xl font-extrabold tracking-tight">
+                Capabilities
+              </h1>
               <p className="mt-3 text-muted-foreground max-w-2xl">
-                End‑to‑end embedded product engineering across hardware, software,
-                testing and support.
+                End‑to‑end embedded product engineering across hardware,
+                software, testing and support.
               </p>
             </div>
             <img
@@ -79,7 +81,15 @@ export default function Capabilities() {
   );
 }
 
-function Card({ title, items, icon }: { title: string; items: string[]; icon?: React.ReactNode }) {
+function Card({
+  title,
+  items,
+  icon,
+}: {
+  title: string;
+  items: string[];
+  icon?: React.ReactNode;
+}) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 16 }}
@@ -90,7 +100,9 @@ function Card({ title, items, icon }: { title: string; items: string[]; icon?: R
       className="rounded-lg border p-6 bg-card/60 backdrop-blur"
     >
       <div className="flex items-center gap-2 font-semibold mb-3 text-foreground">
-        <span className="grid h-8 w-8 place-items-center rounded-md bg-primary/15 text-primary">{icon}</span>
+        <span className="grid h-8 w-8 place-items-center rounded-md bg-primary/15 text-primary">
+          {icon}
+        </span>
         <span>{title}</span>
       </div>
       <ul className="space-y-2 text-sm text-muted-foreground">

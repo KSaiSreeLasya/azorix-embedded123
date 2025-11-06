@@ -116,8 +116,12 @@ export default function Contact() {
         >
           <div>
             <div className="font-medium text-foreground">Offices</div>
-            <div className="flex items-center gap-2"><MapPin className="h-4 w-4" /> Troy, MI, USA</div>
-            <div className="flex items-center gap-2"><MapPin className="h-4 w-4" /> Hyderabad, India</div>
+            <div className="flex items-center gap-2">
+              <MapPin className="h-4 w-4" /> Troy, MI, USA
+            </div>
+            <div className="flex items-center gap-2">
+              <MapPin className="h-4 w-4" /> Hyderabad, India
+            </div>
           </div>
           <div>
             <div className="font-medium text-foreground">Website</div>
@@ -132,7 +136,10 @@ export default function Contact() {
           </div>
           <div>
             <div className="font-medium text-foreground">Email</div>
-            <a className="inline-flex items-center gap-2 underline" href="mailto:info@azorixembeeded.com">
+            <a
+              className="inline-flex items-center gap-2 underline"
+              href="mailto:info@azorixembeeded.com"
+            >
               <Mail className="h-4 w-4" /> info@azorixembeeded.com
             </a>
           </div>

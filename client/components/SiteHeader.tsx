@@ -44,7 +44,9 @@ export default function SiteHeader() {
                 cn(
                   "px-3 py-2 text-sm font-medium rounded-md transition-colors",
                   "hover:bg-primary/10 hover:text-foreground/90",
-                  isActive ? "bg-primary/15 text-foreground" : "text-foreground/70",
+                  isActive
+                    ? "bg-primary/15 text-foreground"
+                    : "text-foreground/70",
                 )
               }
             >

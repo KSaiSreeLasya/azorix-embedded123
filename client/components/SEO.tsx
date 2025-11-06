@@ -7,14 +7,21 @@ interface SEOProps {
   canonicalUrl?: string; // absolute URL overrides canonicalPath
 }
 
-export default function SEO({ title, description, canonicalPath, canonicalUrl }: SEOProps) {
+export default function SEO({
+  title,
+  description,
+  canonicalPath,
+  canonicalUrl,
+}: SEOProps) {
   useEffect(() => {
     if (title) {
       document.title = title;
     }
 
     const ensureMeta = (key: "name" | "property", id: string) => {
-      let el = document.head.querySelector(`meta[${key}="${id}"]`) as HTMLMetaElement | null;
+      let el = document.head.querySelector(
+        `meta[${key}="${id}"]`,
+      ) as HTMLMetaElement | null;
       if (!el) {
         el = document.createElement("meta");
         el.setAttribute(key, id);
@@ -29,7 +36,9 @@ export default function SEO({ title, description, canonicalPath, canonicalUrl }:
     }
 
     const ensureLink = (rel: string) => {
-      let el = document.head.querySelector(`link[rel="${rel}"]`) as HTMLLinkElement | null;
+      let el = document.head.querySelector(
+        `link[rel="${rel}"]`,
+      ) as HTMLLinkElement | null;
       if (!el) {
         el = document.createElement("link");
         el.setAttribute("rel", rel);
@@ -38,9 +47,11 @@ export default function SEO({ title, description, canonicalPath, canonicalUrl }:
       return el;
     };
 
-    const canonical = canonicalUrl ?? (typeof window !== "undefined"
-      ? `${window.location.origin}${canonicalPath ?? window.location.pathname}`
-      : canonicalPath ?? "/");
+    const canonical =
+      canonicalUrl ??
+      (typeof window !== "undefined"
+        ? `${window.location.origin}${canonicalPath ?? window.location.pathname}`
+        : (canonicalPath ?? "/"));
 
     const link = ensureLink("canonical");
     link.setAttribute("href", canonical);

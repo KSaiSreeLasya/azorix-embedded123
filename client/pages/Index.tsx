@@ -61,26 +61,14 @@ export default function Index() {
                 <Stat kpi="2" label="Global Offices" />
               </div>
             </div>
-            <div className="grid gap-4 sm:grid-cols-2">
-              <FeatureCard
-                icon={<Cpu className="h-5 w-5" />}
-                title="Embedded SW"
-                subtitle="BSP, drivers, RTOS, Linux, Android"
-              />
-              <FeatureCard
-                icon={<CircuitBoard className="h-5 w-5" />}
-                title="Hardware"
-                subtitle="Schematics, layout, bring‑up"
-              />
-              <FeatureCard
-                icon={<Wrench className="h-5 w-5" />}
-                title="Testing"
-                subtitle="Automation, stability, verification"
-              />
-              <FeatureCard
-                icon={<Award className="h-5 w-5" />}
-                title="Delivery"
-                subtitle="SoW, BOT, augmentation"
+            <div className="relative">
+              <img
+                src="https://images.pexels.com/photos/3825581/pexels-photo-3825581.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800"
+                alt="Embedded device PCB and components"
+                loading="eager"
+                fetchpriority="high"
+                decoding="async"
+                className="rounded-xl border shadow-sm object-cover w-full h-[240px] md:h-[320px] lg:h-[420px]"
               />
             </div>
           </div>
@@ -264,6 +252,8 @@ function LinkCard({
         <img
           src={image}
           alt=""
+          loading="lazy"
+          decoding="async"
           className="absolute inset-0 h-full w-full object-cover opacity-70 transition-transform duration-500 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/60 to-background/20" />
@@ -319,6 +309,8 @@ function DomainCard({
         <img
           src={image}
           alt=""
+          loading="lazy"
+          decoding="async"
           className="absolute inset-0 h-full w-full object-cover opacity-70 transition-transform duration-500 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/60 to-background/20" />

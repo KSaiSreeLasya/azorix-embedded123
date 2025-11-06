@@ -5,11 +5,11 @@ export default function SiteFooter() {
         <div>
           <div className="flex items-center gap-3 mb-4">
             <img
-              src="https://cdn.builder.io/api/v1/image/assets%2F8bf52f20c3654880b140d224131cfa2e%2Fd72511e7e901420a856bc00f97844f91?format=webp&width=800"
-              alt="Axiswatt Logo"
+              src="https://cdn.builder.io/api/v1/image/assets%2F07ba826074254d3191a55ee32e800a58%2F7d0ce5b5bd9f4847a9b0b9add5682e46?format=png&width=128"
+              alt="Azorix Embeeded Logo"
               className="h-8 w-8 object-contain"
             />
-            <div className="text-xl font-bold">Axiswatt</div>
+            <div className="text-xl font-bold">Azorix Embeeded</div>
           </div>
           <p className="text-sm text-muted-foreground mt-2 max-w-xs">
             Innovation. Quality. Reliability. Partnering with clients to deliver
@@ -32,7 +32,7 @@ export default function SiteFooter() {
         </div>
       </div>
       <div className="border-t py-4 text-center text-xs text-muted-foreground">
-        © 2024 Axiswatt. All rights reserved.
+        © 2024 Azorix Embeeded. All rights reserved.
       </div>
     </footer>
   );

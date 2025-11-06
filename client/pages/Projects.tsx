@@ -30,7 +30,7 @@ export default function Projects() {
               </p>
             </div>
             <img
-              className="rounded-xl border shadow-sm hidden md:block object-cover h-40 md:h-56 lg:h-72"
+              className="rounded-xl border shadow-sm object-cover w-full h-[240px] md:h-[320px] lg:h-[420px]"
               alt="Project showcase - embedded device and PCB"
               src="https://images.pexels.com/photos/3825581/pexels-photo-3825581.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800"
               loading="eager"

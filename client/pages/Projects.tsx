@@ -3,6 +3,7 @@ import SiteFooter from "@/components/SiteFooter";
 import Section from "@/components/Section";
 import { motion } from "framer-motion";
 import SEO from "@/components/SEO";
+import { CheckCircle } from "lucide-react";
 
 export default function Projects() {
   return (
@@ -31,7 +32,12 @@ export default function Projects() {
             <img
               className="rounded-xl border shadow-sm hidden md:block"
               alt="Project showcase"
-              src="https://images.pexels.com/photos/7652069/pexels-photo-7652069.jpeg"
+              src="https://images.pexels.com/photos/7652069/pexels-photo-7652069.jpeg?auto=compress&cs=tinysrgb&w=900&h=600"
+              width="900"
+              height="600"
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
             />
           </div>
         </div>
@@ -110,10 +116,11 @@ function Proj({ title, points }: { title: string; points: string[] }) {
       className="rounded-lg border p-5 bg-card/60 backdrop-blur hover:shadow-md transition-shadow"
     >
       <div className="font-semibold mb-2 text-foreground">{title}</div>
-      <ul className="list-disc pl-5 space-y-1">
+      <ul className="list-none pl-0 space-y-1">
         {points.map((p) => (
-          <li key={p} className="text-sm text-muted-foreground">
-            {p}
+          <li key={p} className="flex items-start gap-2 text-sm text-muted-foreground">
+            <CheckCircle className="h-4 w-4 text-primary mt-0.5" />
+            <span>{p}</span>
           </li>
         ))}
       </ul>

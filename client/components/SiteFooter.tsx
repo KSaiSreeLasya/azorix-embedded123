@@ -13,7 +13,7 @@ export default function SiteFooter() {
                 className="h-12 w-12 object-contain dark:hidden"
               />
               <img
-                src="https://cdn.builder.io/api/v1/image/assets%2Fdf131029371243a6bdd4cd7752a9db95%2Ffb96ec0fa67245f1ba7adbbb9bd83bbf?format=webp&width=800"
+                src="https://cdn.builder.io/api/v1/image/assets%2Fdf131029371243a6bdd4cd7752a9db95%2F89ffe0a68af8496fab2fb1696fd78272?format=webp&width=800"
                 alt="Azorix Embeeded Logo White"
                 aria-hidden
                 className="h-12 w-12 object-contain hidden dark:inline-block"

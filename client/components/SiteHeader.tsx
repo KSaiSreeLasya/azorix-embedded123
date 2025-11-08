@@ -23,11 +23,19 @@ export default function SiteHeader() {
             <BackButton className="hidden sm:inline-flex" />
           )}
           <Link to="/" className="flex items-center gap-3">
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets%2F07ba826074254d3191a55ee32e800a58%2F7d0ce5b5bd9f4847a9b0b9add5682e46?format=png&width=128"
-              alt="Azorix Embeeded Logo"
-              className="h-9 w-9 object-contain"
-            />
+            <span className="relative inline-flex">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F07ba826074254d3191a55ee32e800a58%2F7d0ce5b5bd9f4847a9b0b9add5682e46?format=png&width=128"
+                alt="Azorix Embeeded Logo"
+                className="h-12 w-12 object-contain dark:hidden brightness-0"
+              />
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F07ba826074254d3191a55ee32e800a58%2F7d0ce5b5bd9f4847a9b0b9add5682e46?format=png&width=128"
+                alt=""
+                aria-hidden
+                className="h-12 w-12 object-contain hidden dark:inline-block brightness-0 invert"
+              />
+            </span>
             <div className="leading-tight">
               <div className="text-lg font-extrabold tracking-tight">
                 Azorix Embeeded

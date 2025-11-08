@@ -6,11 +6,19 @@ export default function SiteFooter() {
       <div className="container py-12 grid gap-6 md:grid-cols-4">
         <div>
           <div className="flex items-center gap-3 mb-4">
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets%2F07ba826074254d3191a55ee32e800a58%2F7d0ce5b5bd9f4847a9b0b9add5682e46?format=png&width=128"
-              alt="Azorix Embeeded Logo"
-              className="h-8 w-8 object-contain"
-            />
+            <span className="relative inline-flex">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F07ba826074254d3191a55ee32e800a58%2F7d0ce5b5bd9f4847a9b0b9add5682e46?format=png&width=128"
+                alt="Azorix Embeeded Logo"
+                className="h-10 w-10 object-contain dark:hidden brightness-0"
+              />
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F07ba826074254d3191a55ee32e800a58%2F7d0ce5b5bd9f4847a9b0b9add5682e46?format=png&width=128"
+                alt=""
+                aria-hidden
+                className="h-10 w-10 object-contain hidden dark:inline-block brightness-0 invert"
+              />
+            </span>
             <div className="text-xl font-bold">Azorix Embeeded</div>
           </div>
           <p className="text-sm text-muted-foreground mt-2 max-w-sm">

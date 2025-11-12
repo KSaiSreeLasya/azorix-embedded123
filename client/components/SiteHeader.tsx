@@ -37,9 +37,7 @@ export default function SiteHeader() {
               />
             </span>
             <div className="leading-tight">
-              <div className="text-lg font-extrabold tracking-tight">
-                
-              </div>
+              <div className="text-lg font-extrabold tracking-tight"></div>
             </div>
           </Link>
         </div>

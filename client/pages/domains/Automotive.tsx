@@ -27,7 +27,9 @@ export default function Automotive() {
 
       {/* Core Capabilities */}
       <Section container>
-        <h2 className="text-2xl md:text-3xl font-bold mb-8">Core Capabilities</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-8">
+          Core Capabilities
+        </h2>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           <CapabilityCard
             icon={<Zap className="h-6 w-6" />}
@@ -63,19 +65,43 @@ export default function Automotive() {
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           <ProtocolCard
             title="CAN Family"
-            items={["CAN", "CAN FD", "CAN XL", "Timing and arbitration", "Error handling"]}
+            items={[
+              "CAN",
+              "CAN FD",
+              "CAN XL",
+              "Timing and arbitration",
+              "Error handling",
+            ]}
           />
           <ProtocolCard
             title="Diagnostics"
-            items={["UDS (ISO 14229)", "OBD-II", "Kwp2000", "Bootloader protocols", "Security access"]}
+            items={[
+              "UDS (ISO 14229)",
+              "OBD-II",
+              "Kwp2000",
+              "Bootloader protocols",
+              "Security access",
+            ]}
           />
           <ProtocolCard
             title="Industrial"
-            items={["J1939 (Heavy duty)", "Autosar stack", "LIN", "FlexRay", "MOST"]}
+            items={[
+              "J1939 (Heavy duty)",
+              "Autosar stack",
+              "LIN",
+              "FlexRay",
+              "MOST",
+            ]}
           />
           <ProtocolCard
             title="Telematics"
-            items={["GPRS/3G/LTE", "5G-ready", "GPS/GNSS", "Vehicle data extraction", "Remote services"]}
+            items={[
+              "GPRS/3G/LTE",
+              "5G-ready",
+              "GPS/GNSS",
+              "Vehicle data extraction",
+              "Remote services",
+            ]}
           />
         </div>
       </Section>
@@ -91,7 +117,13 @@ export default function Automotive() {
         <div className="grid gap-6 md:grid-cols-3">
           <SoftwareCard
             title="RTOS & OS"
-            items={["Linux (custom BSP)", "FreeRTOS", "QNX", "VxWorks", "ThreadX"]}
+            items={[
+              "Linux (custom BSP)",
+              "FreeRTOS",
+              "QNX",
+              "VxWorks",
+              "ThreadX",
+            ]}
           />
           <SoftwareCard
             title="Languages & Standards"
@@ -228,13 +260,7 @@ function CapabilityCard({
   );
 }
 
-function ProtocolCard({
-  title,
-  items,
-}: {
-  title: string;
-  items: string[];
-}) {
+function ProtocolCard({ title, items }: { title: string; items: string[] }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 16 }}
@@ -257,13 +283,7 @@ function ProtocolCard({
   );
 }
 
-function SoftwareCard({
-  title,
-  items,
-}: {
-  title: string;
-  items: string[];
-}) {
+function SoftwareCard({ title, items }: { title: string; items: string[] }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 16 }}
@@ -307,13 +327,7 @@ function Card({
   );
 }
 
-function ApplicationCard({
-  title,
-  desc,
-}: {
-  title: string;
-  desc: string;
-}) {
+function ApplicationCard({ title, desc }: { title: string; desc: string }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 16 }}

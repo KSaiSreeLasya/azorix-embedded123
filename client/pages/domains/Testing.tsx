@@ -27,7 +27,9 @@ export default function Testing() {
 
       {/* Core Capabilities */}
       <Section container>
-        <h2 className="text-2xl md:text-3xl font-bold mb-8">Core Capabilities</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-8">
+          Core Capabilities
+        </h2>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           <CapabilityCard
             icon={<Zap className="h-6 w-6" />}
@@ -209,15 +211,30 @@ export default function Testing() {
         <div className="grid gap-6 md:grid-cols-3">
           <ToolCard
             title="Hardware Lab"
-            items={["Oscilloscopes", "Logic analyzers", "Power analyzers", "Environmental chambers"]}
+            items={[
+              "Oscilloscopes",
+              "Logic analyzers",
+              "Power analyzers",
+              "Environmental chambers",
+            ]}
           />
           <ToolCard
             title="Software Tools"
-            items={["Debuggers (JTAG, SWD)", "Profilers", "Code analyzers", "Test frameworks"]}
+            items={[
+              "Debuggers (JTAG, SWD)",
+              "Profilers",
+              "Code analyzers",
+              "Test frameworks",
+            ]}
           />
           <ToolCard
             title="Platforms"
-            items={["Development boards", "Custom test rigs", "HIL simulators", "Protocol analyzers"]}
+            items={[
+              "Development boards",
+              "Custom test rigs",
+              "HIL simulators",
+              "Protocol analyzers",
+            ]}
           />
         </div>
       </Section>
@@ -277,13 +294,7 @@ function Card({
   );
 }
 
-function TestTypeCard({
-  title,
-  desc,
-}: {
-  title: string;
-  desc: string;
-}) {
+function TestTypeCard({ title, desc }: { title: string; desc: string }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 16 }}
@@ -299,13 +310,7 @@ function TestTypeCard({
   );
 }
 
-function AutomationCard({
-  title,
-  items,
-}: {
-  title: string;
-  items: string[];
-}) {
+function AutomationCard({ title, items }: { title: string; items: string[] }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 16 }}
@@ -328,13 +333,7 @@ function AutomationCard({
   );
 }
 
-function SpecializedCard({
-  title,
-  items,
-}: {
-  title: string;
-  items: string[];
-}) {
+function SpecializedCard({ title, items }: { title: string; items: string[] }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 16 }}
@@ -357,13 +356,7 @@ function SpecializedCard({
   );
 }
 
-function ToolCard({
-  title,
-  items,
-}: {
-  title: string;
-  items: string[];
-}) {
+function ToolCard({ title, items }: { title: string; items: string[] }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 16 }}

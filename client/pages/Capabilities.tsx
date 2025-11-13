@@ -187,14 +187,7 @@ export default function Capabilities() {
           </ExpertiseGroup>
           <ExpertiseGroup title="Interface Protocols">
             <ul className="space-y-2">
-              {[
-                "TCP/IP",
-                "UART",
-                "I2C",
-                "SPI",
-                "USB",
-                "Ethernet",
-              ].map((p) => (
+              {["TCP/IP", "UART", "I2C", "SPI", "USB", "Ethernet"].map((p) => (
                 <li key={p} className="flex items-center gap-2">
                   <CheckCircle2 className="h-4 w-4 text-primary" />
                   <span className="text-sm">{p}</span>
@@ -323,13 +316,7 @@ function ExpertiseGroup({
   );
 }
 
-function ServiceCard({
-  title,
-  desc,
-}: {
-  title: string;
-  desc: string;
-}) {
+function ServiceCard({ title, desc }: { title: string; desc: string }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 16 }}
@@ -345,13 +332,7 @@ function ServiceCard({
   );
 }
 
-function QualityCard({
-  title,
-  items,
-}: {
-  title: string;
-  items: string[];
-}) {
+function QualityCard({ title, items }: { title: string; items: string[] }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 16 }}

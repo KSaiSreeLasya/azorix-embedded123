@@ -124,8 +124,8 @@ export default function Index() {
           For over 25 years, Embinsys has been enabling global companies with
           comprehensive product and engineering services. With dual offices in
           Troy, Michigan (USA) and Hyderabad, India, and a team of 80+
-          experienced engineers, we deliver end-to-end embedded systems solutions
-          with a focus on quality, reliability, and innovation.
+          experienced engineers, we deliver end-to-end embedded systems
+          solutions with a focus on quality, reliability, and innovation.
         </p>
         <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           <OverviewCard
@@ -187,7 +187,8 @@ export default function Index() {
             Specialized Teams for Every Market
           </h2>
           <p className="mt-2 text-foreground/80 max-w-3xl mx-auto leading-relaxed">
-            Expert centers focused on specific industries - each with deep knowledge and proven track records
+            Expert centers focused on specific industries - each with deep
+            knowledge and proven track records
           </p>
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -197,7 +198,12 @@ export default function Index() {
             title="Handheld & IoT"
             highlight="Smart Devices"
             desc="Building smart devices - phones, watches, home devices"
-            topics={["Android", "Connectivity", "Low-power design", "User apps"]}
+            topics={[
+              "Android",
+              "Connectivity",
+              "Low-power design",
+              "User apps",
+            ]}
           />
           <CoECard
             emoji="🏥"
@@ -205,7 +211,12 @@ export default function Index() {
             title="Medical Devices"
             highlight="Healthcare"
             desc="Medical-grade devices that save lives"
-            topics={["Regulatory compliance", "Patient safety", "Sensor integration", "Data security"]}
+            topics={[
+              "Regulatory compliance",
+              "Patient safety",
+              "Sensor integration",
+              "Data security",
+            ]}
           />
           <CoECard
             emoji="🚗"
@@ -213,7 +224,12 @@ export default function Index() {
             title="Automotive"
             highlight="Connected Vehicles"
             desc="Making cars smarter and safer"
-            topics={["Vehicle networks", "Safety systems", "Telematics", "Real-time control"]}
+            topics={[
+              "Vehicle networks",
+              "Safety systems",
+              "Telematics",
+              "Real-time control",
+            ]}
           />
           <CoECard
             emoji="⚙️"
@@ -233,7 +249,8 @@ export default function Index() {
             Four Pillars of Expertise
           </h2>
           <p className="text-foreground/80 max-w-3xl mx-auto leading-relaxed">
-            Complete end-to-end engineering solutions from hardware to deployment
+            Complete end-to-end engineering solutions from hardware to
+            deployment
           </p>
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -377,7 +394,8 @@ export default function Index() {
             IoT Applications
           </h2>
           <p className="text-foreground/80 max-w-3xl mx-auto leading-relaxed">
-            Smart devices that make everyday tasks smarter, faster, and more efficient
+            Smart devices that make everyday tasks smarter, faster, and more
+            efficient
           </p>
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-5">
@@ -385,13 +403,21 @@ export default function Index() {
             title="🏭 Industrial IoT"
             desc="Factories that monitor themselves - machines that predict problems before they happen"
             icon={<Zap className="h-6 w-6" />}
-            examples={["Predictive maintenance", "Production optimization", "Equipment monitoring"]}
+            examples={[
+              "Predictive maintenance",
+              "Production optimization",
+              "Equipment monitoring",
+            ]}
           />
           <IoTAppCard
             title="🏥 Medical IoT"
             desc="Devices that care for your health - from monitoring your heart to tracking fitness"
             icon={<Stethoscope className="h-6 w-6" />}
-            examples={["Health monitoring", "Patient alerts", "Remote diagnosis"]}
+            examples={[
+              "Health monitoring",
+              "Patient alerts",
+              "Remote diagnosis",
+            ]}
           />
           <IoTAppCard
             title="🏙️ Smart City"
@@ -421,19 +447,52 @@ export default function Index() {
             Trusted by Global Leaders
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Our expertise is trusted by Fortune 500 companies and leading innovators worldwide
+            Our expertise is trusted by Fortune 500 companies and leading
+            innovators worldwide
           </p>
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {[
-            { name: "Qualcomm", color: "from-blue-600 to-blue-400", desc: "Leading chipset provider" },
-            { name: "Intel", color: "from-blue-700 to-blue-500", desc: "Global processor leader" },
-            { name: "Bosch", color: "from-red-600 to-red-400", desc: "Industrial innovation" },
-            { name: "Ford", color: "from-blue-800 to-blue-600", desc: "Automotive excellence" },
-            { name: "Thermo Fisher", color: "from-orange-600 to-orange-400", desc: "Medical devices" },
-            { name: "AMD", color: "from-red-700 to-red-500", desc: "Advanced computing" },
-            { name: "Tech Mahindra", color: "from-blue-600 to-cyan-400", desc: "Digital transformation" },
-            { name: "OnePlus", color: "from-red-600 to-pink-500", desc: "Mobile innovation" },
+            {
+              name: "Qualcomm",
+              color: "from-blue-600 to-blue-400",
+              desc: "Leading chipset provider",
+            },
+            {
+              name: "Intel",
+              color: "from-blue-700 to-blue-500",
+              desc: "Global processor leader",
+            },
+            {
+              name: "Bosch",
+              color: "from-red-600 to-red-400",
+              desc: "Industrial innovation",
+            },
+            {
+              name: "Ford",
+              color: "from-blue-800 to-blue-600",
+              desc: "Automotive excellence",
+            },
+            {
+              name: "Thermo Fisher",
+              color: "from-orange-600 to-orange-400",
+              desc: "Medical devices",
+            },
+            {
+              name: "AMD",
+              color: "from-red-700 to-red-500",
+              desc: "Advanced computing",
+            },
+            {
+              name: "Tech Mahindra",
+              color: "from-blue-600 to-cyan-400",
+              desc: "Digital transformation",
+            },
+            {
+              name: "OnePlus",
+              color: "from-red-600 to-pink-500",
+              desc: "Mobile innovation",
+            },
           ].map((client) => (
             <motion.div
               key={client.name}
@@ -444,7 +503,9 @@ export default function Index() {
               transition={{ duration: 0.4 }}
               className={`rounded-lg border p-6 flex flex-col items-center justify-center text-center min-h-32 bg-gradient-to-br ${client.color} opacity-10 hover:opacity-15 transition-opacity hover:border-primary/50`}
             >
-              <div className="font-bold text-foreground text-lg mb-1">{client.name}</div>
+              <div className="font-bold text-foreground text-lg mb-1">
+                {client.name}
+              </div>
               <div className="text-xs text-muted-foreground">{client.desc}</div>
             </motion.div>
           ))}
@@ -550,7 +611,10 @@ function CoECard({
       <p className="text-sm text-muted-foreground mb-4">{desc}</p>
       <div className="flex flex-wrap gap-1.5">
         {topics.map((topic) => (
-          <span key={topic} className="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary/80">
+          <span
+            key={topic}
+            className="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary/80"
+          >
             {topic}
           </span>
         ))}
@@ -597,13 +661,7 @@ function ExpertiseCard({
   );
 }
 
-function EngagementCard({
-  title,
-  desc,
-}: {
-  title: string;
-  desc: string;
-}) {
+function EngagementCard({ title, desc }: { title: string; desc: string }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 16 }}
@@ -771,7 +829,6 @@ function IoTAppCard({
     </motion.div>
   );
 }
-
 
 function Pill({
   children,

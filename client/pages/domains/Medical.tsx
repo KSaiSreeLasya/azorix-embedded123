@@ -27,7 +27,9 @@ export default function Medical() {
 
       {/* Core Capabilities */}
       <Section container>
-        <h2 className="text-2xl md:text-3xl font-bold mb-8">Core Capabilities</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-8">
+          Core Capabilities
+        </h2>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           <CapabilityCard
             icon={<Zap className="h-6 w-6" />}
@@ -168,11 +170,22 @@ export default function Medical() {
 
       {/* Portfolio */}
       <Section>
-        <h2 className="text-2xl md:text-3xl font-bold mb-8">Project Portfolio</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-8">
+          Project Portfolio
+        </h2>
         <div className="grid gap-6 md:grid-cols-3 text-sm">
-          <PortfolioCard title="BP Monitor" desc="Wireless blood pressure monitor with BLE and mobile app" />
-          <PortfolioCard title="Smart Knee Monitor" desc="Wearable joint angle monitoring with haptic feedback" />
-          <PortfolioCard title="Smart Band" desc="Fitness wearable with heart rate and activity tracking" />
+          <PortfolioCard
+            title="BP Monitor"
+            desc="Wireless blood pressure monitor with BLE and mobile app"
+          />
+          <PortfolioCard
+            title="Smart Knee Monitor"
+            desc="Wearable joint angle monitoring with haptic feedback"
+          />
+          <PortfolioCard
+            title="Smart Band"
+            desc="Fitness wearable with heart rate and activity tracking"
+          />
         </div>
       </Section>
 
@@ -210,13 +223,7 @@ function CapabilityCard({
   );
 }
 
-function ServiceCard({
-  title,
-  items,
-}: {
-  title: string;
-  items: string[];
-}) {
+function ServiceCard({ title, items }: { title: string; items: string[] }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 16 }}
@@ -289,13 +296,7 @@ function Card({
   );
 }
 
-function PortfolioCard({
-  title,
-  desc,
-}: {
-  title: string;
-  desc: string;
-}) {
+function PortfolioCard({ title, desc }: { title: string; desc: string }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 16 }}

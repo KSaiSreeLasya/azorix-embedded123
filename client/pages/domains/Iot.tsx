@@ -27,7 +27,9 @@ export default function Iot() {
 
       {/* Core Capabilities */}
       <Section container>
-        <h2 className="text-2xl md:text-3xl font-bold mb-8">Core Capabilities</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-8">
+          Core Capabilities
+        </h2>
         <div className="grid gap-6 md:grid-cols-3">
           <CapabilityCard
             icon={<Zap className="h-6 w-6" />}
@@ -114,10 +116,22 @@ export default function Iot() {
           Integration with leading IoT platforms and data analytics.
         </p>
         <div className="grid gap-6 md:grid-cols-4">
-          <PlatformCard name="AWS IoT" features={["Device Shadow", "Greengrass", "IoT Analytics"]} />
-          <PlatformCard name="Azure IoT" features={["Device Provisioning", "Event Hub", "Stream Analytics"]} />
-          <PlatformCard name="Google Cloud IoT" features={["Cloud Pub/Sub", "Dataflow", "BigQuery"]} />
-          <PlatformCard name="TronX" features={["Real-time Platform", "Custom Logic", "Integration Hub"]} />
+          <PlatformCard
+            name="AWS IoT"
+            features={["Device Shadow", "Greengrass", "IoT Analytics"]}
+          />
+          <PlatformCard
+            name="Azure IoT"
+            features={["Device Provisioning", "Event Hub", "Stream Analytics"]}
+          />
+          <PlatformCard
+            name="Google Cloud IoT"
+            features={["Cloud Pub/Sub", "Dataflow", "BigQuery"]}
+          />
+          <PlatformCard
+            name="TronX"
+            features={["Real-time Platform", "Custom Logic", "Integration Hub"]}
+          />
         </div>
       </Section>
 
@@ -220,7 +234,10 @@ function PlatformCard({
       <h4 className="font-semibold text-foreground mb-3">{name}</h4>
       <ul className="space-y-1">
         {features.map((f) => (
-          <li key={f} className="flex items-center gap-2 text-xs text-muted-foreground">
+          <li
+            key={f}
+            className="flex items-center gap-2 text-xs text-muted-foreground"
+          >
             <span className="h-1.5 w-1.5 rounded-full bg-primary" />
             {f}
           </li>
@@ -230,13 +247,7 @@ function PlatformCard({
   );
 }
 
-function ApplicationCard({
-  title,
-  desc,
-}: {
-  title: string;
-  desc: string;
-}) {
+function ApplicationCard({ title, desc }: { title: string; desc: string }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 16 }}

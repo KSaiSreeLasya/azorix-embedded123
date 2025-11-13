@@ -27,7 +27,9 @@ export default function Hardware() {
 
       {/* Core Capabilities */}
       <Section container>
-        <h2 className="text-2xl md:text-3xl font-bold mb-8">Core Capabilities</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-8">
+          Core Capabilities
+        </h2>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           <CapabilityCard
             icon={<Zap className="h-6 w-6" />}
@@ -115,7 +117,11 @@ export default function Hardware() {
           />
           <ProcessorCard
             title="Custom SoCs"
-            items={["Application-specific chips", "FPGA integration", "Hybrid designs"]}
+            items={[
+              "Application-specific chips",
+              "FPGA integration",
+              "Hybrid designs",
+            ]}
           />
         </div>
       </Section>
@@ -155,7 +161,8 @@ export default function Hardware() {
           Manufacturing Support
         </h2>
         <p className="text-muted-foreground mb-8">
-          Production and quality support from prototypes to volume manufacturing.
+          Production and quality support from prototypes to volume
+          manufacturing.
         </p>
         <div className="grid gap-6 md:grid-cols-3">
           <SupportCard
@@ -272,13 +279,7 @@ function Card({
   );
 }
 
-function ProcessorCard({
-  title,
-  items,
-}: {
-  title: string;
-  items: string[];
-}) {
+function ProcessorCard({ title, items }: { title: string; items: string[] }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 16 }}
@@ -301,13 +302,7 @@ function ProcessorCard({
   );
 }
 
-function ServiceCard({
-  title,
-  items,
-}: {
-  title: string;
-  items: string[];
-}) {
+function ServiceCard({ title, items }: { title: string; items: string[] }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 16 }}
@@ -330,13 +325,7 @@ function ServiceCard({
   );
 }
 
-function SupportCard({
-  title,
-  desc,
-}: {
-  title: string;
-  desc: string;
-}) {
+function SupportCard({ title, desc }: { title: string; desc: string }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 16 }}

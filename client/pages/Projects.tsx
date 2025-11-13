@@ -3,7 +3,19 @@ import SiteFooter from "@/components/SiteFooter";
 import Section from "@/components/Section";
 import { motion, AnimatePresence } from "framer-motion";
 import SEO from "@/components/SEO";
-import { CheckCircle, Smartphone, Zap, Radio, Lightbulb, X, Heart, Radio as RadioIcon, Monitor, Wifi as WifiIcon, Cpu } from "lucide-react";
+import {
+  CheckCircle,
+  Smartphone,
+  Zap,
+  Radio,
+  Lightbulb,
+  X,
+  Heart,
+  Radio as RadioIcon,
+  Monitor,
+  Wifi as WifiIcon,
+  Cpu,
+} from "lucide-react";
 import { useState } from "react";
 
 const projects = [
@@ -14,7 +26,8 @@ const projects = [
     image: "https://images.pexels.com/photos/3931603/pexels-photo-3931603.jpeg",
     icon: <Lightbulb className="h-5 w-5" />,
     shortDesc: "Real-time knee angle monitoring with haptic feedback",
-    fullDesc: "A wearable device that monitors knee joint angles in real-time and triggers haptic feedback when movement exceeds comfortable limits. Perfect for rehabilitation and sports medicine applications.",
+    fullDesc:
+      "A wearable device that monitors knee joint angles in real-time and triggers haptic feedback when movement exceeds comfortable limits. Perfect for rehabilitation and sports medicine applications.",
     details: [
       "Dialog DA14682 BLE SoC with haptics",
       "Real-time angle monitoring with haptic feedback",
@@ -33,7 +46,8 @@ const projects = [
     image: "https://images.pexels.com/photos/3962286/pexels-photo-3962286.jpeg",
     icon: <Heart className="h-5 w-5" />,
     shortDesc: "Fitness wearable with heart rate and activity tracking",
-    fullDesc: "A lightweight wearable device that continuously tracks fitness parameters including heart rate and step count. Provides smartphone notifications and integrates with mobile apps for comprehensive health monitoring.",
+    fullDesc:
+      "A lightweight wearable device that continuously tracks fitness parameters including heart rate and step count. Provides smartphone notifications and integrates with mobile apps for comprehensive health monitoring.",
     details: [
       "nRF51822 BLE wearable platform",
       "Fitness parameters: heart rate, steps count",
@@ -52,7 +66,8 @@ const projects = [
     image: "https://images.pexels.com/photos/8367747/pexels-photo-8367747.jpeg",
     icon: <Zap className="h-5 w-5" />,
     shortDesc: "Wireless blood pressure monitoring with BLE connectivity",
-    fullDesc: "A medical-grade blood pressure monitor with wireless connectivity that transmits real-time Systolic, Diastolic, and heart rate data to mobile devices. Ideal for remote patient monitoring and telemedicine applications.",
+    fullDesc:
+      "A medical-grade blood pressure monitor with wireless connectivity that transmits real-time Systolic, Diastolic, and heart rate data to mobile devices. Ideal for remote patient monitoring and telemedicine applications.",
     details: [
       "BLE blood pressure monitoring device",
       "Real-time Systolic/Diastolic/Heart rate",
@@ -71,7 +86,8 @@ const projects = [
     image: "https://images.pexels.com/photos/3062551/pexels-photo-3062551.jpeg",
     icon: <RadioIcon className="h-5 w-5" />,
     shortDesc: "Advanced IoT controller with radar and motion sensing",
-    fullDesc: "An advanced IoT control module featuring radar sensing, 6-dimensional motion detection, and addressable LED feedback. Supports OTA firmware updates for seamless remote device management.",
+    fullDesc:
+      "An advanced IoT control module featuring radar sensing, 6-dimensional motion detection, and addressable LED feedback. Supports OTA firmware updates for seamless remote device management.",
     details: [
       "nRF52833 DK with Acconeer A111 Radar",
       "OTA firmware updates via nRF Connect",
@@ -90,7 +106,8 @@ const projects = [
     image: "https://images.pexels.com/photos/5632663/pexels-photo-5632663.jpeg",
     icon: <Lightbulb className="h-5 w-5" />,
     shortDesc: "Remote-controlled smart lock with mobile and web access",
-    fullDesc: "A secure smart lock system controlled via both Android app (BLE) and web portal. Features robust communication protocols for reliable remote access and integrates with smart home ecosystems.",
+    fullDesc:
+      "A secure smart lock system controlled via both Android app (BLE) and web portal. Features robust communication protocols for reliable remote access and integrates with smart home ecosystems.",
     details: [
       "Quectel EC25 + nRF52832 BLE SoC",
       "Command control via Android app and web portal",
@@ -109,7 +126,8 @@ const projects = [
     image: "https://images.pexels.com/photos/3808517/pexels-photo-3808517.jpeg",
     icon: <WifiIcon className="h-5 w-5" />,
     shortDesc: "Zigbee hub for smart home device control and coordination",
-    fullDesc: "A central hub for Zigbee home automation devices. Controls and coordinates smart devices, provides WiFi repeater functionality, and enables both online and offline remote control via mobile apps.",
+    fullDesc:
+      "A central hub for Zigbee home automation devices. Controls and coordinates smart devices, provides WiFi repeater functionality, and enables both online and offline remote control via mobile apps.",
     details: [
       "ESP32 controller for Zigbee HA profile devices",
       "WiFi repeater for existing networks",
@@ -128,7 +146,8 @@ const projects = [
     image: "https://images.pexels.com/photos/4386366/pexels-photo-4386366.jpeg",
     icon: <Monitor className="h-5 w-5" />,
     shortDesc: "Connected helmet with GPS and communication features",
-    fullDesc: "An advanced motorcycle/racing helmet with built-in GPS, camera, display, and Bluetooth connectivity. Optimized for navigation, real-time monitoring, and integrated communication with rider safety features.",
+    fullDesc:
+      "An advanced motorcycle/racing helmet with built-in GPS, camera, display, and Bluetooth connectivity. Optimized for navigation, real-time monitoring, and integrated communication with rider safety features.",
     details: [
       "TI OMAP 4430 board bring-up",
       "Bluetooth 3 to 4 upgrade",
@@ -147,7 +166,8 @@ const projects = [
     image: "https://images.pexels.com/photos/3825581/pexels-photo-3825581.jpeg",
     icon: <Cpu className="h-5 w-5" />,
     shortDesc: "Reverse osmosis system with IoT monitoring",
-    fullDesc: "An industrial-grade water treatment system with comprehensive IoT connectivity. Monitors water quality parameters, tracks consumption, and enables remote diagnostics and control via GSM/GPS/WiFi.",
+    fullDesc:
+      "An industrial-grade water treatment system with comprehensive IoT connectivity. Monitors water quality parameters, tracks consumption, and enables remote diagnostics and control via GSM/GPS/WiFi.",
     details: [
       "TI MSP432E401Y microcontroller",
       "I2C TDS sensors and ADC temperature monitoring",
@@ -166,7 +186,8 @@ const projects = [
     image: "https://images.pexels.com/photos/4498318/pexels-photo-4498318.jpeg",
     icon: <Lightbulb className="h-5 w-5" />,
     shortDesc: "Intelligent yoga mat with posture analysis",
-    fullDesc: "An innovative yoga mat embedded with sensors for real-time posture analysis. Provides instant feedback via Bluetooth to mobile apps, helping users perfect their yoga technique and prevent injuries.",
+    fullDesc:
+      "An innovative yoga mat embedded with sensors for real-time posture analysis. Provides instant feedback via Bluetooth to mobile apps, helping users perfect their yoga technique and prevent injuries.",
     details: [
       "MSP432P401R + Raspberry Pi 0 platform",
       "22 ADC channels for mat sensor data",
@@ -193,9 +214,15 @@ const clientLogos = [
 
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
-  const selectedProjectData = selectedProject ? projects.find((p) => p.id === selectedProject) : null;
+  const selectedProjectData = selectedProject
+    ? projects.find((p) => p.id === selectedProject)
+    : null;
 
-  const categories = ["Medical & Wearables", "IoT & Consumer", "Automotive & Industrial"];
+  const categories = [
+    "Medical & Wearables",
+    "IoT & Consumer",
+    "Automotive & Industrial",
+  ];
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -216,7 +243,9 @@ export default function Projects() {
                 Projects
               </h1>
               <p className="mt-3 text-muted-foreground max-w-2xl">
-                Explore our diverse portfolio of successful embedded systems projects. Click on any project to see detailed technical specifications and implementation details.
+                Explore our diverse portfolio of successful embedded systems
+                projects. Click on any project to see detailed technical
+                specifications and implementation details.
               </p>
             </div>
             <img
@@ -233,12 +262,24 @@ export default function Projects() {
 
       {/* Project Grid */}
       {categories.map((category) => (
-        <Section key={category} className={category.includes("Medical") ? "bg-secondary/40" : category.includes("Consumer") ? undefined : "bg-secondary/40"}>
+        <Section
+          key={category}
+          className={
+            category.includes("Medical")
+              ? "bg-secondary/40"
+              : category.includes("Consumer")
+                ? undefined
+                : "bg-secondary/40"
+          }
+        >
           <h2 className="text-2xl md:text-3xl font-bold mb-2">{category}</h2>
           <p className="text-muted-foreground mb-8">
-            {category === "Medical & Wearables" && "Regulated medical devices and consumer health monitoring solutions."}
-            {category === "IoT & Consumer" && "Smart home and IoT connectivity solutions."}
-            {category === "Automotive & Industrial" && "Automotive embedded systems and industrial IoT solutions."}
+            {category === "Medical & Wearables" &&
+              "Regulated medical devices and consumer health monitoring solutions."}
+            {category === "IoT & Consumer" &&
+              "Smart home and IoT connectivity solutions."}
+            {category === "Automotive & Industrial" &&
+              "Automotive embedded systems and industrial IoT solutions."}
           </p>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {projects
@@ -248,7 +289,11 @@ export default function Projects() {
                   key={project.id}
                   project={project}
                   isSelected={selectedProject === project.id}
-                  onSelect={() => setSelectedProject(selectedProject === project.id ? null : project.id)}
+                  onSelect={() =>
+                    setSelectedProject(
+                      selectedProject === project.id ? null : project.id,
+                    )
+                  }
                 />
               ))}
           </div>
@@ -277,7 +322,9 @@ export default function Projects() {
                   <span className="grid h-10 w-10 place-items-center rounded-lg bg-primary/15 text-primary">
                     {selectedProjectData.icon}
                   </span>
-                  <h2 className="text-2xl font-bold">{selectedProjectData.title}</h2>
+                  <h2 className="text-2xl font-bold">
+                    {selectedProjectData.title}
+                  </h2>
                 </div>
                 <button
                   onClick={() => setSelectedProject(null)}
@@ -296,14 +343,21 @@ export default function Projects() {
 
                 <div>
                   <h3 className="text-lg font-semibold mb-2">Overview</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{selectedProjectData.fullDesc}</p>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    {selectedProjectData.fullDesc}
+                  </p>
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-semibold mb-3">Technical Details</h3>
+                  <h3 className="text-lg font-semibold mb-3">
+                    Technical Details
+                  </h3>
                   <ul className="space-y-2">
                     {selectedProjectData.details.map((detail) => (
-                      <li key={detail} className="flex items-start gap-2 text-sm">
+                      <li
+                        key={detail}
+                        className="flex items-start gap-2 text-sm"
+                      >
                         <CheckCircle className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
                         <span className="text-muted-foreground">{detail}</span>
                       </li>
@@ -312,10 +366,15 @@ export default function Projects() {
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-semibold mb-3">Technologies Used</h3>
+                  <h3 className="text-lg font-semibold mb-3">
+                    Technologies Used
+                  </h3>
                   <div className="flex flex-wrap gap-2">
                     {selectedProjectData.technologies.map((tech) => (
-                      <span key={tech} className="px-3 py-1 rounded-full border bg-primary/10 text-primary text-xs font-medium">
+                      <span
+                        key={tech}
+                        className="px-3 py-1 rounded-full border bg-primary/10 text-primary text-xs font-medium"
+                      >
                         {tech}
                       </span>
                     ))}
@@ -329,12 +388,18 @@ export default function Projects() {
 
       {/* Success Story */}
       <Section className="bg-secondary/40">
-        <h2 className="text-2xl md:text-3xl font-bold mb-2">Extended End-to-End Engineering</h2>
-        <p className="text-muted-foreground mb-8">Comprehensive success story with a global chipset company.</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-2">
+          Extended End-to-End Engineering
+        </h2>
+        <p className="text-muted-foreground mb-8">
+          Comprehensive success story with a global chipset company.
+        </p>
         <div className="rounded-lg border p-8 bg-card/60 backdrop-blur">
           <div className="grid gap-8 md:grid-cols-2">
             <div>
-              <h3 className="font-bold text-lg mb-4">Global Chipset Company Partnership</h3>
+              <h3 className="font-bold text-lg mb-4">
+                Global Chipset Company Partnership
+              </h3>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 {[
                   "Firmware development and new features",
@@ -366,8 +431,12 @@ export default function Projects() {
                 className="rounded-lg border bg-gradient-to-br from-primary/10 to-transparent p-8 text-center w-full"
               >
                 <div className="text-5xl font-bold text-primary mb-2">360°</div>
-                <div className="font-semibold">Extended End-to-End Embedded Engineering Team</div>
-                <p className="text-sm text-muted-foreground mt-2">From concept through production and beyond</p>
+                <div className="font-semibold">
+                  Extended End-to-End Embedded Engineering Team
+                </div>
+                <p className="text-sm text-muted-foreground mt-2">
+                  From concept through production and beyond
+                </p>
               </motion.div>
             </div>
           </div>
@@ -376,7 +445,9 @@ export default function Projects() {
 
       {/* Trusted By Section */}
       <Section>
-        <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center">Trusted by Global Leaders</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center">
+          Trusted by Global Leaders
+        </h2>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {clientLogos.map((logo) => (
             <motion.div
@@ -387,7 +458,9 @@ export default function Projects() {
               transition={{ duration: 0.4 }}
               className={`rounded-lg border p-6 flex items-center justify-center h-24 bg-gradient-to-br ${logo.color} opacity-20 hover:opacity-30 transition-opacity`}
             >
-              <span className="font-semibold text-foreground text-center text-sm">{logo.name}</span>
+              <span className="font-semibold text-foreground text-center text-sm">
+                {logo.name}
+              </span>
             </motion.div>
           ))}
         </div>
@@ -431,14 +504,20 @@ function ProjectCard({
             {project.icon}
           </span>
           <div>
-            <div className="text-xs font-medium text-primary/80">{project.category}</div>
+            <div className="text-xs font-medium text-primary/80">
+              {project.category}
+            </div>
             <h3 className="font-bold text-foreground">{project.title}</h3>
           </div>
         </div>
-        <p className="text-sm text-foreground/80 leading-relaxed mb-3">{project.shortDesc}</p>
+        <p className="text-sm text-foreground/80 leading-relaxed mb-3">
+          {project.shortDesc}
+        </p>
         <div className="inline-flex items-center gap-1 w-fit rounded-md bg-background/70 px-2 py-1 text-xs font-semibold text-primary hover:bg-background transition-colors">
           <span>Click to see details</span>
-          <span className="transition-transform group-hover:translate-x-0.5">→</span>
+          <span className="transition-transform group-hover:translate-x-0.5">
+            →
+          </span>
         </div>
       </div>
     </motion.button>

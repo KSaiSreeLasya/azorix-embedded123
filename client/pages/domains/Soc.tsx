@@ -27,7 +27,9 @@ export default function Soc() {
 
       {/* Core Capabilities */}
       <Section container>
-        <h2 className="text-2xl md:text-3xl font-bold mb-8">Core Capabilities</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-8">
+          Core Capabilities
+        </h2>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           <CapabilityCard
             icon={<Zap className="h-6 w-6" />}
@@ -222,13 +224,7 @@ function CapabilityCard({
   );
 }
 
-function ProcessorCard({
-  title,
-  items,
-}: {
-  title: string;
-  items: string[];
-}) {
+function ProcessorCard({ title, items }: { title: string; items: string[] }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 16 }}
@@ -272,13 +268,7 @@ function Card({
   );
 }
 
-function FeatureCard({
-  title,
-  items,
-}: {
-  title: string;
-  items: string[];
-}) {
+function FeatureCard({ title, items }: { title: string; items: string[] }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 16 }}
@@ -301,13 +291,7 @@ function FeatureCard({
   );
 }
 
-function TestingCard({
-  title,
-  desc,
-}: {
-  title: string;
-  desc: string;
-}) {
+function TestingCard({ title, desc }: { title: string; desc: string }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 16 }}

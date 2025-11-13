@@ -3,7 +3,7 @@ import SiteFooter from "@/components/SiteFooter";
 import Section from "@/components/Section";
 import { motion, AnimatePresence } from "framer-motion";
 import SEO from "@/components/SEO";
-import { CheckCircle, Smartphone, Zap, Radio, Lightbulb, X, Heart, Radio as RadioIcon, Monitor, Wifi as WifiIcon } from "lucide-react";
+import { CheckCircle, Smartphone, Zap, Radio, Lightbulb, X, Heart, Radio as RadioIcon, Monitor, Wifi as WifiIcon, Cpu } from "lucide-react";
 import { useState } from "react";
 
 const projects = [

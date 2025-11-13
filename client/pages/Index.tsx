@@ -521,13 +521,19 @@ function OverviewCard({
 }
 
 function CoECard({
+  emoji,
   icon,
   title,
+  highlight,
   desc,
+  topics,
 }: {
+  emoji: string;
   icon: React.ReactNode;
   title: string;
+  highlight: string;
   desc: string;
+  topics: string[];
 }) {
   return (
     <motion.div
@@ -538,11 +544,17 @@ function CoECard({
       transition={{ duration: 0.4 }}
       className="rounded-lg border bg-background/70 p-6 shadow-sm hover:shadow-md transition-all"
     >
-      <div className="mb-3 flex items-center justify-center h-12 w-12 rounded-lg bg-primary/15 text-primary">
-        {icon}
+      <div className="text-4xl mb-3">{emoji}</div>
+      <h3 className="font-bold mb-1">{title}</h3>
+      <p className="text-xs font-medium text-primary/70 mb-2">{highlight}</p>
+      <p className="text-sm text-muted-foreground mb-4">{desc}</p>
+      <div className="flex flex-wrap gap-1.5">
+        {topics.map((topic) => (
+          <span key={topic} className="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary/80">
+            {topic}
+          </span>
+        ))}
       </div>
-      <h3 className="font-semibold mb-2">{title}</h3>
-      <p className="text-sm text-muted-foreground">{desc}</p>
     </motion.div>
   );
 }

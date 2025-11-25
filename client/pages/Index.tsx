@@ -121,15 +121,31 @@ export default function Index() {
       </Section>
 
       {/* Company Overview */}
-      <Section className="bg-secondary/40">
-        <h2 className="text-2xl md:text-3xl font-bold">About Embinsys</h2>
-        <p className="mt-2 text-foreground/80 max-w-3xl leading-relaxed">
-          For over 25 years, Embinsys has been enabling global companies with
-          comprehensive product and engineering services. With dual offices in
-          Troy, Michigan (USA) and Hyderabad, India, and a team of 80+
-          experienced engineers, we deliver end-to-end embedded systems
-          solutions with a focus on quality, reliability, and innovation.
-        </p>
+      <Section className="bg-gradient-to-b from-background to-secondary/30">
+        <div className="mb-12">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-3xl md:text-4xl font-black bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent"
+          >
+            About Embinsys
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="mt-4 text-lg text-foreground/70 max-w-3xl leading-relaxed font-medium"
+          >
+            For over 25 years, Embinsys has been enabling global companies with
+            comprehensive product and engineering services. With dual offices in
+            Troy, Michigan (USA) and Hyderabad, India, and a team of 80+
+            experienced engineers, we deliver end-to-end embedded systems
+            solutions with a focus on quality, reliability, and innovation.
+          </motion.p>
+        </div>
         <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           <OverviewCard
             icon={<Rocket className="h-5 w-5" />}

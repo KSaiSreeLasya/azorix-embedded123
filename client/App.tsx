@@ -38,6 +38,8 @@ import MedicalIoT from "./pages/iot/Medical";
 import SmartCity from "./pages/iot/SmartCity";
 import AutomotiveIoT from "./pages/iot/Automotive";
 import ConsumerIoT from "./pages/iot/Consumer";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
 
 const queryClient = new QueryClient();
 

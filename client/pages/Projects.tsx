@@ -252,9 +252,7 @@ export default function Projects() {
                 Projects
               </h1>
               <p className="mt-3 text-muted-foreground max-w-2xl">
-                Explore our diverse portfolio of successful embedded systems
-                projects. Click on any project to see detailed technical
-                specifications and implementation details.
+                From smart wearables to IoT systems and connected vehicles - explore real products we've built. Click any project to discover what it does and who uses it.
               </p>
             </div>
             <img

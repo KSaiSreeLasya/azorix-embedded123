@@ -35,31 +35,37 @@ export default function Iot() {
             icon={<Zap className="h-6 w-6" />}
             title="Firmware Design"
             desc="Device firmware, bootloaders, RTOS integration, power management, OTA updates"
+            index={0}
           />
           <CapabilityCard
             icon={<Radio className="h-6 w-6" />}
             title="Embedded Applications"
             desc="Edge computing logic, sensor interfaces, data processing, real-time control"
+            index={1}
           />
           <CapabilityCard
             icon={<Cloud className="h-6 w-6" />}
             title="Web Services & APIs"
             desc="RESTful APIs, cloud integration, data pipelines, dashboard development"
+            index={2}
           />
           <CapabilityCard
             icon={<Smartphone className="h-6 w-6" />}
             title="Mobile Apps"
             desc="iOS/Android development, BLE connectivity, user interfaces"
+            index={3}
           />
           <CapabilityCard
             icon={<Lock className="h-6 w-6" />}
             title="Security"
             desc="Secure provisioning, encryption, authentication, data protection"
+            index={4}
           />
           <CapabilityCard
             icon={<Wifi className="h-6 w-6" />}
             title="Connectivity"
             desc="WiFi, BLE, Zigbee, Z-Wave, cellular, MQTT, CoAP protocols"
+            index={5}
           />
         </div>
       </Section>

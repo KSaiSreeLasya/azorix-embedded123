@@ -158,49 +158,64 @@ export default function Capabilities() {
         </div>
       </Section>
 
-      {/* Protocols & Standards */}
+      {/* Connectivity & Communication */}
       <Section>
         <h2 className="text-2xl md:text-3xl font-bold mb-2">
-          Protocols & Standards
+          Ways Devices Connect & Communicate
         </h2>
         <p className="text-muted-foreground mb-8">
-          Expertise in automotive, industrial, and connectivity standards.
+          Devices need standard ways to talk to each other, follow rules, and connect securely. We expertise in all major standards.
         </p>
         <div className="grid gap-6 md:grid-cols-3">
-          <ExpertiseGroup title="Automotive Protocols">
-            <ul className="space-y-2">
-              {["CAN", "CAN FD", "UDS", "J1939", "Autosar", "MISRA C/C++"].map(
-                (p) => (
-                  <li key={p} className="flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-primary" />
-                    <span className="text-sm">{p}</span>
-                  </li>
-                ),
-              )}
-            </ul>
-          </ExpertiseGroup>
-          <ExpertiseGroup title="Wireless Connectivity">
+          <ExpertiseGroup title="Car & Vehicle Systems">
+            <p className="text-xs text-muted-foreground mb-3">
+              Special standards for automotive safety, diagnostics, and communication.
+            </p>
             <ul className="space-y-2">
               {[
-                "Bluetooth / BLE",
-                "Wi-Fi",
-                "Zigbee",
-                "LoRaWAN",
-                "NB-IoT",
-                "5G/LTE",
+                "CAN Network (vehicle data bus)",
+                "Diagnostics & troubleshooting",
+                "J1939 (heavy trucks)",
+                "Safety standards",
               ].map((p) => (
-                <li key={p} className="flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-primary" />
+                <li key={p} className="flex items-start gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
                   <span className="text-sm">{p}</span>
                 </li>
               ))}
             </ul>
           </ExpertiseGroup>
-          <ExpertiseGroup title="Interface Protocols">
+          <ExpertiseGroup title="Wireless Connectivity">
+            <p className="text-xs text-muted-foreground mb-3">
+              Technologies to connect devices wirelessly - like WiFi for phones or Bluetooth for wearables.
+            </p>
             <ul className="space-y-2">
-              {["TCP/IP", "UART", "I2C", "SPI", "USB", "Ethernet"].map((p) => (
-                <li key={p} className="flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-primary" />
+              {[
+                "Bluetooth (headphones, watches)",
+                "Wi-Fi (internet connection)",
+                "Cellular (mobile networks)",
+                "Long-range wireless (LoRaWAN)",
+              ].map((p) => (
+                <li key={p} className="flex items-start gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-sm">{p}</span>
+                </li>
+              ))}
+            </ul>
+          </ExpertiseGroup>
+          <ExpertiseGroup title="Physical Connections">
+            <p className="text-xs text-muted-foreground mb-3">
+              How components inside devices talk to each other - the physical communication paths.
+            </p>
+            <ul className="space-y-2">
+              {[
+                "USB (universal standard)",
+                "Ethernet (wired networks)",
+                "Serial connections",
+                "Sensor communication",
+              ].map((p) => (
+                <li key={p} className="flex items-start gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
                   <span className="text-sm">{p}</span>
                 </li>
               ))}

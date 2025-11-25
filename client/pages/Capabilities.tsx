@@ -436,23 +436,36 @@ function ServiceCard({
   icon,
   title,
   desc,
+  index = 0,
 }: {
   icon?: string;
   title: string;
   desc: string;
+  index?: number;
 }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      whileHover={{ y: -4, boxShadow: "0 12px 32px rgba(0,0,0,0.1)" }}
-      transition={{ duration: 0.4 }}
-      className="rounded-lg border p-6 bg-card/60 backdrop-blur hover:shadow-md transition-all"
+      whileHover={{ y: -6, boxShadow: "0 20px 40px rgba(0,0,0,0.12)" }}
+      transition={{ duration: 0.4, delay: index * 0.08 }}
+      className="rounded-lg border border-primary/15 p-6 bg-card/60 backdrop-blur hover:shadow-md hover:border-primary/40 transition-all group overflow-hidden"
     >
-      {icon && <div className="text-3xl mb-3">{icon}</div>}
-      <h3 className="font-bold mb-2 text-foreground">{title}</h3>
-      <p className="text-sm text-muted-foreground leading-relaxed">{desc}</p>
+      <motion.div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <div className="relative">
+        {icon && (
+          <motion.div
+            className="text-3xl mb-3"
+            whileHover={{ scale: 1.2, rotate: 10 }}
+            transition={{ duration: 0.3 }}
+          >
+            {icon}
+          </motion.div>
+        )}
+        <h3 className="font-bold mb-2 text-foreground">{title}</h3>
+        <p className="text-sm text-muted-foreground leading-relaxed">{desc}</p>
+      </div>
     </motion.div>
   );
 }

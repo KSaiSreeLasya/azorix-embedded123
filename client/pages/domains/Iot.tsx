@@ -282,7 +282,15 @@ function PlatformCard({
   );
 }
 
-function ApplicationCard({ title, desc, index = 0 }: { title: string; desc: string; index?: number }) {
+function ApplicationCard({
+  title,
+  desc,
+  index = 0,
+}: {
+  title: string;
+  desc: string;
+  index?: number;
+}) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}

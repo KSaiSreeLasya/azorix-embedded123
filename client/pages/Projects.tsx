@@ -416,7 +416,10 @@ export default function Projects() {
                         key={tech}
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
-                        whileHover={{ scale: 1.05, boxShadow: "0 4px 12px rgba(var(--primary-rgb), 0.2)" }}
+                        whileHover={{
+                          scale: 1.05,
+                          boxShadow: "0 4px 12px rgba(var(--primary-rgb), 0.2)",
+                        }}
                         transition={{ duration: 0.3, delay: idx * 0.05 }}
                         className="px-3 py-1.5 rounded-full border border-primary/30 bg-gradient-to-r from-primary/15 to-accent/15 text-foreground text-xs font-semibold hover:border-primary/50 transition-colors"
                       >
@@ -584,7 +587,11 @@ function ProjectCard({
         />
         <motion.div
           className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent"
-          whileHover={{ from: "rgba(0,0,0,0.7)", via: "transparent", to: "transparent" }}
+          whileHover={{
+            from: "rgba(0,0,0,0.7)",
+            via: "transparent",
+            to: "transparent",
+          }}
         />
       </div>
 
@@ -636,14 +643,14 @@ function ProjectCard({
 
         <motion.div
           className="inline-flex items-center gap-1 w-fit rounded-lg bg-gradient-to-r from-primary/20 to-accent/20 px-3 py-1.5 text-xs font-bold text-primary border border-primary/30 hover:border-primary/60 transition-all"
-          whileHover={{ x: 4, boxShadow: "0 4px 12px rgba(var(--primary-rgb), 0.2)" }}
+          whileHover={{
+            x: 4,
+            boxShadow: "0 4px 12px rgba(var(--primary-rgb), 0.2)",
+          }}
           whileTap={{ scale: 0.95 }}
         >
           <span>View Details</span>
-          <motion.span
-            className="transition-transform"
-            whileHover={{ x: 3 }}
-          >
+          <motion.span className="transition-transform" whileHover={{ x: 3 }}>
             →
           </motion.span>
         </motion.div>

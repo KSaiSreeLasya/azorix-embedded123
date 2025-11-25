@@ -145,7 +145,10 @@ export default function Capabilities() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.3, delay: idx * 0.05 }}
-                  whileHover={{ scale: 1.05, backgroundColor: "rgba(var(--primary-rgb), 0.1)" }}
+                  whileHover={{
+                    scale: 1.05,
+                    backgroundColor: "rgba(var(--primary-rgb), 0.1)",
+                  }}
                   className="px-3 py-2 rounded-md bg-card/60 text-sm border border-primary/15 hover:border-primary/40 transition-all cursor-pointer"
                 >
                   {p}
@@ -153,7 +156,10 @@ export default function Capabilities() {
               ))}
             </div>
           </ExpertiseGroup>
-          <ExpertiseGroup title="Operating Systems & Software Platforms" index={1}>
+          <ExpertiseGroup
+            title="Operating Systems & Software Platforms"
+            index={1}
+          >
             <p className="text-sm text-muted-foreground mb-4">
               The system software that manages how devices work - similar to
               Windows or Mac for computers.
@@ -173,7 +179,10 @@ export default function Capabilities() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.3, delay: idx * 0.05 }}
-                  whileHover={{ scale: 1.05, backgroundColor: "rgba(var(--primary-rgb), 0.1)" }}
+                  whileHover={{
+                    scale: 1.05,
+                    backgroundColor: "rgba(var(--primary-rgb), 0.1)",
+                  }}
                   className="px-3 py-2 rounded-md bg-card/60 text-sm border border-primary/15 hover:border-primary/40 transition-all cursor-pointer"
                 >
                   {os}
@@ -482,9 +491,7 @@ function ExpertiseGroup({
     >
       <motion.div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg" />
       <h3 className="font-semibold mb-4 relative text-foreground">{title}</h3>
-      <div className="relative">
-        {children}
-      </div>
+      <div className="relative">{children}</div>
     </motion.div>
   );
 }

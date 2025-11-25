@@ -37,10 +37,15 @@ export default function SiteHeader() {
           "sticky top-0 z-40 w-full transition-all duration-300",
           isScrolled
             ? "border-b border-primary/30 bg-background/95 backdrop-blur-lg supports-[backdrop-filter]:bg-background/90 shadow-lg"
-            : "border-b border-primary/20 bg-background/70 backdrop-blur-md supports-[backdrop-filter]:bg-background/60"
+            : "border-b border-primary/20 bg-background/70 backdrop-blur-md supports-[backdrop-filter]:bg-background/60",
         )}
       >
-        <div className={cn("container flex items-center justify-between transition-all duration-300", isScrolled ? "h-14" : "h-16")}>
+        <div
+          className={cn(
+            "container flex items-center justify-between transition-all duration-300",
+            isScrolled ? "h-14" : "h-16",
+          )}
+        >
           <div className="flex items-center gap-4">
             {location.pathname !== "/" && (
               <BackButton className="hidden sm:inline-flex" />
@@ -52,7 +57,7 @@ export default function SiteHeader() {
                   alt="Azorix Embedded Logo"
                   className={cn(
                     "w-auto object-contain dark:hidden group-hover:opacity-80 transition-all duration-300",
-                    isScrolled ? "h-12" : "h-16"
+                    isScrolled ? "h-12" : "h-16",
                   )}
                 />
                 <img
@@ -61,7 +66,7 @@ export default function SiteHeader() {
                   aria-hidden
                   className={cn(
                     "w-auto object-contain hidden dark:inline-block group-hover:opacity-80 transition-all duration-300",
-                    isScrolled ? "h-12" : "h-16"
+                    isScrolled ? "h-12" : "h-16",
                   )}
                 />
               </span>
@@ -94,7 +99,11 @@ export default function SiteHeader() {
                         <motion.div
                           layoutId="navIndicator"
                           className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary to-accent"
-                          transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                          transition={{
+                            type: "spring",
+                            stiffness: 380,
+                            damping: 30,
+                          }}
                         />
                       )}
                     </>
@@ -110,7 +119,7 @@ export default function SiteHeader() {
               asChild
               className={cn(
                 "hidden md:inline-flex font-semibold rounded-lg shadow-md transition-all duration-200 bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90",
-                isScrolled ? "h-9 px-5 text-sm" : "h-10 px-6 text-sm"
+                isScrolled ? "h-9 px-5 text-sm" : "h-10 px-6 text-sm",
               )}
             >
               <a href="mailto:info@azorixembedded.com">Get in touch</a>
@@ -161,7 +170,9 @@ export default function SiteHeader() {
                   className={({ isActive }) =>
                     cn(
                       "py-3 px-4 text-sm font-semibold rounded-lg transition-all duration-200 border border-transparent block",
-                      isActive ? "bg-primary/15 border-primary/30 text-primary" : "text-foreground/60 hover:bg-primary/10 hover:border-primary/30 hover:text-primary",
+                      isActive
+                        ? "bg-primary/15 border-primary/30 text-primary"
+                        : "text-foreground/60 hover:bg-primary/10 hover:border-primary/30 hover:text-primary",
                     )
                   }
                 >

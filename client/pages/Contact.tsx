@@ -213,7 +213,7 @@ export default function Contact() {
                   whileHover={{ borderColor: "hsl(var(--primary) / 0.4)" }}
                   whileFocus={{
                     boxShadow: "0 0 20px rgba(var(--primary-rgb), 0.2)",
-                    borderColor: "hsl(var(--primary) / 0.8)"
+                    borderColor: "hsl(var(--primary) / 0.8)",
                   }}
                 >
                   <option value="">Select range</option>
@@ -243,7 +243,7 @@ export default function Contact() {
                   whileHover={{ borderColor: "hsl(var(--primary) / 0.4)" }}
                   whileFocus={{
                     boxShadow: "0 0 20px rgba(var(--primary-rgb), 0.2)",
-                    borderColor: "hsl(var(--primary) / 0.8)"
+                    borderColor: "hsl(var(--primary) / 0.8)",
                   }}
                 >
                   <option value="">Select timeline</option>

@@ -99,7 +99,9 @@ export default function Contact() {
             Let's Build Something Great
           </h1>
           <p className="mt-4 text-lg text-foreground/70 max-w-2xl leading-relaxed font-medium">
-            Tell us about your project or resource needs. Our leadership team will respond promptly and work with you to find the perfect solution.
+            Tell us about your project or resource needs. Our leadership team
+            will respond promptly and work with you to find the perfect
+            solution.
           </p>
         </motion.div>
 
@@ -364,10 +366,11 @@ export default function Contact() {
                 <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
                   <MapPin className="h-5 w-5 text-primary-foreground" />
                 </div>
-                <div className="font-semibold text-foreground text-base">Offices</div>
+                <div className="font-semibold text-foreground text-base">
+                  Offices
+                </div>
               </div>
               <div className="mt-4 space-y-3">
-                
                 <motion.div
                   className="flex items-center gap-3 text-foreground/80"
                   whileHover={{ x: 6 }}
@@ -389,7 +392,9 @@ export default function Contact() {
                   <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
                     <Globe className="h-5 w-5 text-primary-foreground" />
                   </div>
-                  <div className="font-semibold text-foreground text-base">Website</div>
+                  <div className="font-semibold text-foreground text-base">
+                    Website
+                  </div>
                 </div>
                 <motion.a
                   className="inline-flex items-center gap-2 text-foreground/80 hover:text-primary transition-colors font-medium"
@@ -406,7 +411,9 @@ export default function Contact() {
                   <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
                     <Mail className="h-5 w-5 text-primary-foreground" />
                   </div>
-                  <div className="font-semibold text-foreground text-base">Email</div>
+                  <div className="font-semibold text-foreground text-base">
+                    Email
+                  </div>
                 </div>
                 <motion.a
                   className="inline-flex items-center gap-2 text-foreground/80 hover:text-primary transition-colors font-medium"

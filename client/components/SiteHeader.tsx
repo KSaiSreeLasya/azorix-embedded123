@@ -57,7 +57,7 @@ export default function SiteHeader() {
                   alt="Azorix Embedded Logo"
                   className={cn(
                     "w-auto object-contain dark:hidden group-hover:opacity-80 transition-all duration-300",
-                    isScrolled ? "h-16" : "h-24",
+                    isScrolled ? "h-14" : "h-20",
                   )}
                 />
                 <img
@@ -66,7 +66,7 @@ export default function SiteHeader() {
                   aria-hidden
                   className={cn(
                     "w-auto object-contain hidden dark:inline-block group-hover:opacity-80 transition-all duration-300",
-                    isScrolled ? "h-16" : "h-24",
+                    isScrolled ? "h-14" : "h-20",
                   )}
                 />
               </span>

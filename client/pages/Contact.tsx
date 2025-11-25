@@ -133,7 +133,7 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mt-8 grid gap-6 max-w-3xl rounded-xl border bg-card/60 backdrop-blur p-6 md:p-8"
+          className="mt-8 grid gap-6 max-w-3xl rounded-2xl border border-primary/20 bg-gradient-to-br from-primary/5 via-background to-accent/5 backdrop-blur p-6 md:p-10 shadow-lg hover:shadow-xl hover:border-primary/30 transition-all"
         >
           <div className="grid gap-6 md:grid-cols-2">
             <motion.div

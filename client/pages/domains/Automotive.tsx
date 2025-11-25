@@ -69,6 +69,7 @@ export default function Automotive() {
         </p>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           <ProtocolCard
+            index={0}
             title="CAN Family"
             items={[
               "CAN",
@@ -79,6 +80,7 @@ export default function Automotive() {
             ]}
           />
           <ProtocolCard
+            index={1}
             title="Diagnostics"
             items={[
               "UDS (ISO 14229)",
@@ -89,6 +91,7 @@ export default function Automotive() {
             ]}
           />
           <ProtocolCard
+            index={2}
             title="Industrial"
             items={[
               "J1939 (Heavy duty)",
@@ -99,6 +102,7 @@ export default function Automotive() {
             ]}
           />
           <ProtocolCard
+            index={3}
             title="Telematics"
             items={[
               "GPRS/3G/LTE",

@@ -2,11 +2,11 @@ import { Link } from "react-router-dom";
 
 export default function SiteFooter() {
   return (
-    <footer className="border-t bg-secondary/40">
-      <div className="container py-12 grid gap-6 md:grid-cols-4">
+    <footer className="border-t border-primary/20 bg-gradient-to-b from-background to-secondary/20">
+      <div className="container py-16 md:py-20 grid gap-10 md:grid-cols-4">
         <div>
           <div className="flex items-center gap-3 mb-4">
-            <span className="relative inline-flex">
+            <span className="relative inline-flex opacity-80 hover:opacity-100 transition-opacity">
               <img
                 src="https://cdn.builder.io/api/v1/image/assets%2Fdf131029371243a6bdd4cd7752a9db95%2F1ea1a5551abe4a9abfb9506ae0f1ecaf?format=webp&width=800"
                 alt="Azorix Embedded Logo"
@@ -19,44 +19,43 @@ export default function SiteFooter() {
                 className="h-16 w-auto object-contain hidden dark:inline-block"
               />
             </span>
-            <div className="text-xl font-bold"></div>
           </div>
-          <p className="text-sm text-muted-foreground mt-2 max-w-sm">
+          <p className="text-sm text-foreground/65 mt-3 max-w-sm leading-relaxed font-medium">
             Innovation. Quality. Reliability. Partnering with clients to deliver
             end‑to‑end embedded engineering solutions.
           </p>
         </div>
         <div>
-          <div className="font-semibold mb-3">Offices</div>
-          <ul className="space-y-1 text-sm text-muted-foreground">
-            <li>Troy, MI, USA</li>
-            <li>Hyderabad, India</li>
+          <div className="font-bold text-lg mb-4 text-foreground">Offices</div>
+          <ul className="space-y-2 text-sm text-foreground/70">
+            <li className="hover:text-primary transition-colors">Troy, MI, USA</li>
+            <li className="hover:text-primary transition-colors">Hyderabad, India</li>
           </ul>
         </div>
         <div>
-          <div className="font-semibold mb-3">Contact</div>
-          <ul className="space-y-1 text-sm text-muted-foreground">
-            <li>www.azorixembedded.com</li>
-            <li>info@azorixembedded.com</li>
+          <div className="font-bold text-lg mb-4 text-foreground">Contact</div>
+          <ul className="space-y-2 text-sm text-foreground/70">
+            <li className="hover:text-primary transition-colors">www.azorixembedded.com</li>
+            <li className="hover:text-primary transition-colors">info@azorixembedded.com</li>
           </ul>
         </div>
         <div>
-          <div className="font-semibold mb-3">Legal</div>
-          <ul className="space-y-1 text-sm">
+          <div className="font-bold text-lg mb-4 text-foreground">Legal</div>
+          <ul className="space-y-2 text-sm">
             <li>
-              <Link to="/privacy" className="underline text-muted-foreground">
+              <Link to="/privacy" className="text-foreground/70 hover:text-primary transition-colors font-medium">
                 Privacy Policy
               </Link>
             </li>
             <li>
-              <Link to="/terms" className="underline text-muted-foreground">
+              <Link to="/terms" className="text-foreground/70 hover:text-primary transition-colors font-medium">
                 Terms of Service
               </Link>
             </li>
           </ul>
         </div>
       </div>
-      <div className="border-t py-4 text-center text-xs text-muted-foreground bg-gradient-to-r from-transparent via-primary/10 to-transparent">
+      <div className="border-t border-primary/20 py-6 text-center text-sm text-foreground/60 bg-gradient-to-r from-transparent via-primary/5 to-transparent font-medium">
         © 2024 Azorix Embedded. All rights reserved.
       </div>
     </footer>

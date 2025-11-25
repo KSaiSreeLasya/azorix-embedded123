@@ -34,53 +34,66 @@ export default function Index() {
 
       {/* Hero */}
       <Section container>
-        <div className="relative overflow-hidden rounded-2xl border bg-gradient-to-br from-teal-50 via-white to-emerald-50 dark:from-teal-950/30 dark:via-slate-950 dark:to-emerald-950/20">
-          <div className="grid gap-8 md:grid-cols-2 p-8 md:p-12 items-center">
+        <div className="relative overflow-hidden rounded-3xl border border-primary/20 bg-gradient-to-br from-primary/5 via-background to-accent/5 dark:from-primary/10 dark:via-background dark:to-accent/10">
+          <div className="absolute inset-0 overflow-hidden">
+            <div className="absolute -top-40 -right-40 h-80 w-80 rounded-full bg-primary/5 blur-3xl" />
+            <div className="absolute -bottom-32 -left-40 h-64 w-64 rounded-full bg-accent/5 blur-3xl" />
+          </div>
+          <div className="relative grid gap-12 md:grid-cols-2 p-8 md:p-16 items-center">
             <div>
               <motion.p
-                initial={{ opacity: 0, y: -8 }}
+                initial={{ opacity: 0, y: -12 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4 }}
-                className="text-sm font-semibold text-primary"
+                transition={{ duration: 0.5 }}
+                className="text-xs md:text-sm font-semibold uppercase tracking-widest text-primary"
               >
                 Engineering & Design Services
               </motion.p>
               <motion.h1
-                initial={{ opacity: 0, y: 12 }}
+                initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                className="mt-2 pb-[20px] text-4xl md:text-6xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-emerald-400 bg-clip-text text-transparent drop-shadow-[0_2px_8px_rgba(16,185,129,0.15)]"
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="mt-4 pb-4 text-5xl md:text-7xl font-black tracking-tighter bg-gradient-to-r from-foreground via-primary to-accent bg-clip-text text-transparent"
               >
                 Innovation. Quality. Reliability.
               </motion.h1>
               <motion.p
-                initial={{ opacity: 0, y: 12 }}
+                initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                className="mt-4 text-base md:text-lg text-foreground/80 max-w-xl leading-relaxed"
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="mt-6 text-lg md:text-xl text-foreground/70 max-w-lg leading-relaxed font-medium"
               >
                 Enabling global companies with product and engineering services.
                 Start-to-finish embedded systems expertise across hardware,
                 software, testing, and support.
               </motion.p>
               <motion.div
-                initial={{ opacity: 0, y: 12 }}
+                initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-                className="mt-6 flex flex-wrap gap-3"
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="mt-8 flex flex-wrap gap-4"
               >
-                <Button asChild size="lg">
+                <Button
+                  asChild
+                  size="lg"
+                  className="h-12 px-8 text-base font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-200"
+                >
                   <a href="/contact">Get Started</a>
                 </Button>
-                <Button asChild variant="outline" size="lg">
+                <Button
+                  asChild
+                  variant="outline"
+                  size="lg"
+                  className="h-12 px-8 text-base font-semibold rounded-lg border-2 hover:border-primary"
+                >
                   <a href="/capabilities">Explore Capabilities</a>
                 </Button>
               </motion.div>
               <motion.div
-                initial={{ opacity: 0, y: 12 }}
+                initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-                className="mt-6 flex flex-wrap gap-2"
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="mt-8 flex flex-wrap gap-3"
               >
                 <Pill icon={<Wifi className="h-4 w-4" />}>IoT</Pill>
                 <Pill icon={<Stethoscope className="h-4 w-4" />}>Medical</Pill>
@@ -88,10 +101,10 @@ export default function Index() {
                 <Pill icon={<Cpu className="h-4 w-4" />}>SoC</Pill>
               </motion.div>
               <motion.div
-                initial={{ opacity: 0, y: 12 }}
+                initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.5 }}
-                className="mt-8 grid grid-cols-3 gap-4 text-center"
+                transition={{ duration: 0.6, delay: 0.5 }}
+                className="mt-10 grid grid-cols-3 gap-4"
               >
                 <Stat kpi="25+" label="Years Experience" />
                 <Stat kpi="80+" label="Team Engineers" />
@@ -99,18 +112,19 @@ export default function Index() {
               </motion.div>
             </div>
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              initial={{ opacity: 0, scale: 0.9, rotateY: 20 }}
+              animate={{ opacity: 1, scale: 1, rotateY: 0 }}
+              transition={{ duration: 0.7, delay: 0.2, type: "spring" }}
               className="relative"
             >
+              <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-2xl blur opacity-20" />
               <img
                 src="https://images.pexels.com/photos/3825581/pexels-photo-3825581.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800"
                 alt="Embedded device PCB and components"
                 loading="eager"
                 fetchpriority="high"
                 decoding="async"
-                className="rounded-xl border shadow-lg object-cover w-full h-[240px] md:h-[320px] lg:h-[420px]"
+                className="relative rounded-2xl border-2 border-primary/30 shadow-2xl object-cover w-full h-[280px] md:h-[360px] lg:h-[480px]"
               />
             </motion.div>
           </div>
@@ -118,15 +132,31 @@ export default function Index() {
       </Section>
 
       {/* Company Overview */}
-      <Section className="bg-secondary/40">
-        <h2 className="text-2xl md:text-3xl font-bold">About Embinsys</h2>
-        <p className="mt-2 text-foreground/80 max-w-3xl leading-relaxed">
-          For over 25 years, Embinsys has been enabling global companies with
-          comprehensive product and engineering services. With dual offices in
-          Troy, Michigan (USA) and Hyderabad, India, and a team of 80+
-          experienced engineers, we deliver end-to-end embedded systems
-          solutions with a focus on quality, reliability, and innovation.
-        </p>
+      <Section className="bg-gradient-to-b from-background to-secondary/30">
+        <div className="mb-12">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-3xl md:text-4xl font-black bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent"
+          >
+            About Embinsys
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="mt-4 text-lg text-foreground/70 max-w-3xl leading-relaxed font-medium"
+          >
+            For over 25 years, Embinsys has been enabling global companies with
+            comprehensive product and engineering services. With dual offices in
+            Troy, Michigan (USA) and Hyderabad, India, and a team of 80+
+            experienced engineers, we deliver end-to-end embedded systems
+            solutions with a focus on quality, reliability, and innovation.
+          </motion.p>
+        </div>
         <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           <OverviewCard
             icon={<Rocket className="h-5 w-5" />}
@@ -153,43 +183,77 @@ export default function Index() {
 
       {/* Quick links */}
       <Section>
-        <div className="rounded-xl border bg-card/50 backdrop-blur p-4 md:p-6">
-          <div className="grid gap-6 md:grid-cols-3">
-            <LinkCard
-              to="/capabilities"
-              title="Capabilities"
-              desc="End‑to‑end product engineering across hardware, software, and test."
-              image="https://images.pexels.com/photos/3938016/pexels-photo-3938016.jpeg"
-              icon={<Layers className="h-5 w-5" />}
-            />
-            <LinkCard
-              to="/projects"
-              title="Projects"
-              desc="Selected work across medical, industrial, consumer and automotive."
-              image="https://images.pexels.com/photos/7974/pexels-photo-7974.jpeg"
-              icon={<Award className="h-5 w-5" />}
-            />
-            <LinkCard
-              to="/contact"
-              title="Contact"
-              desc="Talk to our team about your product or resource needs."
-              image="https://images.pexels.com/photos/8728429/pexels-photo-8728429.jpeg"
-              icon={<Wrench className="h-5 w-5" />}
-            />
-          </div>
+        <div className="text-center mb-16">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-3xl md:text-4xl font-black bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent mb-4"
+          >
+            Explore Our Expertise
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="text-lg text-foreground/70 max-w-2xl mx-auto font-medium"
+          >
+            Discover our capabilities, view our work, or get in touch with our
+            team
+          </motion.p>
+        </div>
+        <div className="grid gap-8 md:grid-cols-3">
+          <LinkCard
+            to="/capabilities"
+            title="Capabilities"
+            desc="End‑to‑end product engineering across hardware, software, and test."
+            image="https://images.pexels.com/photos/3938016/pexels-photo-3938016.jpeg"
+            icon={<Layers className="h-5 w-5" />}
+            delay={0}
+          />
+          <LinkCard
+            to="/projects"
+            title="Projects"
+            desc="Selected work across medical, industrial, consumer and automotive."
+            image="https://images.pexels.com/photos/7974/pexels-photo-7974.jpeg"
+            icon={<Award className="h-5 w-5" />}
+            delay={0.1}
+          />
+          <LinkCard
+            to="/contact"
+            title="Contact"
+            desc="Talk to our team about your product or resource needs."
+            image="https://images.pexels.com/photos/8728429/pexels-photo-8728429.jpeg"
+            icon={<Wrench className="h-5 w-5" />}
+            delay={0.2}
+          />
         </div>
       </Section>
 
       {/* Centers of Excellence */}
-      <Section className="bg-secondary/40">
-        <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold">
+      <Section className="bg-gradient-to-b from-background to-secondary/30">
+        <div className="text-center mb-16">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-3xl md:text-4xl font-black bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent"
+          >
             Specialized Teams for Every Market
-          </h2>
-          <p className="mt-2 text-foreground/80 max-w-3xl mx-auto leading-relaxed">
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="mt-4 text-lg text-foreground/70 max-w-3xl mx-auto leading-relaxed font-medium"
+          >
             Expert centers focused on specific industries - each with deep
             knowledge and proven track records
-          </p>
+          </motion.p>
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           <CoECard
@@ -244,14 +308,26 @@ export default function Index() {
 
       {/* Expertise Capabilities */}
       <Section>
-        <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold mb-2">
+        <div className="text-center mb-16">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-3xl md:text-4xl font-black bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent mb-4"
+          >
             Four Pillars of Expertise
-          </h2>
-          <p className="text-foreground/80 max-w-3xl mx-auto leading-relaxed">
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="text-lg text-foreground/70 max-w-3xl mx-auto leading-relaxed font-medium"
+          >
             Complete end-to-end engineering solutions from hardware to
             deployment
-          </p>
+          </motion.p>
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           <ExpertiseCard
@@ -310,13 +386,25 @@ export default function Index() {
       </Section>
 
       {/* Engagement Models */}
-      <Section className="bg-secondary/40">
-        <h2 className="text-2xl md:text-3xl font-bold mb-2">
+      <Section className="bg-gradient-to-b from-background to-secondary/30">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-3xl md:text-4xl font-black bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent mb-4"
+        >
           Engagement Models
-        </h2>
-        <p className="text-foreground/80 max-w-3xl leading-relaxed mb-8">
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="text-lg text-foreground/70 max-w-3xl leading-relaxed mb-12 font-medium"
+        >
           Flexible partnerships tailored to your project needs.
-        </p>
+        </motion.p>
         <div className="grid gap-6 md:grid-cols-3">
           <EngagementCard
             title="Project / SoW"
@@ -335,10 +423,24 @@ export default function Index() {
 
       {/* Domains */}
       <Section>
-        <h2 className="text-2xl md:text-3xl font-bold">Domains</h2>
-        <p className="mt-2 text-foreground/80 max-w-3xl leading-relaxed mb-8">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-3xl md:text-4xl font-black bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent"
+        >
+          Domains
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="mt-4 text-lg text-foreground/70 max-w-3xl leading-relaxed mb-12 font-medium"
+        >
           Where we deliver the most impact across industries and technologies.
-        </p>
+        </motion.p>
         <div className="rounded-xl border bg-card/60 backdrop-blur p-4 md:p-6">
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             <DomainCard
@@ -388,15 +490,27 @@ export default function Index() {
       </Section>
 
       {/* IoT Applications */}
-      <Section className="bg-secondary/40">
-        <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold mb-2">
+      <Section className="bg-gradient-to-b from-background to-secondary/30">
+        <div className="text-center mb-16">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-3xl md:text-4xl font-black bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent mb-4"
+          >
             IoT Applications
-          </h2>
-          <p className="text-foreground/80 max-w-3xl mx-auto leading-relaxed">
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="text-lg text-foreground/70 max-w-3xl mx-auto leading-relaxed font-medium"
+          >
             Smart devices that make everyday tasks smarter, faster, and more
             efficient
-          </p>
+          </motion.p>
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-5">
           <IoTAppCard
@@ -442,71 +556,81 @@ export default function Index() {
 
       {/* Client Partners */}
       <Section>
-        <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold mb-2">
+        <div className="text-center mb-16">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-3xl md:text-4xl font-black bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent mb-4"
+          >
             Trusted by Global Leaders
-          </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="text-lg text-foreground/70 max-w-2xl mx-auto font-medium"
+          >
             Our expertise is trusted by Fortune 500 companies and leading
             innovators worldwide
-          </p>
+          </motion.p>
         </div>
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {[
             {
               name: "Qualcomm",
-              color: "from-blue-600 to-blue-400",
-              desc: "Leading chipset provider",
+              logo: "https://cdn.builder.io/api/v1/image/assets%2F94c98e5ba7184650a99abe5e5bc2b664%2Ff84798c90742499b9c530c34302a27b3?format=webp&width=800",
             },
             {
               name: "Intel",
-              color: "from-blue-700 to-blue-500",
-              desc: "Global processor leader",
+              logo: "https://cdn.builder.io/api/v1/image/assets%2F94c98e5ba7184650a99abe5e5bc2b664%2F996e70ded31f47c0ad70d8d408240e3e?format=webp&width=800",
             },
             {
               name: "Bosch",
-              color: "from-red-600 to-red-400",
-              desc: "Industrial innovation",
+              logo: "https://cdn.builder.io/api/v1/image/assets%2F94c98e5ba7184650a99abe5e5bc2b664%2F9c77ee4533c644ab8f645e74e4f5aeaf?format=webp&width=800",
             },
             {
               name: "Ford",
-              color: "from-blue-800 to-blue-600",
-              desc: "Automotive excellence",
+              logo: "https://cdn.builder.io/api/v1/image/assets%2F94c98e5ba7184650a99abe5e5bc2b664%2F9b867ed044cb4aa085cf221997f72ba8?format=webp&width=800",
             },
             {
-              name: "Thermo Fisher",
-              color: "from-orange-600 to-orange-400",
-              desc: "Medical devices",
+              name: "Thermo Fisher Scientific",
+              logo: "https://cdn.builder.io/api/v1/image/assets%2F94c98e5ba7184650a99abe5e5bc2b664%2Fb473361533db46029fe8b7f3fc44f72a?format=webp&width=800",
             },
             {
               name: "AMD",
-              color: "from-red-700 to-red-500",
-              desc: "Advanced computing",
+              logo: "https://cdn.builder.io/api/v1/image/assets%2F94c98e5ba7184650a99abe5e5bc2b664%2Fb643fb8d25fb44678335e1d7ba418785?format=webp&width=800",
             },
             {
               name: "Tech Mahindra",
-              color: "from-blue-600 to-cyan-400",
-              desc: "Digital transformation",
+              logo: "https://cdn.builder.io/api/v1/image/assets%2F94c98e5ba7184650a99abe5e5bc2b664%2Fb7a7a132b1ad476a9b2f284c78b16c73?format=webp&width=800",
             },
             {
               name: "OnePlus",
-              color: "from-red-600 to-pink-500",
-              desc: "Mobile innovation",
+              logo: "https://cdn.builder.io/api/v1/image/assets%2F94c98e5ba7184650a99abe5e5bc2b664%2F59a2e39f5e6a4c40a41d63ccc182a06c?format=webp&width=800",
             },
           ].map((client) => (
             <motion.div
               key={client.name}
-              initial={{ opacity: 0, y: 12 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              whileHover={{ y: -4, boxShadow: "0 12px 24px rgba(0,0,0,0.15)" }}
-              transition={{ duration: 0.4 }}
-              className={`rounded-lg border p-6 flex flex-col items-center justify-center text-center min-h-32 bg-gradient-to-br ${client.color} opacity-10 hover:opacity-15 transition-opacity hover:border-primary/50`}
+              whileHover={{ y: -8, boxShadow: "0 24px 48px rgba(0,0,0,0.15)" }}
+              transition={{ duration: 0.5 }}
+              className="relative rounded-2xl border border-primary/20 p-8 flex flex-col items-center justify-center min-h-48 bg-gradient-to-br from-primary/5 to-accent/5 hover:from-primary/10 hover:to-accent/10 transition-all duration-300 group overflow-hidden"
             >
-              <div className="font-bold text-foreground text-lg mb-1">
-                {client.name}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="relative flex items-center justify-center h-full w-full">
+                <img
+                  src={client.logo}
+                  alt={client.name}
+                  loading="lazy"
+                  decoding="async"
+                  className="max-h-20 max-w-[90%] object-contain opacity-75 group-hover:opacity-100 transition-opacity duration-300 filter grayscale group-hover:grayscale-0"
+                />
               </div>
-              <div className="text-xs text-muted-foreground">{client.desc}</div>
             </motion.div>
           ))}
         </div>
@@ -514,22 +638,34 @@ export default function Index() {
 
       {/* CTA band */}
       <Section container>
-        <div className="rounded-xl border p-8 md:p-10 bg-gradient-to-r from-primary/10 to-transparent">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="relative overflow-hidden rounded-3xl border border-primary/30 p-10 md:p-16 bg-gradient-to-br from-primary/15 via-background to-accent/10 shadow-xl"
+        >
+          <div className="absolute -top-40 -right-40 h-80 w-80 rounded-full bg-primary/10 blur-3xl" />
+          <div className="absolute -bottom-32 -left-40 h-64 w-64 rounded-full bg-accent/10 blur-3xl" />
+          <div className="relative flex flex-col md:flex-row md:items-center md:justify-between gap-8">
             <div>
-              <h3 className="text-xl md:text-2xl font-bold">
+              <h3 className="text-2xl md:text-3xl font-black bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">
                 Ready to build your next product?
               </h3>
-              <p className="text-muted-foreground mt-1">
+              <p className="text-foreground/65 mt-3 text-lg font-medium">
                 Collaborate with a dependable engineering partner with 25+ years
                 of expertise.
               </p>
             </div>
-            <Button asChild size="lg">
+            <Button
+              asChild
+              size="lg"
+              className="md:flex-shrink-0 h-12 px-8 text-base font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90"
+            >
               <a href="/contact">Start a conversation</a>
             </Button>
           </div>
-        </div>
+        </motion.div>
       </Section>
 
       <SiteFooter />
@@ -540,14 +676,22 @@ export default function Index() {
 function Stat({ kpi, label }: { kpi: string; label: string }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 12 }}
+      initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.4 }}
-      className="rounded-lg border bg-background/70 p-4 shadow-sm hover:shadow-md transition-shadow"
+      transition={{ duration: 0.5 }}
+      whileHover={{ y: -4, boxShadow: "0 20px 40px rgba(0,0,0,0.1)" }}
+      className="relative rounded-xl border border-primary/20 bg-gradient-to-br from-primary/5 to-transparent p-6 backdrop-blur shadow-md hover:shadow-lg transition-all"
     >
-      <div className="text-2xl font-bold">{kpi}</div>
-      <div className="text-xs text-muted-foreground">{label}</div>
+      <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-primary/10 via-transparent to-accent/5 opacity-0 hover:opacity-100 transition-opacity duration-300" />
+      <div className="relative">
+        <div className="text-3xl md:text-4xl font-black bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+          {kpi}
+        </div>
+        <div className="text-sm md:text-base font-semibold text-foreground/60 mt-2">
+          {label}
+        </div>
+      </div>
     </motion.div>
   );
 }
@@ -563,20 +707,23 @@ function OverviewCard({
 }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 16 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      whileHover={{ y: -4 }}
-      transition={{ duration: 0.4 }}
-      className="rounded-lg border bg-background/70 p-5 shadow-sm hover:shadow-md transition-all"
+      whileHover={{ y: -6, boxShadow: "0 24px 48px rgba(0,0,0,0.12)" }}
+      transition={{ duration: 0.5 }}
+      className="relative rounded-2xl border border-primary/15 bg-gradient-to-br from-primary/5 via-background to-accent/5 p-7 shadow-lg hover:shadow-xl transition-all group overflow-hidden"
     >
-      <div className="flex items-center gap-2 font-semibold mb-2">
-        <span className="grid h-8 w-8 place-items-center rounded-md bg-primary/15 text-primary">
-          {icon}
-        </span>
-        {title}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <div className="relative">
+        <div className="flex items-center gap-3 font-bold mb-3 text-lg">
+          <span className="grid h-10 w-10 place-items-center rounded-lg bg-gradient-to-br from-primary to-accent text-primary-foreground shadow-md">
+            {icon}
+          </span>
+          {title}
+        </div>
+        <p className="text-base text-foreground/65 leading-relaxed">{desc}</p>
       </div>
-      <p className="text-sm text-muted-foreground">{desc}</p>
     </motion.div>
   );
 }
@@ -598,26 +745,35 @@ function CoECard({
 }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 16 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      whileHover={{ y: -4 }}
-      transition={{ duration: 0.4 }}
-      className="rounded-lg border bg-background/70 p-6 shadow-sm hover:shadow-md transition-all"
+      whileHover={{ y: -6, boxShadow: "0 24px 48px rgba(0,0,0,0.12)" }}
+      transition={{ duration: 0.5 }}
+      className="relative rounded-2xl border border-primary/15 bg-gradient-to-br from-primary/5 via-background to-accent/5 p-8 shadow-lg hover:shadow-xl transition-all group overflow-hidden"
     >
-      <div className="text-4xl mb-3">{emoji}</div>
-      <h3 className="font-bold mb-1">{title}</h3>
-      <p className="text-xs font-medium text-primary/70 mb-2">{highlight}</p>
-      <p className="text-sm text-muted-foreground mb-4">{desc}</p>
-      <div className="flex flex-wrap gap-1.5">
-        {topics.map((topic) => (
-          <span
-            key={topic}
-            className="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary/80"
-          >
-            {topic}
-          </span>
-        ))}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <div className="relative">
+        <div className="text-5xl mb-4 inline-block transform group-hover:scale-110 transition-transform duration-300">
+          {emoji}
+        </div>
+        <h3 className="font-bold text-xl mb-2">{title}</h3>
+        <p className="text-sm font-semibold text-primary/80 mb-3 uppercase tracking-wide">
+          {highlight}
+        </p>
+        <p className="text-base text-foreground/65 mb-5 leading-relaxed">
+          {desc}
+        </p>
+        <div className="flex flex-wrap gap-2">
+          {topics.map((topic) => (
+            <span
+              key={topic}
+              className="text-xs px-3 py-1.5 rounded-full bg-gradient-to-r from-primary/15 to-accent/15 text-foreground/75 font-medium border border-primary/20 hover:border-primary/40 transition-colors"
+            >
+              {topic}
+            </span>
+          ))}
+        </div>
       </div>
     </motion.div>
   );
@@ -638,25 +794,34 @@ function ExpertiseCard({
 }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 16 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      whileHover={{ y: -4 }}
-      transition={{ duration: 0.4 }}
-      className="rounded-lg border p-6 bg-card/60 backdrop-blur hover:shadow-md transition-all"
+      whileHover={{ y: -6, boxShadow: "0 24px 48px rgba(0,0,0,0.12)" }}
+      transition={{ duration: 0.5 }}
+      className="relative rounded-2xl border border-primary/15 p-8 bg-gradient-to-br from-primary/5 via-background to-accent/5 backdrop-blur hover:shadow-xl transition-all group overflow-hidden"
     >
-      <div className="text-4xl mb-2">{icon}</div>
-      <h3 className="font-bold text-lg">{title}</h3>
-      <p className="text-xs font-medium text-primary/70 mb-3">{subtitle}</p>
-      <p className="text-xs text-muted-foreground mb-4">{desc}</p>
-      <ul className="space-y-1.5">
-        {items.map((item) => (
-          <li key={item} className="flex items-start gap-2 text-xs">
-            <span className="h-1.5 w-1.5 rounded-full bg-primary mt-1 flex-shrink-0" />
-            <span className="text-muted-foreground">{item}</span>
-          </li>
-        ))}
-      </ul>
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <div className="relative">
+        <div className="text-5xl mb-4 transform group-hover:scale-110 transition-transform duration-300">
+          {icon}
+        </div>
+        <h3 className="font-bold text-2xl mb-2">{title}</h3>
+        <p className="text-sm font-semibold text-primary/80 mb-4 uppercase tracking-wide">
+          {subtitle}
+        </p>
+        <p className="text-base text-foreground/65 mb-6 leading-relaxed">
+          {desc}
+        </p>
+        <ul className="space-y-3">
+          {items.map((item) => (
+            <li key={item} className="flex items-start gap-3 text-sm">
+              <span className="h-2 w-2 rounded-full bg-gradient-to-r from-primary to-accent mt-2 flex-shrink-0" />
+              <span className="text-foreground/70 font-medium">{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
     </motion.div>
   );
 }
@@ -664,15 +829,18 @@ function ExpertiseCard({
 function EngagementCard({ title, desc }: { title: string; desc: string }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 16 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      whileHover={{ y: -2 }}
-      transition={{ duration: 0.4 }}
-      className="rounded-lg border p-6 bg-card/60 backdrop-blur hover:shadow-md transition-all"
+      whileHover={{ y: -4, boxShadow: "0 20px 40px rgba(0,0,0,0.1)" }}
+      transition={{ duration: 0.5 }}
+      className="relative rounded-2xl border border-primary/15 p-8 bg-gradient-to-br from-primary/5 via-background to-accent/5 backdrop-blur hover:shadow-lg transition-all group overflow-hidden"
     >
-      <h3 className="font-bold mb-2">{title}</h3>
-      <p className="text-sm text-muted-foreground">{desc}</p>
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <div className="relative">
+        <h3 className="font-bold text-xl mb-3">{title}</h3>
+        <p className="text-base text-foreground/65 leading-relaxed">{desc}</p>
+      </div>
     </motion.div>
   );
 }
@@ -683,51 +851,65 @@ function LinkCard({
   desc,
   image,
   icon,
+  delay = 0,
 }: {
   to: string;
   title: string;
   desc: string;
   image: string;
   icon: React.ReactNode;
+  delay?: number;
 }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: 30, scale: 0.95 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.45 }}
+      transition={{ duration: 0.6, delay, type: "spring", stiffness: 100 }}
     >
       <Link
         to={to}
-        className="group relative overflow-hidden rounded-xl border h-48 hover:shadow-lg transition-shadow"
+        className="group relative overflow-hidden rounded-3xl border-2 border-primary/30 h-64 hover:shadow-2xl transition-all duration-300 bg-gradient-to-br from-background to-background/80"
       >
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         <img
           src={image}
           alt=""
           loading="lazy"
           decoding="async"
-          className="absolute inset-0 h-full w-full object-cover opacity-70 transition-transform duration-500 group-hover:scale-105"
+          className="absolute inset-0 h-full w-full object-cover opacity-50 transition-transform duration-500 group-hover:scale-120"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/60 to-background/20" />
-        <div className="relative z-10 h-full p-5 md:p-6 flex flex-col justify-end">
-          <div className="flex items-center gap-3 font-semibold">
-            <span className="grid h-9 w-9 place-items-center rounded-md bg-primary/20 text-primary">
+        <div className="absolute inset-0 bg-gradient-to-t from-background/98 via-background/60 to-background/5 group-hover:from-background/99 group-hover:via-background/70 transition-all duration-300" />
+        <div className="absolute inset-0 rounded-3xl border-2 border-transparent bg-gradient-to-br from-primary/40 via-transparent to-accent/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        <div className="relative z-10 h-full p-7 md:p-10 flex flex-col justify-end">
+          <div className="flex items-center gap-4 font-bold text-xl">
+            <motion.span
+              className="grid h-14 w-14 place-items-center rounded-xl bg-gradient-to-br from-primary to-accent text-primary-foreground shadow-lg group-hover:shadow-2xl transition-all"
+              whileHover={{ scale: 1.1, rotate: 5 }}
+              transition={{ type: "spring", stiffness: 200 }}
+            >
               {icon}
+            </motion.span>
+            <span className="group-hover:text-primary transition-colors duration-300">
+              {title}
             </span>
-            <span>{title}</span>
           </div>
-          <p className="mt-1 text-sm text-foreground/80 leading-relaxed">
+          <p className="mt-4 text-base text-foreground/70 leading-relaxed font-medium">
             {desc}
           </p>
-          <div className="mt-3 inline-flex items-center gap-1 w-fit rounded-md bg-background/70 px-2 py-1 text-sm font-semibold text-primary">
-            <span className="group-hover:underline">Learn more</span>
+          <motion.div
+            className="mt-5 inline-flex items-center gap-2 w-fit rounded-lg bg-gradient-to-r from-primary/25 to-accent/25 px-5 py-2.5 text-sm font-bold text-primary border-2 border-primary/50 hover:border-primary/80 transition-all"
+            whileHover={{ x: 4 }}
+            transition={{ type: "spring", stiffness: 200 }}
+          >
+            <span className="group-hover:text-primary/90">Learn more</span>
             <span
               aria-hidden
-              className="transition-transform group-hover:translate-x-0.5"
+              className="transition-transform duration-300 group-hover:translate-x-1"
             >
               →
             </span>
-          </div>
+          </motion.div>
         </div>
       </Link>
     </motion.div>
@@ -749,38 +931,40 @@ function DomainCard({
 }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 16 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.45 }}
+      transition={{ duration: 0.5 }}
     >
       <Link
         to={to}
-        className="group relative overflow-hidden rounded-xl border h-48 hover:shadow-lg transition-shadow"
+        className="group relative overflow-hidden rounded-2xl border border-primary/20 h-56 hover:shadow-2xl transition-all duration-300"
       >
         <img
           src={image}
           alt={title}
           loading="lazy"
           decoding="async"
-          className="absolute inset-0 h-full w-full object-cover opacity-70 transition-transform duration-500 group-hover:scale-105"
+          className="absolute inset-0 h-full w-full object-cover opacity-60 transition-transform duration-500 group-hover:scale-110"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/60 to-background/20" />
-        <div className="relative z-10 h-full p-5 md:p-6 flex flex-col justify-end">
-          <div className="flex items-center gap-3 font-semibold">
-            <span className="grid h-9 w-9 place-items-center rounded-md bg-primary/20 text-primary">
+        <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/50 to-background/10 group-hover:from-background/97 group-hover:via-background/60 transition-all" />
+        <div className="relative z-10 h-full p-6 md:p-8 flex flex-col justify-end">
+          <div className="flex items-center gap-3 font-bold text-lg">
+            <span className="grid h-12 w-12 place-items-center rounded-lg bg-gradient-to-br from-primary to-accent text-primary-foreground shadow-lg group-hover:shadow-xl transition-all">
               {icon}
             </span>
-            <span>{title}</span>
+            <span className="group-hover:text-primary transition-colors">
+              {title}
+            </span>
           </div>
-          <p className="mt-1 text-sm text-foreground/80 leading-relaxed">
+          <p className="mt-3 text-base text-foreground/75 leading-relaxed">
             {desc}
           </p>
-          <div className="mt-3 inline-flex items-center gap-1 w-fit rounded-md bg-background/70 px-2 py-1 text-sm font-semibold text-primary">
-            <span className="group-hover:underline">Learn more</span>
+          <div className="mt-4 inline-flex items-center gap-2 w-fit rounded-lg bg-gradient-to-r from-primary/20 to-accent/20 px-4 py-2 text-sm font-bold text-primary border border-primary/30 hover:border-primary/60 transition-all">
+            <span className="group-hover:text-primary/90">Learn more</span>
             <span
               aria-hidden
-              className="transition-transform group-hover:translate-x-0.5"
+              className="transition-transform group-hover:translate-x-1"
             >
               →
             </span>
@@ -804,28 +988,36 @@ function IoTAppCard({
 }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 16 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      whileHover={{ y: -4 }}
-      transition={{ duration: 0.4 }}
-      className="rounded-lg border p-6 bg-background/70 hover:shadow-md transition-all"
+      whileHover={{ y: -6, boxShadow: "0 24px 48px rgba(0,0,0,0.12)" }}
+      transition={{ duration: 0.5 }}
+      className="relative rounded-2xl border border-primary/15 p-8 bg-gradient-to-br from-primary/5 via-background to-accent/5 hover:shadow-xl transition-all group overflow-hidden"
     >
-      <div className="mb-3 flex items-center justify-center h-12 w-12 rounded-lg bg-primary/15 text-primary">
-        {icon}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <div className="relative">
+        <div className="mb-4 flex items-center justify-center h-14 w-14 rounded-lg bg-gradient-to-br from-primary to-accent text-primary-foreground shadow-lg transform group-hover:scale-110 transition-transform">
+          {icon}
+        </div>
+        <h3 className="font-bold text-lg mb-3">{title}</h3>
+        <p className="text-base text-foreground/65 mb-5 leading-relaxed">
+          {desc}
+        </p>
+        {examples && (
+          <ul className="text-sm space-y-2.5">
+            {examples.map((ex) => (
+              <li
+                key={ex}
+                className="flex items-center gap-2 text-foreground/70 font-medium"
+              >
+                <span className="h-2 w-2 rounded-full bg-gradient-to-r from-primary to-accent flex-shrink-0" />
+                {ex}
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
-      <h3 className="font-semibold mb-2">{title}</h3>
-      <p className="text-sm text-muted-foreground mb-3">{desc}</p>
-      {examples && (
-        <ul className="text-xs space-y-1">
-          {examples.map((ex) => (
-            <li key={ex} className="flex items-center gap-1 text-primary/70">
-              <span className="h-1 w-1 rounded-full bg-primary" />
-              {ex}
-            </li>
-          ))}
-        </ul>
-      )}
     </motion.div>
   );
 }
@@ -838,9 +1030,13 @@ function Pill({
   icon?: React.ReactNode;
 }) {
   return (
-    <span className="inline-flex items-center gap-1 rounded-full border bg-background/80 backdrop-blur px-3 py-1 text-sm">
-      {icon}
+    <motion.span
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-gradient-to-r from-primary/10 to-accent/10 backdrop-blur px-4 py-2 text-sm font-semibold text-foreground hover:border-primary/50 hover:bg-gradient-to-r hover:from-primary/15 hover:to-accent/15 transition-all shadow-sm hover:shadow-md"
+    >
+      {icon && <span className="text-primary">{icon}</span>}
       {children}
-    </span>
+    </motion.span>
   );
 }

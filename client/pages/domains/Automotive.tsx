@@ -212,26 +212,32 @@ export default function Automotive() {
         </h2>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           <ApplicationCard
+            index={0}
             title="Engine Control"
             desc="Fuel injection, ignition timing, emission control, diagnostics"
           />
           <ApplicationCard
+            index={1}
             title="Transmission Control"
             desc="Gear selection, shift logic, torque management, adaptive learning"
           />
           <ApplicationCard
+            index={2}
             title="Body & Comfort"
             desc="Lighting, climate control, door locks, seat adjustment, infotainment"
           />
           <ApplicationCard
+            index={3}
             title="Powertrain"
             desc="Battery management, motor control, hybrid/EV power conversion"
           />
           <ApplicationCard
+            index={4}
             title="Autonomous Driving"
             desc="Sensor fusion, perception, path planning, vehicle control"
           />
           <ApplicationCard
+            index={5}
             title="Connected Services"
             desc="OTA updates, cloud connectivity, telematics, V2X communication"
           />

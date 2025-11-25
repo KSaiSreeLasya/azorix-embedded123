@@ -639,42 +639,52 @@ export default function Index() {
               {
                 name: "Qualcomm",
                 logo: "https://cdn.builder.io/api/v1/image/assets%2Fd7c7391d30904ea7881376e6ef9502a6%2Febf2ef164d994b569d71f886ae6009ac?format=webp&width=800",
+                size: "max-h-16",
               },
               {
                 name: "Intel",
                 logo: "https://cdn.builder.io/api/v1/image/assets%2Fd7c7391d30904ea7881376e6ef9502a6%2F1fe0861a53234f258ae05b386a218919?format=webp&width=800",
+                size: "max-h-16",
               },
               {
                 name: "Bosch",
                 logo: "https://cdn.builder.io/api/v1/image/assets%2Fd7c7391d30904ea7881376e6ef9502a6%2Fd561fc3109de4576ab82554c59cbf464?format=webp&width=800",
+                size: "max-h-16",
               },
               {
                 name: "Ford",
                 logo: "https://cdn.builder.io/api/v1/image/assets%2Fd7c7391d30904ea7881376e6ef9502a6%2F4ba3011410274053ae9c2ac7560f311a?format=webp&width=800",
+                size: "max-h-16",
               },
               {
                 name: "Thermo Fisher Scientific",
                 logo: "https://cdn.builder.io/api/v1/image/assets%2Fd7c7391d30904ea7881376e6ef9502a6%2Fc33c02f95c7e4e5a9dafd9e8f214ac20?format=webp&width=800",
+                size: "max-h-24",
               },
               {
                 name: "AMD",
                 logo: "https://cdn.builder.io/api/v1/image/assets%2Fd7c7391d30904ea7881376e6ef9502a6%2Fb04649cc615a496a856fe43a6b580976?format=webp&width=800",
+                size: "max-h-24",
               },
               {
                 name: "Tech Mahindra",
                 logo: "https://cdn.builder.io/api/v1/image/assets%2Fd7c7391d30904ea7881376e6ef9502a6%2F4a8685ebce2c4f1784f5b8bb8245e7ce?format=webp&width=800",
+                size: "max-h-24",
               },
               {
                 name: "OnePlus",
                 logo: "https://cdn.builder.io/api/v1/image/assets%2Fd7c7391d30904ea7881376e6ef9502a6%2F0e0f616b739c44a594f103a1b958f321?format=webp&width=800",
+                size: "max-h-24",
               },
               {
                 name: "Qualcomm",
                 logo: "https://cdn.builder.io/api/v1/image/assets%2Fd7c7391d30904ea7881376e6ef9502a6%2Febf2ef164d994b569d71f886ae6009ac?format=webp&width=800",
+                size: "max-h-16",
               },
               {
                 name: "Intel",
                 logo: "https://cdn.builder.io/api/v1/image/assets%2Fd7c7391d30904ea7881376e6ef9502a6%2F1fe0861a53234f258ae05b386a218919?format=webp&width=800",
+                size: "max-h-16",
               },
             ].map((client, idx) => (
               <div
@@ -688,7 +698,7 @@ export default function Index() {
                     alt={client.name}
                     loading="lazy"
                     decoding="async"
-                    className="max-h-16 max-w-[85%] object-contain opacity-90 group-hover:opacity-100 transition-opacity duration-300"
+                    className={`${client.size} max-w-[85%] object-contain opacity-90 group-hover:opacity-100 transition-opacity duration-300`}
                   />
                 </div>
               </div>

@@ -350,18 +350,19 @@ function Card({
   );
 }
 
-function ApplicationCard({ title, desc }: { title: string; desc: string }) {
+function ApplicationCard({
+  title,
+  desc,
+  index = 0,
+}: {
+  title: string;
+  desc: string;
+  index?: number;
+}) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      whileHover={{ y: -2 }}
-      transition={{ duration: 0.4 }}
-      className="rounded-lg border p-6 bg-card/60 backdrop-blur hover:shadow-md transition-all"
-    >
+    <AnimatedCard variant="hover-glow" index={index}>
       <h3 className="font-semibold text-foreground mb-2">{title}</h3>
       <p className="text-sm text-muted-foreground">{desc}</p>
-    </motion.div>
+    </AnimatedCard>
   );
 }

@@ -23,10 +23,12 @@ const projects = [
     id: 1,
     category: "Medical & Wearables",
     title: "Smart Knee Joint Monitor",
-    image: "https://images.pexels.com/photos/3931603/pexels-photo-3931603.jpeg?auto=compress&cs=tinysrgb&w=600",
+    image:
+      "https://images.pexels.com/photos/3931603/pexels-photo-3931603.jpeg?auto=compress&cs=tinysrgb&w=600",
     icon: <Lightbulb className="h-5 w-5" />,
     shortDesc: "Wearable device that helps prevent knee injuries during sports",
-    realWorldUse: "Athletes, physical therapy clinics, and sports medicine professionals use this to monitor knee movements and get instant feedback when motion is about to exceed safe limits - preventing injuries before they happen.",
+    realWorldUse:
+      "Athletes, physical therapy clinics, and sports medicine professionals use this to monitor knee movements and get instant feedback when motion is about to exceed safe limits - preventing injuries before they happen.",
     fullDesc:
       "This wearable device sits on your knee and continuously monitors how the joint moves. When movements approach unsafe limits, it sends gentle vibrations to alert the wearer. Athletes and physical therapists use this during recovery or training to prevent re-injury.",
     details: [
@@ -44,10 +46,13 @@ const projects = [
     id: 2,
     category: "Medical & Wearables",
     title: "Smart Fitness Band",
-    image: "https://images.pexels.com/photos/3962286/pexels-photo-3962286.jpeg?auto=compress&cs=tinysrgb&w=600",
+    image:
+      "https://images.pexels.com/photos/3962286/pexels-photo-3962286.jpeg?auto=compress&cs=tinysrgb&w=600",
     icon: <Heart className="h-5 w-5" />,
-    shortDesc: "Lightweight tracker for heart rate and daily activity monitoring",
-    realWorldUse: "Fitness enthusiasts, health-conscious individuals, and wellness programs use this band to track daily activity, monitor heart health, and receive notifications on their phones.",
+    shortDesc:
+      "Lightweight tracker for heart rate and daily activity monitoring",
+    realWorldUse:
+      "Fitness enthusiasts, health-conscious individuals, and wellness programs use this band to track daily activity, monitor heart health, and receive notifications on their phones.",
     fullDesc:
       "A sleek wearable band that constantly monitors your heart rate and counts your steps throughout the day. It sends important notifications to your phone - calls, messages, and fitness milestones - keeping you informed without needing to check your phone constantly.",
     details: [
@@ -65,10 +70,13 @@ const projects = [
     id: 3,
     category: "Medical & Wearables",
     title: "Smart Blood Pressure Monitor",
-    image: "https://images.pexels.com/photos/8367747/pexels-photo-8367747.jpeg?auto=compress&cs=tinysrgb&w=600",
+    image:
+      "https://images.pexels.com/photos/8367747/pexels-photo-8367747.jpeg?auto=compress&cs=tinysrgb&w=600",
     icon: <Zap className="h-5 w-5" />,
-    shortDesc: "Wireless monitor that sends blood pressure readings to your phone",
-    realWorldUse: "Hospitals, clinics, and patients managing hypertension use this to track blood pressure remotely. Doctors can monitor multiple patients from anywhere, enabling telemedicine and early intervention.",
+    shortDesc:
+      "Wireless monitor that sends blood pressure readings to your phone",
+    realWorldUse:
+      "Hospitals, clinics, and patients managing hypertension use this to track blood pressure remotely. Doctors can monitor multiple patients from anywhere, enabling telemedicine and early intervention.",
     fullDesc:
       "This wireless blood pressure monitor measures your pressure and sends readings directly to your phone via Bluetooth. Perfect for patients who need regular monitoring - no need to visit a clinic every time. Doctors can review your history and spot trends.",
     details: [
@@ -86,10 +94,12 @@ const projects = [
     id: 4,
     category: "IoT & Consumer",
     title: "Smart Home Controller (Dashpod)",
-    image: "https://images.pexels.com/photos/3587620/pexels-photo-3587620.jpeg?auto=compress&cs=tinysrgb&w=600",
+    image:
+      "https://images.pexels.com/photos/3587620/pexels-photo-3587620.jpeg?auto=compress&cs=tinysrgb&w=600",
     icon: <RadioIcon className="h-5 w-5" />,
     shortDesc: "Smart controller that detects motion and controls home devices",
-    realWorldUse: "Smart home enthusiasts use this to automate their homes - automatically turning on lights when you enter a room, adjusting temperature, or triggering security alerts.",
+    realWorldUse:
+      "Smart home enthusiasts use this to automate their homes - automatically turning on lights when you enter a room, adjusting temperature, or triggering security alerts.",
     fullDesc:
       "This intelligent controller uses radar to sense motion and presence in rooms. It can automatically control lights, thermostats, and other devices. LED feedback shows status, and updates happen automatically over the internet.",
     details: [
@@ -107,10 +117,12 @@ const projects = [
     id: 5,
     category: "IoT & Consumer",
     title: "Smart Lock System",
-    image: "https://images.pexels.com/photos/279810/pexels-photo-279810.jpeg?auto=compress&cs=tinysrgb&w=600",
+    image:
+      "https://images.pexels.com/photos/279810/pexels-photo-279810.jpeg?auto=compress&cs=tinysrgb&w=600",
     icon: <Lightbulb className="h-5 w-5" />,
     shortDesc: "Control your door lock from anywhere - phone or computer",
-    realWorldUse: "Homeowners, landlords, and property managers use this to lock/unlock doors remotely. You can give access to guests without being home, track who entered and when.",
+    realWorldUse:
+      "Homeowners, landlords, and property managers use this to lock/unlock doors remotely. You can give access to guests without being home, track who entered and when.",
     fullDesc:
       "This smart lock lets you control your door from your phone or computer. Whether you're at work or traveling, you can unlock doors for guests, receive notifications when someone enters, and track all access. Multiple people can have different access levels.",
     details: [
@@ -128,10 +140,12 @@ const projects = [
     id: 6,
     category: "IoT & Consumer",
     title: "Smart Home Hub",
-    image: "https://images.pexels.com/photos/3945683/pexels-photo-3945683.jpeg?auto=compress&cs=tinysrgb&w=600",
+    image:
+      "https://images.pexels.com/photos/3945683/pexels-photo-3945683.jpeg?auto=compress&cs=tinysrgb&w=600",
     icon: <WifiIcon className="h-5 w-5" />,
     shortDesc: "Central hub that controls all your smart home devices",
-    realWorldUse: "Smart home owners use this hub to connect and control all their devices - lights, thermostats, door locks - from one place. Works even without internet connection.",
+    realWorldUse:
+      "Smart home owners use this hub to connect and control all their devices - lights, thermostats, door locks - from one place. Works even without internet connection.",
     fullDesc:
       "This is the brain of your smart home. It connects all your smart devices together and lets you control them from your phone. It also acts as a WiFi booster and works offline so you're never without control.",
     details: [
@@ -149,10 +163,12 @@ const projects = [
     id: 7,
     category: "Automotive & Industrial",
     title: "Connected Motorcycle Helmet",
-    image: "https://images.pexels.com/photos/4386366/pexels-photo-4386366.jpeg?auto=compress&cs=tinysrgb&w=600",
+    image:
+      "https://images.pexels.com/photos/4386366/pexels-photo-4386366.jpeg?auto=compress&cs=tinysrgb&w=600",
     icon: <Monitor className="h-5 w-5" />,
     shortDesc: "Smart helmet with GPS, camera, and Bluetooth communication",
-    realWorldUse: "Motorcycle enthusiasts and professional racers use this helmet for navigation, recording rides, communicating with team members, and safety monitoring.",
+    realWorldUse:
+      "Motorcycle enthusiasts and professional racers use this helmet for navigation, recording rides, communicating with team members, and safety monitoring.",
     fullDesc:
       "This advanced helmet has everything a rider needs - built-in GPS for navigation, a camera to record the journey, a display for speed and directions, and Bluetooth to communicate with your phone and other riders.",
     details: [
@@ -170,10 +186,13 @@ const projects = [
     id: 8,
     category: "Automotive & Industrial",
     title: "Smart Water Purification System",
-    image: "https://images.pexels.com/photos/3825581/pexels-photo-3825581.jpeg?auto=compress&cs=tinysrgb&w=600",
+    image:
+      "https://images.pexels.com/photos/3825581/pexels-photo-3825581.jpeg?auto=compress&cs=tinysrgb&w=600",
     icon: <Cpu className="h-5 w-5" />,
-    shortDesc: "Industrial water system that monitors quality and alerts about maintenance",
-    realWorldUse: "Hospitals, industrial facilities, and commercial buildings use this to ensure water quality, track consumption, and get alerts before problems occur.",
+    shortDesc:
+      "Industrial water system that monitors quality and alerts about maintenance",
+    realWorldUse:
+      "Hospitals, industrial facilities, and commercial buildings use this to ensure water quality, track consumption, and get alerts before problems occur.",
     fullDesc:
       "This intelligent water purification system continuously monitors water quality, measures consumption, and predicts maintenance needs. Managers can check status from anywhere and get alerts if water quality drops or filters need replacement.",
     details: [
@@ -191,10 +210,13 @@ const projects = [
     id: 9,
     category: "Automotive & Industrial",
     title: "Smart Yoga Mat",
-    image: "https://images.pexels.com/photos/4498318/pexels-photo-4498318.jpeg?auto=compress&cs=tinysrgb&w=600",
+    image:
+      "https://images.pexels.com/photos/4498318/pexels-photo-4498318.jpeg?auto=compress&cs=tinysrgb&w=600",
     icon: <Lightbulb className="h-5 w-5" />,
-    shortDesc: "Intelligent mat that guides your yoga form and prevents injuries",
-    realWorldUse: "Yoga practitioners, fitness instructors, and physical therapists use this mat to get real-time feedback on their form, preventing common mistakes and injuries.",
+    shortDesc:
+      "Intelligent mat that guides your yoga form and prevents injuries",
+    realWorldUse:
+      "Yoga practitioners, fitness instructors, and physical therapists use this mat to get real-time feedback on their form, preventing common mistakes and injuries.",
     fullDesc:
       "This smart yoga mat has sensors embedded throughout to detect your body position. It sends real-time feedback to your phone about your posture - telling you if you're aligned correctly or need to adjust. Perfect for learning proper technique.",
     details: [
@@ -252,7 +274,9 @@ export default function Projects() {
                 Projects
               </h1>
               <p className="mt-3 text-muted-foreground max-w-2xl">
-                From smart wearables to IoT systems and connected vehicles - explore real products we've built. Click any project to discover what it does and who uses it.
+                From smart wearables to IoT systems and connected vehicles -
+                explore real products we've built. Click any project to discover
+                what it does and who uses it.
               </p>
             </div>
             <img
@@ -350,7 +374,9 @@ export default function Projects() {
 
                 {(selectedProjectData as any).realWorldUse && (
                   <div className="rounded-lg bg-primary/10 border border-primary/30 p-4">
-                    <h3 className="text-sm font-bold text-primary mb-2">💡 Real-World Use</h3>
+                    <h3 className="text-sm font-bold text-primary mb-2">
+                      💡 Real-World Use
+                    </h3>
                     <p className="text-sm text-foreground leading-relaxed">
                       {(selectedProjectData as any).realWorldUse}
                     </p>
@@ -365,9 +391,7 @@ export default function Projects() {
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-semibold mb-3">
-                    Key Features
-                  </h3>
+                  <h3 className="text-lg font-semibold mb-3">Key Features</h3>
                   <ul className="space-y-2">
                     {selectedProjectData.details.map((detail) => (
                       <li
@@ -408,7 +432,8 @@ export default function Projects() {
           Complete Partnership Example
         </h2>
         <p className="text-muted-foreground mb-8">
-          How we partner with a major global chipset company - handling everything from concept to market.
+          How we partner with a major global chipset company - handling
+          everything from concept to market.
         </p>
         <div className="rounded-lg border p-8 bg-card/60 backdrop-blur">
           <div className="grid gap-8 md:grid-cols-2">
@@ -453,7 +478,8 @@ export default function Projects() {
                   Complete Engineering Partnership
                 </div>
                 <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
-                  We handle the complete journey - from your idea through design, development, testing, manufacturing, and support.
+                  We handle the complete journey - from your idea through
+                  design, development, testing, manufacturing, and support.
                 </p>
               </motion.div>
             </div>
@@ -468,7 +494,8 @@ export default function Projects() {
             Trusted by Global Technology Leaders
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Fortune 500 companies and innovators worldwide rely on us to bring their embedded systems to life
+            Fortune 500 companies and innovators worldwide rely on us to bring
+            their embedded systems to life
           </p>
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -513,7 +540,9 @@ function ProjectCard({
       whileHover={{ y: -6, boxShadow: "0 12px 32px rgba(0,0,0,0.15)" }}
       transition={{ duration: 0.4 }}
       className={`relative overflow-hidden rounded-2xl border text-left transition-all flex flex-col h-full ${
-        isSelected ? "ring-2 ring-primary shadow-xl bg-primary/5" : "hover:shadow-lg bg-card/40"
+        isSelected
+          ? "ring-2 ring-primary shadow-xl bg-primary/5"
+          : "hover:shadow-lg bg-card/40"
       }`}
     >
       <div className="relative h-48 w-full overflow-hidden bg-secondary/50 flex-shrink-0">
@@ -537,7 +566,9 @@ function ProjectCard({
               <div className="text-xs font-bold text-primary/90 uppercase tracking-wide">
                 {project.category}
               </div>
-              <h3 className="font-bold text-foreground text-base mt-1 line-clamp-2">{project.title}</h3>
+              <h3 className="font-bold text-foreground text-base mt-1 line-clamp-2">
+                {project.title}
+              </h3>
             </div>
           </div>
           <p className="text-sm text-foreground/75 leading-relaxed mb-4 line-clamp-2">

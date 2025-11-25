@@ -4,7 +4,15 @@ import Section from "@/components/Section";
 import { motion } from "framer-motion";
 import SEO from "@/components/SEO";
 import { useState } from "react";
-import { Package, Code2, CheckCircle2, Lightbulb, Zap, Shield, Users } from "lucide-react";
+import {
+  Package,
+  Code2,
+  CheckCircle2,
+  Lightbulb,
+  Zap,
+  Shield,
+  Users,
+} from "lucide-react";
 
 export default function Capabilities() {
   return (
@@ -106,12 +114,14 @@ export default function Capabilities() {
           Devices We Work With
         </h2>
         <p className="text-muted-foreground mb-8">
-          We have deep expertise with the leading chip brands and operating systems used to power devices worldwide.
+          We have deep expertise with the leading chip brands and operating
+          systems used to power devices worldwide.
         </p>
         <div className="grid gap-6 md:grid-cols-2">
           <ExpertiseGroup title="Processor Chips">
             <p className="text-sm text-muted-foreground mb-4">
-              The "brains" of devices - the chips that make everything run. We work with all major brands.
+              The "brains" of devices - the chips that make everything run. We
+              work with all major brands.
             </p>
             <div className="grid grid-cols-2 gap-3">
               {[
@@ -136,7 +146,8 @@ export default function Capabilities() {
           </ExpertiseGroup>
           <ExpertiseGroup title="Operating Systems & Software Platforms">
             <p className="text-sm text-muted-foreground mb-4">
-              The system software that manages how devices work - similar to Windows or Mac for computers.
+              The system software that manages how devices work - similar to
+              Windows or Mac for computers.
             </p>
             <div className="grid grid-cols-2 gap-3">
               {[
@@ -165,12 +176,14 @@ export default function Capabilities() {
           Ways Devices Connect & Communicate
         </h2>
         <p className="text-muted-foreground mb-8">
-          Devices need standard ways to talk to each other, follow rules, and connect securely. We expertise in all major standards.
+          Devices need standard ways to talk to each other, follow rules, and
+          connect securely. We expertise in all major standards.
         </p>
         <div className="grid gap-6 md:grid-cols-3">
           <ExpertiseGroup title="Car & Vehicle Systems">
             <p className="text-xs text-muted-foreground mb-3">
-              Special standards for automotive safety, diagnostics, and communication.
+              Special standards for automotive safety, diagnostics, and
+              communication.
             </p>
             <ul className="space-y-2">
               {[
@@ -188,7 +201,8 @@ export default function Capabilities() {
           </ExpertiseGroup>
           <ExpertiseGroup title="Wireless Connectivity">
             <p className="text-xs text-muted-foreground mb-3">
-              Technologies to connect devices wirelessly - like WiFi for phones or Bluetooth for wearables.
+              Technologies to connect devices wirelessly - like WiFi for phones
+              or Bluetooth for wearables.
             </p>
             <ul className="space-y-2">
               {[
@@ -206,7 +220,8 @@ export default function Capabilities() {
           </ExpertiseGroup>
           <ExpertiseGroup title="Physical Connections">
             <p className="text-xs text-muted-foreground mb-3">
-              How components inside devices talk to each other - the physical communication paths.
+              How components inside devices talk to each other - the physical
+              communication paths.
             </p>
             <ul className="space-y-2">
               {[
@@ -231,7 +246,8 @@ export default function Capabilities() {
           How We Work With You
         </h2>
         <p className="text-muted-foreground mb-8">
-          We offer flexible ways to partner with you based on what your project needs.
+          We offer flexible ways to partner with you based on what your project
+          needs.
         </p>
         <div className="grid gap-6 md:grid-cols-3">
           <ServiceCard
@@ -258,7 +274,8 @@ export default function Capabilities() {
           Why You Can Trust Us
         </h2>
         <p className="text-muted-foreground mb-8">
-          We're committed to delivering quality work and being a true partner in your success.
+          We're committed to delivering quality work and being a true partner in
+          your success.
         </p>
         <div className="grid gap-6 md:grid-cols-2">
           <QualityCard
@@ -322,7 +339,11 @@ function Card({
         </span>
         <div className="flex-1">
           <h3 className="font-bold text-foreground">{title}</h3>
-          {subtitle && <p className="text-xs text-primary font-semibold mt-0.5">{subtitle}</p>}
+          {subtitle && (
+            <p className="text-xs text-primary font-semibold mt-0.5">
+              {subtitle}
+            </p>
+          )}
         </div>
       </div>
 
@@ -330,7 +351,7 @@ function Card({
         initial={{ opacity: 0, height: 0 }}
         animate={{
           opacity: expanded ? 1 : 0.7,
-          height: expanded ? "auto" : "auto"
+          height: expanded ? "auto" : "auto",
         }}
         transition={{ duration: 0.3 }}
         className={expanded ? "block" : "hidden sm:block"}
@@ -378,7 +399,15 @@ function ExpertiseGroup({
   );
 }
 
-function ServiceCard({ icon, title, desc }: { icon?: string; title: string; desc: string }) {
+function ServiceCard({
+  icon,
+  title,
+  desc,
+}: {
+  icon?: string;
+  title: string;
+  desc: string;
+}) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 16 }}
@@ -395,7 +424,15 @@ function ServiceCard({ icon, title, desc }: { icon?: string; title: string; desc
   );
 }
 
-function QualityCard({ icon, title, items }: { icon?: string; title: string; items: string[] }) {
+function QualityCard({
+  icon,
+  title,
+  items,
+}: {
+  icon?: string;
+  title: string;
+  items: string[];
+}) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 16 }}

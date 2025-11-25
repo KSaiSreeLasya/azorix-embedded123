@@ -405,31 +405,31 @@ export default function Projects() {
       {/* Success Story */}
       <Section className="bg-secondary/40">
         <h2 className="text-2xl md:text-3xl font-bold mb-2">
-          Extended End-to-End Engineering
+          Complete Partnership Example
         </h2>
         <p className="text-muted-foreground mb-8">
-          Comprehensive success story with a global chipset company.
+          How we partner with a major global chipset company - handling everything from concept to market.
         </p>
         <div className="rounded-lg border p-8 bg-card/60 backdrop-blur">
           <div className="grid gap-8 md:grid-cols-2">
             <div>
               <h3 className="font-bold text-lg mb-4">
-                Global Chipset Company Partnership
+                What We Do for Our Clients
               </h3>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 {[
-                  "Firmware development and new features",
-                  "Customer feature implementation",
-                  "SDK testing and release",
-                  "Customer support and escalation",
-                  "Application notes and documentation",
-                  "Product teardown and analysis",
-                  "Comparative market analysis",
-                  "PCB design, layout, and fabrication",
-                  "Engineering samples manufacturing",
-                  "Board bring-up and integration",
-                  "Industrial design and optimization",
-                  "Assembly and sample production",
+                  "Build new features and capabilities",
+                  "Test features with real customers",
+                  "Complete quality assurance",
+                  "Provide customer support and help",
+                  "Create detailed documentation and guides",
+                  "Analyze competitor products",
+                  "Design circuit boards and layouts",
+                  "Manufacture and test samples",
+                  "Optimize designs for reliability",
+                  "Assembly and quality control",
+                  "Help clients launch products",
+                  "Ongoing technical support",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-2">
                     <CheckCircle className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
@@ -444,14 +444,16 @@ export default function Projects() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className="rounded-lg border bg-gradient-to-br from-primary/10 to-transparent p-8 text-center w-full"
+                className="rounded-lg border bg-gradient-to-br from-primary/20 via-accent/10 to-transparent p-8 text-center w-full hover:shadow-lg transition-all"
               >
-                <div className="text-5xl font-bold text-primary mb-2">360°</div>
-                <div className="font-semibold">
-                  Extended End-to-End Embedded Engineering Team
+                <div className="text-5xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-3">
+                  360°
                 </div>
-                <p className="text-sm text-muted-foreground mt-2">
-                  From concept through production and beyond
+                <div className="font-bold text-foreground text-lg">
+                  Complete Engineering Partnership
+                </div>
+                <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
+                  We handle the complete journey - from your idea through design, development, testing, manufacturing, and support.
                 </p>
               </motion.div>
             </div>

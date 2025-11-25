@@ -315,7 +315,7 @@ export default function Projects() {
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {projects
               .filter((p) => p.category === category)
-              .map((project) => (
+              .map((project, idx) => (
                 <ProjectCard
                   key={project.id}
                   project={project}
@@ -325,6 +325,7 @@ export default function Projects() {
                       selectedProject === project.id ? null : project.id,
                     )
                   }
+                  index={idx}
                 />
               ))}
           </div>

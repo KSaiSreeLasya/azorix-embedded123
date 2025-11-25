@@ -191,7 +191,7 @@ const projects = [
     id: 9,
     category: "Automotive & Industrial",
     title: "Smart Yoga Mat",
-    image: "https://images.pexels.com/photos/4498318/pexels-photo-4498318.jpeg",
+    image: "https://images.pexels.com/photos/4498318/pexels-photo-4498318.jpeg?auto=compress&cs=tinysrgb&w=600",
     icon: <Lightbulb className="h-5 w-5" />,
     shortDesc: "Intelligent mat that guides your yoga form and prevents injuries",
     realWorldUse: "Yoga practitioners, fitness instructors, and physical therapists use this mat to get real-time feedback on their form, preventing common mistakes and injuries.",

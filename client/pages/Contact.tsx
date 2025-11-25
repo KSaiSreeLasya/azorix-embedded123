@@ -198,18 +198,20 @@ export default function Contact() {
               transition={{ duration: 0.3, delay: 0.25 }}
             >
               <div className="relative">
-                <label className="text-sm font-medium text-foreground">
+                <label className="text-sm font-semibold text-foreground">
                   Budget
                 </label>
-                <motion.select
-                  className="mt-2 w-full rounded-lg border border-primary/20 bg-background px-4 py-3 text-foreground transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/80 hover:border-primary/40"
+                <select
+                  className="mt-2 w-full rounded-lg border border-primary/20 bg-gradient-to-r from-primary/5 to-accent/5 px-4 py-3 text-foreground transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/60 hover:border-primary/40 hover:bg-gradient-to-r hover:from-primary/10 hover:to-accent/10 appearance-none"
                   value={budget}
                   onChange={(e) => setBudget(e.target.value)}
                   disabled={isLoading}
-                  whileHover={{ borderColor: "hsl(var(--primary) / 0.4)" }}
-                  whileFocus={{
-                    boxShadow: "0 0 20px rgba(var(--primary-rgb), 0.2)",
-                    borderColor: "hsl(var(--primary) / 0.8)",
+                  style={{
+                    backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23888' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e")`,
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: "right 0.75rem center",
+                    backgroundSize: "16px 16px",
+                    paddingRight: "2.5rem",
                   }}
                 >
                   <option value="">Select range</option>
@@ -217,7 +219,7 @@ export default function Contact() {
                   <option value="$10k–$50k">$10k–$50k</option>
                   <option value="$50k–$200k">$50k–$200k</option>
                   <option value="> $200k">More than $200k</option>
-                </motion.select>
+                </select>
               </div>
             </motion.div>
 
@@ -228,18 +230,20 @@ export default function Contact() {
               transition={{ duration: 0.3, delay: 0.3 }}
             >
               <div className="relative">
-                <label className="text-sm font-medium text-foreground">
+                <label className="text-sm font-semibold text-foreground">
                   Timeline
                 </label>
-                <motion.select
-                  className="mt-2 w-full rounded-lg border border-primary/20 bg-background px-4 py-3 text-foreground transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/80 hover:border-primary/40"
+                <select
+                  className="mt-2 w-full rounded-lg border border-primary/20 bg-gradient-to-r from-primary/5 to-accent/5 px-4 py-3 text-foreground transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/60 hover:border-primary/40 hover:bg-gradient-to-r hover:from-primary/10 hover:to-accent/10 appearance-none"
                   value={timeline}
                   onChange={(e) => setTimeline(e.target.value)}
                   disabled={isLoading}
-                  whileHover={{ borderColor: "hsl(var(--primary) / 0.4)" }}
-                  whileFocus={{
-                    boxShadow: "0 0 20px rgba(var(--primary-rgb), 0.2)",
-                    borderColor: "hsl(var(--primary) / 0.8)",
+                  style={{
+                    backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23888' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e")`,
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: "right 0.75rem center",
+                    backgroundSize: "16px 16px",
+                    paddingRight: "2.5rem",
                   }}
                 >
                   <option value="">Select timeline</option>
@@ -247,7 +251,7 @@ export default function Contact() {
                   <option value="1–3 months">1–3 months</option>
                   <option value="3–6 months">3–6 months</option>
                   <option value="> 6 months">More than 6 months</option>
-                </motion.select>
+                </select>
               </div>
             </motion.div>
           </div>

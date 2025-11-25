@@ -44,7 +44,7 @@ const projects = [
     id: 2,
     category: "Medical & Wearables",
     title: "Smart Fitness Band",
-    image: "https://images.pexels.com/photos/3962286/pexels-photo-3962286.jpeg",
+    image: "https://images.pexels.com/photos/3962286/pexels-photo-3962286.jpeg?auto=compress&cs=tinysrgb&w=600",
     icon: <Heart className="h-5 w-5" />,
     shortDesc: "Lightweight tracker for heart rate and daily activity monitoring",
     realWorldUse: "Fitness enthusiasts, health-conscious individuals, and wellness programs use this band to track daily activity, monitor heart health, and receive notifications on their phones.",

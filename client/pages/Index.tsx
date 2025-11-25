@@ -535,6 +535,7 @@ export default function Index() {
               "Production optimization",
               "Equipment monitoring",
             ]}
+            index={0}
           />
           <IoTAppCard
             title="🏥 Medical IoT"
@@ -545,24 +546,28 @@ export default function Index() {
               "Patient alerts",
               "Remote diagnosis",
             ]}
+            index={1}
           />
           <IoTAppCard
             title="🏙️ Smart City"
             desc="Cities that work efficiently - traffic flows better, utilities use less energy"
             icon={<Globe className="h-6 w-6" />}
             examples={["Traffic management", "Energy saving", "Public safety"]}
+            index={2}
           />
           <IoTAppCard
             title="🚗 Automotive IoT"
             desc="Cars that are smarter and safer - connected and aware of their surroundings"
             icon={<Car className="h-6 w-6" />}
             examples={["Navigation", "Safety features", "Remote control"]}
+            index={3}
           />
           <IoTAppCard
             title="📱 Consumer IoT"
             desc="Home devices that listen and respond - making life simpler and more connected"
             icon={<Smartphone className="h-6 w-6" />}
             examples={["Smart home", "Wearables", "Personal devices"]}
+            index={4}
           />
         </div>
       </Section>

@@ -42,50 +42,58 @@ export default function Capabilities() {
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           <Card
             icon={<Package className="h-5 w-5" />}
-            title="Product"
+            title="Hardware Design"
+            subtitle="Building the Physical Device"
+            description="We design and plan what the physical device will look like - from basic sketches to detailed blueprints, component selection, and manufacturing plans."
             items={[
-              "Requirement analysis",
-              "System design & review",
-              "Schematic design & review",
-              "PCB layout and review",
-              "BOM analysis and cleansing",
-              "Project planning and management",
+              "Planning and requirements",
+              "Design and schematics",
+              "Circuit board layout",
+              "Component selection",
+              "Quality checks",
+              "Manufacturing guidance",
             ]}
           />
           <Card
             icon={<Code2 className="h-5 w-5" />}
-            title="Software"
+            title="Software & Firmware"
+            subtitle="Making Devices Smart"
+            description="We write the code that makes devices work - everything from the core operating system to apps, connectivity, and how the device communicates."
             items={[
-              "Board bring‑up, bootloader, BSP, drivers",
-              "RTOS – Linux, QNX, VxWorks, Android",
-              "CAN, UDS, CAN FD, J1939, Autosar",
-              "Telematics, protocol stacks, RF/Network",
-              "Multimedia, applications, UI, debugging",
-              "Build integration, CI‑CD, system integration",
+              "Core system setup",
+              "Operating system selection",
+              "Communication standards",
+              "Connection capabilities",
+              "User interfaces",
+              "Integration & optimization",
             ]}
           />
           <Card
-            icon={<LifeBuoy className="h-5 w-5" />}
-            title="Testing"
+            icon={<Shield className="h-5 w-5" />}
+            title="Quality Testing"
+            subtitle="Ensuring Everything Works"
+            description="We test every aspect of the device thoroughly to ensure it works reliably, safely, and meets all required standards before reaching customers."
             items={[
-              "Test framework development",
-              "Test automation",
-              "Test case creation and execution",
-              "Test failure analysis",
-              "Black‑box testing",
-              "Functional, stability, verification testing",
+              "Test planning",
+              "Automated testing",
+              "Manual testing",
+              "Problem analysis",
+              "Stability verification",
+              "Standards compliance",
             ]}
           />
           <Card
-            icon={<LifeBuoy className="h-5 w-5" />}
-            title="Support"
+            icon={<Users className="h-5 w-5" />}
+            title="Support & Training"
+            subtitle="Helping You Succeed"
+            description="We provide ongoing support, technical expertise, and training to ensure your team can manage and evolve the product long-term."
             items={[
-              "In‑house lab for embedded",
-              "Resource augmentation",
-              "ODC/Statement of work",
-              "Successful execution model",
-              "Strong leadership",
-              "Hands‑on training in labs",
+              "Technical lab support",
+              "Team augmentation",
+              "Project management",
+              "Knowledge transfer",
+              "Staff training",
+              "Long-term guidance",
             ]}
           />
         </div>

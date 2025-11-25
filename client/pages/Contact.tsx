@@ -328,39 +328,53 @@ export default function Contact() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="mt-10 grid gap-6 md:grid-cols-2 text-sm text-muted-foreground"
         >
-          <div className="rounded-xl border bg-card/60 p-5">
+          <motion.div
+            className="rounded-xl border border-primary/15 bg-card/60 p-5 hover:border-primary/40 transition-all hover:shadow-lg"
+            whileHover={{ y: -4 }}
+          >
             <div className="font-medium text-foreground">Offices</div>
             <div className="mt-2 space-y-1">
-              <div className="flex items-center gap-2">
+              <motion.div
+                className="flex items-center gap-2"
+                whileHover={{ x: 4 }}
+              >
                 <MapPin className="h-4 w-4" /> Troy, MI, USA
-              </div>
-              <div className="flex items-center gap-2">
+              </motion.div>
+              <motion.div
+                className="flex items-center gap-2"
+                whileHover={{ x: 4 }}
+              >
                 <MapPin className="h-4 w-4" /> Hyderabad, India
-              </div>
+              </motion.div>
             </div>
-          </div>
-          <div className="rounded-xl border bg-card/60 p-5 grid gap-3">
+          </motion.div>
+          <motion.div
+            className="rounded-xl border border-primary/15 bg-card/60 p-5 grid gap-3 hover:border-primary/40 transition-all hover:shadow-lg"
+            whileHover={{ y: -4 }}
+          >
             <div>
               <div className="font-medium text-foreground">Website</div>
-              <a
-                className="inline-flex items-center gap-2 underline"
+              <motion.a
+                className="inline-flex items-center gap-2 underline hover:text-primary transition-colors"
                 href="https://www.azorixembedded.com"
                 target="_blank"
                 rel="noreferrer"
+                whileHover={{ x: 4 }}
               >
                 <Globe className="h-4 w-4" /> www.azorixembedded.com
-              </a>
+              </motion.a>
             </div>
             <div>
               <div className="font-medium text-foreground">Email</div>
-              <a
-                className="inline-flex items-center gap-2 underline"
+              <motion.a
+                className="inline-flex items-center gap-2 underline hover:text-primary transition-colors"
                 href="mailto:info@azorixembedded.com"
+                whileHover={{ x: 4 }}
               >
                 <Mail className="h-4 w-4" /> info@azorixembedded.com
-              </a>
+              </motion.a>
             </div>
-          </div>
+          </motion.div>
         </motion.div>
       </Section>
       <SiteFooter />

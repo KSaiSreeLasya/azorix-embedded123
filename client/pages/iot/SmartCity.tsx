@@ -4,7 +4,7 @@ import Section from "@/components/Section";
 import DomainHero from "@/components/DomainHero";
 import {
   Globe,
-  Traffic,
+  Navigation,
   Lightbulb,
   Droplets,
   Shield,
@@ -56,7 +56,7 @@ export default function SmartCity() {
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           <ApplicationCard
             index={0}
-            icon={<Traffic className="h-6 w-6" />}
+            icon={<Navigation className="h-6 w-6" />}
             title="Traffic Management"
             desc="Smart traffic lights that optimize flow, reduce congestion, and improve commute times"
           />

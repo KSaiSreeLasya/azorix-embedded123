@@ -299,7 +299,7 @@ function Card({
   items: string[];
   icon?: React.ReactNode;
 }) {
-  const [expanded, setExpanded] = motion.useState(false);
+  const [expanded, setExpanded] = useState(false);
 
   return (
     <motion.div

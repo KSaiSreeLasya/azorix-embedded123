@@ -981,40 +981,56 @@ function IoTAppCard({
   desc,
   icon,
   examples,
+  index = 0,
 }: {
   title: string;
   desc: string;
   icon: React.ReactNode;
   examples?: string[];
+  index?: number;
 }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      whileHover={{ y: -6, boxShadow: "0 24px 48px rgba(0,0,0,0.12)" }}
-      transition={{ duration: 0.5 }}
-      className="relative rounded-2xl border border-primary/15 p-8 bg-gradient-to-br from-primary/5 via-background to-accent/5 hover:shadow-xl transition-all group overflow-hidden"
+      whileHover={{ y: -8, boxShadow: "0 32px 64px rgba(0,0,0,0.15)" }}
+      transition={{ duration: 0.5, delay: index * 0.08 }}
+      className="relative rounded-2xl border border-primary/15 p-8 bg-gradient-to-br from-primary/5 via-background to-accent/5 hover:shadow-xl hover:border-primary/40 transition-all group overflow-hidden"
     >
       <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <motion.div className="absolute -top-10 -left-10 h-40 w-40 bg-gradient-to-br from-accent/20 via-transparent to-transparent rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       <div className="relative">
-        <div className="mb-4 flex items-center justify-center h-14 w-14 rounded-lg bg-gradient-to-br from-primary to-accent text-primary-foreground shadow-lg transform group-hover:scale-110 transition-transform">
+        <motion.div
+          className="mb-4 flex items-center justify-center h-14 w-14 rounded-lg bg-gradient-to-br from-primary to-accent text-primary-foreground shadow-lg"
+          whileHover={{ scale: 1.2, rotate: 10 }}
+          transition={{ duration: 0.3 }}
+        >
           {icon}
-        </div>
+        </motion.div>
         <h3 className="font-bold text-lg mb-3">{title}</h3>
         <p className="text-base text-foreground/65 mb-5 leading-relaxed">
           {desc}
         </p>
         {examples && (
           <ul className="text-sm space-y-2.5">
-            {examples.map((ex) => (
-              <li
+            {examples.map((ex, idx) => (
+              <motion.li
                 key={ex}
                 className="flex items-center gap-2 text-foreground/70 font-medium"
+                initial={{ opacity: 0, x: -10 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3, delay: idx * 0.05 }}
               >
-                <span className="h-2 w-2 rounded-full bg-gradient-to-r from-primary to-accent flex-shrink-0" />
+                <motion.span
+                  className="h-2 w-2 rounded-full bg-gradient-to-r from-primary to-accent flex-shrink-0"
+                  whileInView={{ scale: [0, 1.2, 1] }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: idx * 0.05 + 0.1 }}
+                />
                 {ex}
-              </li>
+              </motion.li>
             ))}
           </ul>
         )}

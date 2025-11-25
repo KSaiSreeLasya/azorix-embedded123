@@ -444,42 +444,36 @@ export default function Index() {
               to="/domains/iot"
               title="IoT"
               desc="Firmware design, embedded applications, web services, hardware, mobile apps, platform integration"
-              image="https://images.pexels.com/photos/159304/network-cable-ethernet-computer-159304.jpeg"
               icon={<Wifi className="h-5 w-5" />}
             />
             <DomainCard
               to="/domains/medical"
               title="Medical"
               desc="Regulated devices, sensors, connectivity, R&D, clinical processes, firmware"
-              image="https://images.pexels.com/photos/7108177/pexels-photo-7108177.jpeg"
               icon={<Stethoscope className="h-5 w-5" />}
             />
             <DomainCard
               to="/domains/automotive"
               title="Automotive"
               desc="BSP, telematics, CAN/UDS/J1939, firmware, connectivity, compliance"
-              image="https://images.pexels.com/photos/18968756/pexels-photo-18968756.jpeg"
               icon={<Car className="h-5 w-5" />}
             />
             <DomainCard
               to="/domains/soc"
               title="SoC"
               desc="BSP, bootloaders, drivers, connectivity, audio, silicon design"
-              image="https://images.pexels.com/photos/3665442/pexels-photo-3665442.jpeg"
               icon={<Cpu className="h-5 w-5" />}
             />
             <DomainCard
               to="/domains/hardware"
               title="Hardware"
               desc="Schematics, PCB layout, bring‑up, testing, manufacturing support"
-              image="https://images.pexels.com/photos/6755088/pexels-photo-6755088.jpeg"
               icon={<CircuitBoard className="h-5 w-5" />}
             />
             <DomainCard
               to="/domains/testing"
               title="Testing"
               desc="Automation, stability, verification, functional testing, frameworks"
-              image="https://images.pexels.com/photos/3913031/pexels-photo-3913031.jpeg"
               icon={<Wrench className="h-5 w-5" />}
             />
           </div>

@@ -71,7 +71,7 @@ const projects = [
     category: "Medical & Wearables",
     title: "Smart Blood Pressure Monitor",
     image:
-      "https://cdn.builder.io/api/v1/image/assets%2F5dae6ba816ad4ab6ab0be78111d8eb0a%2Fadc3cac24dc7454b9ccfbe05c69e723b?format=webp&width=800",
+      "https://images.pexels.com/photos/17043395/pexels-photo-17043395.jpeg?auto=compress&cs=tinysrgb&w=600",
     icon: <Zap className="h-5 w-5" />,
     shortDesc:
       "Wireless monitor that sends blood pressure readings to your phone",
@@ -211,7 +211,7 @@ const projects = [
     category: "Automotive & Industrial",
     title: "Smart Yoga Mat",
     image:
-      "https://images.pexels.com/photos/4498318/pexels-photo-4498318.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/6246246/pexels-photo-6246246.jpeg?auto=compress&cs=tinysrgb&w=600",
     icon: <Lightbulb className="h-5 w-5" />,
     shortDesc:
       "Intelligent mat that guides your yoga form and prevents injuries",

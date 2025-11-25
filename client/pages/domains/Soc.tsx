@@ -6,6 +6,7 @@ import { Cpu, Zap, Radio, Shield } from "lucide-react";
 import { motion } from "framer-motion";
 import SEO from "@/components/SEO";
 import { CheckCircle2 } from "lucide-react";
+import { AnimatedCard } from "@/components/AnimatedCard";
 
 export default function Soc() {
   return (
@@ -32,21 +33,25 @@ export default function Soc() {
         </h2>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           <CapabilityCard
+            index={0}
             icon={<Zap className="h-6 w-6" />}
             title="Bootloaders"
             desc="ROM, secure boot, OTA updates, multi-stage loaders"
           />
           <CapabilityCard
+            index={1}
             icon={<Shield className="h-6 w-6" />}
             title="BSP Development"
             desc="Board support packages, memory management, clock domains"
           />
           <CapabilityCard
+            index={2}
             icon={<Radio className="h-6 w-6" />}
             title="Connectivity"
             desc="Bluetooth, WiFi, USB, Ethernet integration"
           />
           <CapabilityCard
+            index={3}
             icon={<Cpu className="h-6 w-6" />}
             title="Silicon Validation"
             desc="Board bring-up, verification, performance testing"
@@ -64,6 +69,7 @@ export default function Soc() {
         </p>
         <div className="grid gap-6 md:grid-cols-3">
           <ProcessorCard
+            index={0}
             title="ARM Processors"
             items={[
               "Cortex-A (application class)",
@@ -73,6 +79,7 @@ export default function Soc() {
             ]}
           />
           <ProcessorCard
+            index={1}
             title="Popular SoCs"
             items={[
               "Qualcomm (Snapdragon)",
@@ -83,6 +90,7 @@ export default function Soc() {
             ]}
           />
           <ProcessorCard
+            index={2}
             title="Custom SoCs"
             items={[
               "ASIC/FPGA integration",
@@ -103,7 +111,7 @@ export default function Soc() {
           Comprehensive SoC enablement and validation services.
         </p>
         <div className="grid gap-6 md:grid-cols-2">
-          <Card title="Firmware & Bootloaders">
+          <Card index={0} title="Firmware & Bootloaders">
             <ul className="space-y-2">
               {[
                 "ROM bootloader development",
@@ -120,7 +128,7 @@ export default function Soc() {
               ))}
             </ul>
           </Card>
-          <Card title="Drivers & Connectivity">
+          <Card index={1} title="Drivers & Connectivity">
             <ul className="space-y-2">
               {[
                 "Device driver development",
@@ -147,6 +155,7 @@ export default function Soc() {
         </h2>
         <div className="grid gap-6 md:grid-cols-2">
           <FeatureCard
+            index={0}
             title="Audio Development"
             items={[
               "DSP optimization",
@@ -157,6 +166,7 @@ export default function Soc() {
             ]}
           />
           <FeatureCard
+            index={1}
             title="Video & Graphics"
             items={[
               "Video codec acceleration",
@@ -176,14 +186,17 @@ export default function Soc() {
         </h2>
         <div className="grid gap-6 md:grid-cols-3">
           <TestingCard
+            index={0}
             title="Board Bring-Up"
             desc="Initial board validation, peripheral enablement, basic functionality verification"
           />
           <TestingCard
+            index={1}
             title="Silicon Validation"
             desc="Functional testing, performance benchmarking, compliance verification"
           />
           <TestingCard
+            index={2}
             title="Automated Test Suites"
             desc="Test case development, regression testing, stability validation"
           />
@@ -199,110 +212,122 @@ function CapabilityCard({
   icon,
   title,
   desc,
+  index = 0,
 }: {
   icon: React.ReactNode;
   title: string;
   desc: string;
+  index?: number;
 }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      whileHover={{ y: -2 }}
-      transition={{ duration: 0.4 }}
-      className="rounded-lg border p-6 bg-card/60 backdrop-blur hover:shadow-md transition-all"
-    >
+    <AnimatedCard variant="hover-glow" index={index}>
       <div className="flex items-center gap-3 mb-3">
-        <span className="grid h-10 w-10 place-items-center rounded-lg bg-primary/15 text-primary">
+        <motion.span
+          className="grid h-10 w-10 place-items-center rounded-lg bg-primary/15 text-primary"
+          whileHover={{ scale: 1.1, rotate: 5 }}
+          transition={{ type: "spring", stiffness: 400, damping: 10 }}
+        >
           {icon}
-        </span>
+        </motion.span>
         <h3 className="font-semibold">{title}</h3>
       </div>
       <p className="text-sm text-muted-foreground">{desc}</p>
-    </motion.div>
+    </AnimatedCard>
   );
 }
 
-function ProcessorCard({ title, items }: { title: string; items: string[] }) {
+function ProcessorCard({
+  title,
+  items,
+  index = 0,
+}: {
+  title: string;
+  items: string[];
+  index?: number;
+}) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      whileHover={{ y: -2 }}
-      transition={{ duration: 0.4 }}
-      className="rounded-lg border p-6 bg-card/60 backdrop-blur hover:shadow-md transition-all"
-    >
+    <AnimatedCard variant="hover-glow" index={index}>
       <h3 className="font-semibold text-foreground mb-4">{title}</h3>
       <ul className="space-y-2">
-        {items.map((item) => (
-          <li key={item} className="flex items-start gap-2 text-sm">
+        {items.map((item, idx) => (
+          <motion.li
+            key={item}
+            className="flex items-start gap-2 text-sm"
+            initial={{ opacity: 0, x: -10 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.3, delay: idx * 0.05 }}
+          >
             <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
             <span className="text-muted-foreground">{item}</span>
-          </li>
+          </motion.li>
         ))}
       </ul>
-    </motion.div>
+    </AnimatedCard>
   );
 }
 
 function Card({
   title,
   children,
+  index = 0,
 }: {
   title: string;
   children: React.ReactNode;
+  index?: number;
 }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.4 }}
-      className="rounded-lg border p-6 bg-card/60 backdrop-blur"
-    >
+    <AnimatedCard variant="default" index={index}>
       <h3 className="font-semibold text-foreground mb-4">{title}</h3>
       {children}
-    </motion.div>
+    </AnimatedCard>
   );
 }
 
-function FeatureCard({ title, items }: { title: string; items: string[] }) {
+function FeatureCard({
+  title,
+  items,
+  index = 0,
+}: {
+  title: string;
+  items: string[];
+  index?: number;
+}) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      whileHover={{ y: -2 }}
-      transition={{ duration: 0.4 }}
-      className="rounded-lg border p-6 bg-card/60 backdrop-blur hover:shadow-md transition-all"
-    >
+    <AnimatedCard variant="hover-glow" index={index}>
       <h3 className="font-semibold text-foreground mb-4">{title}</h3>
       <ul className="space-y-2">
-        {items.map((item) => (
-          <li key={item} className="flex items-start gap-2 text-sm">
+        {items.map((item, idx) => (
+          <motion.li
+            key={item}
+            className="flex items-start gap-2 text-sm"
+            initial={{ opacity: 0, x: -10 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.3, delay: idx * 0.05 }}
+          >
             <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
             <span className="text-muted-foreground">{item}</span>
-          </li>
+          </motion.li>
         ))}
       </ul>
-    </motion.div>
+    </AnimatedCard>
   );
 }
 
-function TestingCard({ title, desc }: { title: string; desc: string }) {
+function TestingCard({
+  title,
+  desc,
+  index = 0,
+}: {
+  title: string;
+  desc: string;
+  index?: number;
+}) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      whileHover={{ y: -2 }}
-      transition={{ duration: 0.4 }}
-      className="rounded-lg border p-6 bg-card/60 backdrop-blur hover:shadow-md transition-all"
-    >
+    <AnimatedCard variant="hover-glow" index={index}>
       <h3 className="font-semibold text-foreground mb-2">{title}</h3>
       <p className="text-sm text-muted-foreground">{desc}</p>
-    </motion.div>
+    </AnimatedCard>
   );
 }

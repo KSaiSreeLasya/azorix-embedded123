@@ -102,23 +102,24 @@ export default function Capabilities() {
       {/* Platform & Processor Expertise */}
       <Section className="bg-secondary/40">
         <h2 className="text-2xl md:text-3xl font-bold mb-2">
-          Platform & Processor Expertise
+          Devices We Work With
         </h2>
         <p className="text-muted-foreground mb-8">
-          Deep expertise across leading processor families and platforms.
+          We have deep expertise with the leading chip brands and operating systems used to power devices worldwide.
         </p>
         <div className="grid gap-6 md:grid-cols-2">
-          <ExpertiseGroup title="Processors & SoCs">
+          <ExpertiseGroup title="Processor Chips">
+            <p className="text-sm text-muted-foreground mb-4">
+              The "brains" of devices - the chips that make everything run. We work with all major brands.
+            </p>
             <div className="grid grid-cols-2 gap-3">
               {[
-                "x86",
-                "TI-OMAP",
-                "NXP",
-                "Qualcomm",
-                "STM32",
+                "Intel",
+                "ARM (NXP, Qualcomm)",
+                "Texas Instruments",
+                "STMicroelectronics",
                 "Nordic",
-                "ESP32",
-                "ATMEL",
+                "Espressif (ESP32)",
                 "Microchip",
                 "Renesas",
                 "Infineon",
@@ -132,16 +133,18 @@ export default function Capabilities() {
               ))}
             </div>
           </ExpertiseGroup>
-          <ExpertiseGroup title="Operating Systems & RTOS">
+          <ExpertiseGroup title="Operating Systems & Software Platforms">
+            <p className="text-sm text-muted-foreground mb-4">
+              The system software that manages how devices work - similar to Windows or Mac for computers.
+            </p>
             <div className="grid grid-cols-2 gap-3">
               {[
                 "Linux",
                 "Android",
-                "FreeRTOS",
+                "Real-Time OS",
                 "VxWorks",
                 "QNX",
-                "ThreadX",
-                "uCOS",
+                "Custom RTOS",
               ].map((os) => (
                 <span
                   key={os}

@@ -376,18 +376,19 @@ function ExpertiseGroup({
   );
 }
 
-function ServiceCard({ title, desc }: { title: string; desc: string }) {
+function ServiceCard({ icon, title, desc }: { icon?: string; title: string; desc: string }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      whileHover={{ y: -2 }}
+      whileHover={{ y: -4, boxShadow: "0 12px 32px rgba(0,0,0,0.1)" }}
       transition={{ duration: 0.4 }}
       className="rounded-lg border p-6 bg-card/60 backdrop-blur hover:shadow-md transition-all"
     >
-      <h3 className="font-semibold mb-2">{title}</h3>
-      <p className="text-sm text-muted-foreground">{desc}</p>
+      {icon && <div className="text-3xl mb-3">{icon}</div>}
+      <h3 className="font-bold mb-2 text-foreground">{title}</h3>
+      <p className="text-sm text-muted-foreground leading-relaxed">{desc}</p>
     </motion.div>
   );
 }

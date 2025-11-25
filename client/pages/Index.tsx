@@ -209,7 +209,6 @@ export default function Index() {
             to="/capabilities"
             title="Capabilities"
             desc="End‑to‑end product engineering across hardware, software, and test."
-            image=""
             icon={<Layers className="h-5 w-5" />}
             delay={0}
           />
@@ -217,7 +216,6 @@ export default function Index() {
             to="/projects"
             title="Projects"
             desc="Selected work across medical, industrial, consumer and automotive."
-            image=""
             icon={<Award className="h-5 w-5" />}
             delay={0.1}
           />
@@ -225,7 +223,6 @@ export default function Index() {
             to="/contact"
             title="Contact"
             desc="Talk to our team about your product or resource needs."
-            image=""
             icon={<Wrench className="h-5 w-5" />}
             delay={0.2}
           />

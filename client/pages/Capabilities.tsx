@@ -238,15 +238,29 @@ export default function Capabilities() {
                 "Wi-Fi (internet connection)",
                 "Cellular (mobile networks)",
                 "Long-range wireless (LoRaWAN)",
-              ].map((p) => (
-                <li key={p} className="flex items-start gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+              ].map((p, idx) => (
+                <motion.li
+                  key={p}
+                  className="flex items-start gap-2"
+                  initial={{ opacity: 0, x: -10 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: idx * 0.05 }}
+                >
+                  <motion.span
+                    className="h-4 w-4 text-primary flex-shrink-0 mt-0.5"
+                    whileInView={{ scale: [0, 1.2, 1] }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: idx * 0.05 + 0.1 }}
+                  >
+                    <CheckCircle2 className="h-4 w-4" />
+                  </motion.span>
                   <span className="text-sm">{p}</span>
-                </li>
+                </motion.li>
               ))}
             </ul>
           </ExpertiseGroup>
-          <ExpertiseGroup title="Physical Connections">
+          <ExpertiseGroup title="Physical Connections" index={2}>
             <p className="text-xs text-muted-foreground mb-3">
               How components inside devices talk to each other - the physical
               communication paths.
@@ -257,11 +271,25 @@ export default function Capabilities() {
                 "Ethernet (wired networks)",
                 "Serial connections",
                 "Sensor communication",
-              ].map((p) => (
-                <li key={p} className="flex items-start gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+              ].map((p, idx) => (
+                <motion.li
+                  key={p}
+                  className="flex items-start gap-2"
+                  initial={{ opacity: 0, x: -10 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: idx * 0.05 }}
+                >
+                  <motion.span
+                    className="h-4 w-4 text-primary flex-shrink-0 mt-0.5"
+                    whileInView={{ scale: [0, 1.2, 1] }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: idx * 0.05 + 0.1 }}
+                  >
+                    <CheckCircle2 className="h-4 w-4" />
+                  </motion.span>
                   <span className="text-sm">{p}</span>
-                </li>
+                </motion.li>
               ))}
             </ul>
           </ExpertiseGroup>

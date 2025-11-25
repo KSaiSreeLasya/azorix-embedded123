@@ -28,9 +28,7 @@ export default function SiteFooter() {
         <div>
           <div className="font-bold text-lg mb-4 text-foreground">Offices</div>
           <ul className="space-y-2 text-sm text-foreground/70">
-            <li className="hover:text-primary transition-colors">
-              Troy, MI, USA
-            </li>
+            
             <li className="hover:text-primary transition-colors">
               Hyderabad, India
             </li>

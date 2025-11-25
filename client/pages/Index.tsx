@@ -73,21 +73,25 @@ export default function Index() {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="mt-8 flex flex-wrap gap-4"
               >
-                <Button
-                  asChild
-                  size="lg"
-                  className="h-12 px-8 text-base font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-200"
-                >
-                  <a href="/contact">Get Started</a>
-                </Button>
-                <Button
-                  asChild
-                  variant="outline"
-                  size="lg"
-                  className="h-12 px-8 text-base font-semibold rounded-lg border-2 hover:border-primary"
-                >
-                  <a href="/capabilities">Explore Capabilities</a>
-                </Button>
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <Button
+                    asChild
+                    size="lg"
+                    className="h-12 px-8 text-base font-semibold rounded-lg shadow-lg hover:shadow-2xl transition-all duration-200 bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90"
+                  >
+                    <a href="/contact">Get Started</a>
+                  </Button>
+                </motion.div>
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <Button
+                    asChild
+                    variant="outline"
+                    size="lg"
+                    className="h-12 px-8 text-base font-semibold rounded-lg border-2 border-primary/50 hover:border-primary hover:bg-primary/5 transition-all duration-200"
+                  >
+                    <a href="/capabilities">Explore Capabilities</a>
+                  </Button>
+                </motion.div>
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}

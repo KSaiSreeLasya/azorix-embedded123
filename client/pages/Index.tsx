@@ -457,15 +457,27 @@ export default function Index() {
       </Section>
 
       {/* IoT Applications */}
-      <Section className="bg-secondary/40">
-        <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold mb-2">
+      <Section className="bg-gradient-to-b from-background to-secondary/30">
+        <div className="text-center mb-16">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-3xl md:text-4xl font-black bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent mb-4"
+          >
             IoT Applications
-          </h2>
-          <p className="text-foreground/80 max-w-3xl mx-auto leading-relaxed">
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="text-lg text-foreground/70 max-w-3xl mx-auto leading-relaxed font-medium"
+          >
             Smart devices that make everyday tasks smarter, faster, and more
             efficient
-          </p>
+          </motion.p>
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-5">
           <IoTAppCard
@@ -489,7 +501,7 @@ export default function Index() {
             ]}
           />
           <IoTAppCard
-            title="����️ Smart City"
+            title="🏙️ Smart City"
             desc="Cities that work efficiently - traffic flows better, utilities use less energy"
             icon={<Globe className="h-6 w-6" />}
             examples={["Traffic management", "Energy saving", "Public safety"]}

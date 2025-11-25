@@ -53,7 +53,7 @@ export default function SiteHeader() {
             <Link to="/" className="flex items-center gap-3 group">
               <span className="relative inline-flex">
                 <img
-                  src="https://cdn.builder.io/api/v1/image/assets%2Fdf131029371243a6bdd4cd7752a9db95%2F1ea1a5551abe4a9abfb9506ae0f1ecaf?format=webp&width=800"
+                  src="https://cdn.builder.io/api/v1/image/assets%2Fd7c7391d30904ea7881376e6ef9502a6%2F3b9a6b06591c4cdeb476566ddc00c0bc?format=webp&width=800"
                   alt="Azorix Embedded Logo"
                   className={cn(
                     "w-auto object-contain dark:hidden group-hover:opacity-80 transition-all duration-300",

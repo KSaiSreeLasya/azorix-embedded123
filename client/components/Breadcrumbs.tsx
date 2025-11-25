@@ -11,12 +11,30 @@ const breadcrumbMap: Record<string, BreadcrumbItem[]> = {
   "/capabilities": [{ label: "Capabilities", path: "/capabilities" }],
   "/projects": [{ label: "Projects", path: "/projects" }],
   "/contact": [{ label: "Contact", path: "/contact" }],
-  "/domains/iot": [{ label: "Domains", path: "/" }, { label: "IoT", path: "/domains/iot" }],
-  "/domains/medical": [{ label: "Domains", path: "/" }, { label: "Medical", path: "/domains/medical" }],
-  "/domains/automotive": [{ label: "Domains", path: "/" }, { label: "Automotive", path: "/domains/automotive" }],
-  "/domains/soc": [{ label: "Domains", path: "/" }, { label: "SoC", path: "/domains/soc" }],
-  "/domains/hardware": [{ label: "Domains", path: "/" }, { label: "Hardware", path: "/domains/hardware" }],
-  "/domains/testing": [{ label: "Domains", path: "/" }, { label: "Testing", path: "/domains/testing" }],
+  "/domains/iot": [
+    { label: "Domains", path: "/" },
+    { label: "IoT", path: "/domains/iot" },
+  ],
+  "/domains/medical": [
+    { label: "Domains", path: "/" },
+    { label: "Medical", path: "/domains/medical" },
+  ],
+  "/domains/automotive": [
+    { label: "Domains", path: "/" },
+    { label: "Automotive", path: "/domains/automotive" },
+  ],
+  "/domains/soc": [
+    { label: "Domains", path: "/" },
+    { label: "SoC", path: "/domains/soc" },
+  ],
+  "/domains/hardware": [
+    { label: "Domains", path: "/" },
+    { label: "Hardware", path: "/domains/hardware" },
+  ],
+  "/domains/testing": [
+    { label: "Domains", path: "/" },
+    { label: "Testing", path: "/domains/testing" },
+  ],
 };
 
 export default function Breadcrumbs() {

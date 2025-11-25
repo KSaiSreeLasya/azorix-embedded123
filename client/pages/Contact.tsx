@@ -88,8 +88,8 @@ export default function Contact() {
             Contact
           </h1>
           <p className="mt-3 text-muted-foreground max-w-2xl">
-            Tell us about your project or resource needs. Our leadership team will
-            respond promptly.
+            Tell us about your project or resource needs. Our leadership team
+            will respond promptly.
           </p>
         </motion.div>
 
@@ -202,7 +202,9 @@ export default function Contact() {
               transition={{ duration: 0.3, delay: 0.25 }}
             >
               <div className="relative">
-                <label className="text-sm font-medium text-foreground">Budget</label>
+                <label className="text-sm font-medium text-foreground">
+                  Budget
+                </label>
                 <select
                   className="mt-2 w-full rounded-lg border border-primary/20 bg-background px-4 py-3 text-foreground transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/80"
                   value={budget}
@@ -225,7 +227,9 @@ export default function Contact() {
               transition={{ duration: 0.3, delay: 0.3 }}
             >
               <div className="relative">
-                <label className="text-sm font-medium text-foreground">Timeline</label>
+                <label className="text-sm font-medium text-foreground">
+                  Timeline
+                </label>
                 <select
                   className="mt-2 w-full rounded-lg border border-primary/20 bg-background px-4 py-3 text-foreground transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/80"
                   value={timeline}
@@ -275,7 +279,10 @@ export default function Contact() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             />
-            <label htmlFor="agree" className="text-sm text-muted-foreground cursor-pointer">
+            <label
+              htmlFor="agree"
+              className="text-sm text-muted-foreground cursor-pointer"
+            >
               I agree to be contacted and accept the privacy notice.
             </label>
           </motion.div>
@@ -292,7 +299,10 @@ export default function Contact() {
               disabled={isLoading}
             >
               {isLoading ? (
-                <motion.span animate={{ opacity: [0.6, 1] }} transition={{ duration: 0.6, repeat: Infinity }}>
+                <motion.span
+                  animate={{ opacity: [0.6, 1] }}
+                  transition={{ duration: 0.6, repeat: Infinity }}
+                >
                   Sending...
                 </motion.span>
               ) : (

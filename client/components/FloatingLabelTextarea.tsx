@@ -47,7 +47,10 @@ export default function FloatingLabelTextarea({
         animate={{
           y: hasValue || isFocused ? -24 : 0,
           scale: hasValue || isFocused ? 0.85 : 1,
-          color: hasValue || isFocused ? "hsl(var(--primary))" : "hsl(var(--foreground) / 0.6)",
+          color:
+            hasValue || isFocused
+              ? "hsl(var(--primary))"
+              : "hsl(var(--foreground) / 0.6)",
         }}
         transition={{ duration: 0.2 }}
       >

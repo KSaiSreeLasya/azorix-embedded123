@@ -23,7 +23,7 @@ const projects = [
     id: 1,
     category: "Medical & Wearables",
     title: "Smart Knee Joint Monitor",
-    image: "https://images.pexels.com/photos/3931603/pexels-photo-3931603.jpeg",
+    image: "https://images.pexels.com/photos/3931603/pexels-photo-3931603.jpeg?auto=compress&cs=tinysrgb&w=600",
     icon: <Lightbulb className="h-5 w-5" />,
     shortDesc: "Wearable device that helps prevent knee injuries during sports",
     realWorldUse: "Athletes, physical therapy clinics, and sports medicine professionals use this to monitor knee movements and get instant feedback when motion is about to exceed safe limits - preventing injuries before they happen.",

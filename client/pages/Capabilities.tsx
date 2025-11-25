@@ -395,16 +395,20 @@ function ServiceCard({ icon, title, desc }: { icon?: string; title: string; desc
   );
 }
 
-function QualityCard({ title, items }: { title: string; items: string[] }) {
+function QualityCard({ icon, title, items }: { icon?: string; title: string; items: string[] }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
+      whileHover={{ y: -4, boxShadow: "0 12px 32px rgba(0,0,0,0.1)" }}
       transition={{ duration: 0.4 }}
-      className="rounded-lg border p-6 bg-card/60 backdrop-blur"
+      className="rounded-lg border p-6 bg-card/60 backdrop-blur hover:shadow-md transition-all"
     >
-      <h3 className="font-semibold mb-4">{title}</h3>
+      <div className="flex items-center gap-2 mb-4">
+        {icon && <span className="text-2xl">{icon}</span>}
+        <h3 className="font-bold text-foreground">{title}</h3>
+      </div>
       <ul className="space-y-2">
         {items.map((item) => (
           <li key={item} className="flex items-start gap-2 text-sm">

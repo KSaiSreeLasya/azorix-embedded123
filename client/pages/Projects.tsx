@@ -128,7 +128,7 @@ const projects = [
     id: 6,
     category: "IoT & Consumer",
     title: "Smart Home Hub",
-    image: "https://images.pexels.com/photos/3808517/pexels-photo-3808517.jpeg",
+    image: "https://images.pexels.com/photos/3945683/pexels-photo-3945683.jpeg?auto=compress&cs=tinysrgb&w=600",
     icon: <WifiIcon className="h-5 w-5" />,
     shortDesc: "Central hub that controls all your smart home devices",
     realWorldUse: "Smart home owners use this hub to connect and control all their devices - lights, thermostats, door locks - from one place. Works even without internet connection.",

@@ -144,7 +144,6 @@ export default function Contact() {
             >
               <FloatingLabelInput
                 label="Name"
-                placeholder="Your full name"
                 value={name}
                 onChange={setName}
                 disabled={isLoading}
@@ -159,7 +158,6 @@ export default function Contact() {
               <FloatingLabelInput
                 type="email"
                 label="Email"
-                placeholder="you@company.com"
                 value={email}
                 onChange={setEmail}
                 disabled={isLoading}
@@ -173,7 +171,6 @@ export default function Contact() {
             >
               <FloatingLabelInput
                 label="Company"
-                placeholder="Company or organization"
                 value={company}
                 onChange={setCompany}
                 disabled={isLoading}
@@ -188,7 +185,6 @@ export default function Contact() {
               <FloatingLabelInput
                 type="tel"
                 label="Phone"
-                placeholder="+1 555 000 0000"
                 value={phone}
                 onChange={setPhone}
                 disabled={isLoading}
@@ -264,7 +260,6 @@ export default function Contact() {
           >
             <FloatingLabelTextarea
               label="Message"
-              placeholder="Tell us a bit about your project goals, scope, and timeline"
               value={message}
               onChange={setMessage}
               disabled={isLoading}

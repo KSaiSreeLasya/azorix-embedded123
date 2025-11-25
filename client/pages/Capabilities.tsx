@@ -194,7 +194,7 @@ export default function Capabilities() {
           connect securely. We expertise in all major standards.
         </p>
         <div className="grid gap-6 md:grid-cols-3">
-          <ExpertiseGroup title="Car & Vehicle Systems">
+          <ExpertiseGroup title="Car & Vehicle Systems" index={0}>
             <p className="text-xs text-muted-foreground mb-3">
               Special standards for automotive safety, diagnostics, and
               communication.
@@ -205,15 +205,29 @@ export default function Capabilities() {
                 "Diagnostics & troubleshooting",
                 "J1939 (heavy trucks)",
                 "Safety standards",
-              ].map((p) => (
-                <li key={p} className="flex items-start gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+              ].map((p, idx) => (
+                <motion.li
+                  key={p}
+                  className="flex items-start gap-2"
+                  initial={{ opacity: 0, x: -10 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: idx * 0.05 }}
+                >
+                  <motion.span
+                    className="h-4 w-4 text-primary flex-shrink-0 mt-0.5"
+                    whileInView={{ scale: [0, 1.2, 1] }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: idx * 0.05 + 0.1 }}
+                  >
+                    <CheckCircle2 className="h-4 w-4" />
+                  </motion.span>
                   <span className="text-sm">{p}</span>
-                </li>
+                </motion.li>
               ))}
             </ul>
           </ExpertiseGroup>
-          <ExpertiseGroup title="Wireless Connectivity">
+          <ExpertiseGroup title="Wireless Connectivity" index={1}>
             <p className="text-xs text-muted-foreground mb-3">
               Technologies to connect devices wirelessly - like WiFi for phones
               or Bluetooth for wearables.

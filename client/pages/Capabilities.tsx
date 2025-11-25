@@ -122,7 +122,7 @@ export default function Capabilities() {
           systems used to power devices worldwide.
         </p>
         <div className="grid gap-6 md:grid-cols-2">
-          <ExpertiseGroup title="Processor Chips">
+          <ExpertiseGroup title="Processor Chips" index={0}>
             <p className="text-sm text-muted-foreground mb-4">
               The "brains" of devices - the chips that make everything run. We
               work with all major brands.
@@ -138,17 +138,22 @@ export default function Capabilities() {
                 "Microchip",
                 "Renesas",
                 "Infineon",
-              ].map((p) => (
-                <span
+              ].map((p, idx) => (
+                <motion.span
                   key={p}
-                  className="px-3 py-2 rounded-md bg-card/60 text-sm border"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: idx * 0.05 }}
+                  whileHover={{ scale: 1.05, backgroundColor: "rgba(var(--primary-rgb), 0.1)" }}
+                  className="px-3 py-2 rounded-md bg-card/60 text-sm border border-primary/15 hover:border-primary/40 transition-all cursor-pointer"
                 >
                   {p}
-                </span>
+                </motion.span>
               ))}
             </div>
           </ExpertiseGroup>
-          <ExpertiseGroup title="Operating Systems & Software Platforms">
+          <ExpertiseGroup title="Operating Systems & Software Platforms" index={1}>
             <p className="text-sm text-muted-foreground mb-4">
               The system software that manages how devices work - similar to
               Windows or Mac for computers.
@@ -161,13 +166,18 @@ export default function Capabilities() {
                 "VxWorks",
                 "QNX",
                 "Custom RTOS",
-              ].map((os) => (
-                <span
+              ].map((os, idx) => (
+                <motion.span
                   key={os}
-                  className="px-3 py-2 rounded-md bg-card/60 text-sm border"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: idx * 0.05 }}
+                  whileHover={{ scale: 1.05, backgroundColor: "rgba(var(--primary-rgb), 0.1)" }}
+                  className="px-3 py-2 rounded-md bg-card/60 text-sm border border-primary/15 hover:border-primary/40 transition-all cursor-pointer"
                 >
                   {os}
-                </span>
+                </motion.span>
               ))}
             </div>
           </ExpertiseGroup>

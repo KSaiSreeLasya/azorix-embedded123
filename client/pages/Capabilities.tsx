@@ -107,6 +107,7 @@ export default function Capabilities() {
               "Staff training",
               "Long-term guidance",
             ]}
+            index={3}
           />
         </div>
       </Section>

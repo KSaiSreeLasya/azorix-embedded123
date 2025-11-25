@@ -205,18 +205,23 @@ export default function Contact() {
                 <label className="text-sm font-medium text-foreground">
                   Budget
                 </label>
-                <select
-                  className="mt-2 w-full rounded-lg border border-primary/20 bg-background px-4 py-3 text-foreground transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/80"
+                <motion.select
+                  className="mt-2 w-full rounded-lg border border-primary/20 bg-background px-4 py-3 text-foreground transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/80 hover:border-primary/40"
                   value={budget}
                   onChange={(e) => setBudget(e.target.value)}
                   disabled={isLoading}
+                  whileHover={{ borderColor: "hsl(var(--primary) / 0.4)" }}
+                  whileFocus={{
+                    boxShadow: "0 0 20px rgba(var(--primary-rgb), 0.2)",
+                    borderColor: "hsl(var(--primary) / 0.8)"
+                  }}
                 >
                   <option value="">Select range</option>
                   <option value="< $10k">Less than $10k</option>
                   <option value="$10k–$50k">$10k–$50k</option>
                   <option value="$50k–$200k">$50k–$200k</option>
                   <option value="> $200k">More than $200k</option>
-                </select>
+                </motion.select>
               </div>
             </motion.div>
 

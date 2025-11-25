@@ -228,23 +228,26 @@ export default function Capabilities() {
       {/* Services & Engagement */}
       <Section className="bg-secondary/40">
         <h2 className="text-2xl md:text-3xl font-bold mb-2">
-          Services & Engagement Models
+          How We Work With You
         </h2>
         <p className="text-muted-foreground mb-8">
-          Flexible models to support your project needs and business goals.
+          We offer flexible ways to partner with you based on what your project needs.
         </p>
         <div className="grid gap-6 md:grid-cols-3">
           <ServiceCard
-            title="Project / SoW"
-            desc="Complete project delivery with defined scope of work, timeline, and deliverables. Ideal for specific feature development or product launches."
+            icon="📋"
+            title="Project-Based"
+            desc="You define what needs to be built, and we deliver it. Perfect when you have a specific goal - like launching a new product feature."
           />
           <ServiceCard
-            title="Resource Augmentation"
-            desc="Scale your team with skilled engineers working seamlessly as part of your extended team. Flexible duration and skill mix."
+            icon="👥"
+            title="Team Expansion"
+            desc="Boost your team with our skilled engineers. They work like your own employees - same goals, same team, no separate management needed."
           />
           <ServiceCard
-            title="Build Operate Transfer"
-            desc="Build capability on your product, operate services, then transfer knowledge and responsibility to your team."
+            icon="🚀"
+            title="Build & Transfer"
+            desc="We build the capability you need, run it for a while, then hand it over completely to your team so you're fully independent."
           />
         </div>
       </Section>

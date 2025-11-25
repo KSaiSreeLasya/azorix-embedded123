@@ -23,181 +23,212 @@ const projects = [
     id: 1,
     category: "Medical & Wearables",
     title: "Smart Knee Joint Monitor",
-    image: "https://images.pexels.com/photos/3931603/pexels-photo-3931603.jpeg",
+    image:
+      "https://images.pexels.com/photos/3931603/pexels-photo-3931603.jpeg?auto=compress&cs=tinysrgb&w=600",
     icon: <Lightbulb className="h-5 w-5" />,
-    shortDesc: "Real-time knee angle monitoring with haptic feedback",
+    shortDesc: "Wearable device that helps prevent knee injuries during sports",
+    realWorldUse:
+      "Athletes, physical therapy clinics, and sports medicine professionals use this to monitor knee movements and get instant feedback when motion is about to exceed safe limits - preventing injuries before they happen.",
     fullDesc:
-      "A wearable device that monitors knee joint angles in real-time and triggers haptic feedback when movement exceeds comfortable limits. Perfect for rehabilitation and sports medicine applications.",
+      "This wearable device sits on your knee and continuously monitors how the joint moves. When movements approach unsafe limits, it sends gentle vibrations to alert the wearer. Athletes and physical therapists use this during recovery or training to prevent re-injury.",
     details: [
-      "Dialog DA14682 BLE SoC with haptics",
-      "Real-time angle monitoring with haptic feedback",
-      "Custom hardware, firmware, and Android app",
-      "I2C/SPI/ADC/BLE drivers for multiple sensors",
-      "MPU sensor and ICM sensor integration",
-      "Muscle sensor ADC driver",
-      "BLE driver for Android app connectivity",
+      "Monitors knee angles in real-time",
+      "Sends vibration alerts when movement exceeds safe limits",
+      "Works with Android phones via Bluetooth",
+      "Integrates multiple sensors for accurate tracking",
+      "Optimized for continuous wear during sports",
+      "Custom firmware for reliable performance",
+      "Connects seamlessly to training apps",
     ],
-    technologies: ["BLE", "Firmware", "Android", "Sensors", "Haptics"],
+    technologies: ["BLE", "Wearable", "Android", "Sensors"],
   },
   {
     id: 2,
     category: "Medical & Wearables",
-    title: "Smart Band",
-    image: "https://images.pexels.com/photos/3962286/pexels-photo-3962286.jpeg",
+    title: "Smart Fitness Band",
+    image:
+      "https://images.pexels.com/photos/3962286/pexels-photo-3962286.jpeg?auto=compress&cs=tinysrgb&w=600",
     icon: <Heart className="h-5 w-5" />,
-    shortDesc: "Fitness wearable with heart rate and activity tracking",
+    shortDesc:
+      "Lightweight tracker for heart rate and daily activity monitoring",
+    realWorldUse:
+      "Fitness enthusiasts, health-conscious individuals, and wellness programs use this band to track daily activity, monitor heart health, and receive notifications on their phones.",
     fullDesc:
-      "A lightweight wearable device that continuously tracks fitness parameters including heart rate and step count. Provides smartphone notifications and integrates with mobile apps for comprehensive health monitoring.",
+      "A sleek wearable band that constantly monitors your heart rate and counts your steps throughout the day. It sends important notifications to your phone - calls, messages, and fitness milestones - keeping you informed without needing to check your phone constantly.",
     details: [
-      "nRF51822 BLE wearable platform",
-      "Fitness parameters: heart rate, steps count",
-      "Android BLE client with notifications",
-      "Call/message alerts over BLE",
-      "Long battery life optimization",
-      "Low-power sensor integration",
-      "Real-time data synchronization",
+      "Continuous heart rate monitoring",
+      "Accurate step and activity counting",
+      "Sends phone notifications via Bluetooth",
+      "Extremely low power consumption",
+      "Days of battery life per charge",
+      "Syncs fitness data to mobile apps",
+      "Real-time updates on your fitness progress",
     ],
-    technologies: ["BLE", "Wearable", "Android", "Fitness Tracking"],
+    technologies: ["BLE", "Wearable", "Android", "Fitness"],
   },
   {
     id: 3,
     category: "Medical & Wearables",
-    title: "BP Monitor",
-    image: "https://images.pexels.com/photos/8367747/pexels-photo-8367747.jpeg",
+    title: "Smart Blood Pressure Monitor",
+    image:
+      "https://images.pexels.com/photos/8367747/pexels-photo-8367747.jpeg?auto=compress&cs=tinysrgb&w=600",
     icon: <Zap className="h-5 w-5" />,
-    shortDesc: "Wireless blood pressure monitoring with BLE connectivity",
+    shortDesc:
+      "Wireless monitor that sends blood pressure readings to your phone",
+    realWorldUse:
+      "Hospitals, clinics, and patients managing hypertension use this to track blood pressure remotely. Doctors can monitor multiple patients from anywhere, enabling telemedicine and early intervention.",
     fullDesc:
-      "A medical-grade blood pressure monitor with wireless connectivity that transmits real-time Systolic, Diastolic, and heart rate data to mobile devices. Ideal for remote patient monitoring and telemedicine applications.",
+      "This wireless blood pressure monitor measures your pressure and sends readings directly to your phone via Bluetooth. Perfect for patients who need regular monitoring - no need to visit a clinic every time. Doctors can review your history and spot trends.",
     details: [
-      "BLE blood pressure monitoring device",
-      "Real-time Systolic/Diastolic/Heart rate",
-      "Android app with BLE characteristic notifications",
-      "UI parameter display and logging",
-      "Medical-grade accuracy",
-      "Cloud data synchronization",
-      "Historical data analytics",
+      "Measures systolic and diastolic pressure accurately",
+      "Sends readings instantly to Android phones",
+      "Stores historical data for tracking trends",
+      "Medical-grade accuracy and reliability",
+      "Real-time alerts if readings are abnormal",
+      "Works with telemedicine platforms",
+      "Simple one-button operation",
     ],
-    technologies: ["BLE", "Medical Device", "Android", "Monitoring"],
+    technologies: ["BLE", "Medical", "Android", "Healthcare"],
   },
   {
     id: 4,
     category: "IoT & Consumer",
-    title: "Dashpod Module",
-    image: "https://images.pexels.com/photos/3062551/pexels-photo-3062551.jpeg",
+    title: "Smart Home Controller (Dashpod)",
+    image:
+      "https://images.pexels.com/photos/3587620/pexels-photo-3587620.jpeg?auto=compress&cs=tinysrgb&w=600",
     icon: <RadioIcon className="h-5 w-5" />,
-    shortDesc: "Advanced IoT controller with radar and motion sensing",
+    shortDesc: "Smart controller that detects motion and controls home devices",
+    realWorldUse:
+      "Smart home enthusiasts use this to automate their homes - automatically turning on lights when you enter a room, adjusting temperature, or triggering security alerts.",
     fullDesc:
-      "An advanced IoT control module featuring radar sensing, 6-dimensional motion detection, and addressable LED feedback. Supports OTA firmware updates for seamless remote device management.",
+      "This intelligent controller uses radar to sense motion and presence in rooms. It can automatically control lights, thermostats, and other devices. LED feedback shows status, and updates happen automatically over the internet.",
     details: [
-      "nRF52833 DK with Acconeer A111 Radar",
-      "OTA firmware updates via nRF Connect",
-      "6-dimensional accelerometer integration",
-      "Addressable LED control and feedback",
-      "Real-time motion detection",
-      "Range sensing capabilities",
-      "Smart automation triggers",
+      "Radar-based motion and presence detection",
+      "Detects which direction people are moving",
+      "Controls smart lights, thermostats, and devices",
+      "LED feedback shows device status",
+      "Automatic updates without user intervention",
+      "Works in dark conditions (unlike cameras)",
+      "Energy-efficient operation",
     ],
-    technologies: ["IoT", "Radar Sensing", "OTA Updates", "Motion Detection"],
+    technologies: ["IoT", "Motion Sensing", "Automation", "Smart Home"],
   },
   {
     id: 5,
     category: "IoT & Consumer",
-    title: "Smart Lock",
-    image: "https://images.pexels.com/photos/5632663/pexels-photo-5632663.jpeg",
+    title: "Smart Lock System",
+    image:
+      "https://images.pexels.com/photos/279810/pexels-photo-279810.jpeg?auto=compress&cs=tinysrgb&w=600",
     icon: <Lightbulb className="h-5 w-5" />,
-    shortDesc: "Remote-controlled smart lock with mobile and web access",
+    shortDesc: "Control your door lock from anywhere - phone or computer",
+    realWorldUse:
+      "Homeowners, landlords, and property managers use this to lock/unlock doors remotely. You can give access to guests without being home, track who entered and when.",
     fullDesc:
-      "A secure smart lock system controlled via both Android app (BLE) and web portal. Features robust communication protocols for reliable remote access and integrates with smart home ecosystems.",
+      "This smart lock lets you control your door from your phone or computer. Whether you're at work or traveling, you can unlock doors for guests, receive notifications when someone enters, and track all access. Multiple people can have different access levels.",
     details: [
-      "Quectel EC25 + nRF52832 BLE SoC",
-      "Command control via Android app and web portal",
-      "BLE GATT server protocol stack",
-      "Socket-based web communication",
-      "Secure authentication",
-      "Multi-user access control",
-      "Activity logging and audit trails",
+      "Lock/unlock from Android app or web browser",
+      "Works from anywhere in the world",
+      "Set access times for different users",
+      "See a log of who accessed the door and when",
+      "Secure authentication prevents unauthorized entry",
+      "Receive instant notifications on access",
+      "No keys to lose or copy",
     ],
-    technologies: ["BLE", "IoT", "Smart Home", "Security"],
+    technologies: ["IoT", "Smart Home", "Security", "Mobile App"],
   },
   {
     id: 6,
     category: "IoT & Consumer",
-    title: "IoT Controller (t-Hub)",
-    image: "https://images.pexels.com/photos/3808517/pexels-photo-3808517.jpeg",
+    title: "Smart Home Hub",
+    image:
+      "https://images.pexels.com/photos/3945683/pexels-photo-3945683.jpeg?auto=compress&cs=tinysrgb&w=600",
     icon: <WifiIcon className="h-5 w-5" />,
-    shortDesc: "Zigbee hub for smart home device control and coordination",
+    shortDesc: "Central hub that controls all your smart home devices",
+    realWorldUse:
+      "Smart home owners use this hub to connect and control all their devices - lights, thermostats, door locks - from one place. Works even without internet connection.",
     fullDesc:
-      "A central hub for Zigbee home automation devices. Controls and coordinates smart devices, provides WiFi repeater functionality, and enables both online and offline remote control via mobile apps.",
+      "This is the brain of your smart home. It connects all your smart devices together and lets you control them from your phone. It also acts as a WiFi booster and works offline so you're never without control.",
     details: [
-      "ESP32 controller for Zigbee HA profile devices",
-      "WiFi repeater for existing networks",
-      "Mobile app remote control (online/offline)",
-      "Device pairing and management",
-      "Multi-zone support",
-      "Scheduled automation",
-      "Energy monitoring and reporting",
+      "Connects and controls all smart home devices",
+      "Central control from your mobile app",
+      "Boosts WiFi signal throughout your home",
+      "Works without internet for critical devices",
+      "Schedule automations - lights, temperature, etc.",
+      "Monitor energy usage of devices",
+      "Create zones for different areas of home",
     ],
-    technologies: ["Zigbee", "WiFi", "IoT Hub", "Home Automation"],
+    technologies: ["IoT Hub", "WiFi", "Smart Home", "Automation"],
   },
   {
     id: 7,
     category: "Automotive & Industrial",
-    title: "Smart Helmet",
-    image: "https://images.pexels.com/photos/4386366/pexels-photo-4386366.jpeg",
+    title: "Connected Motorcycle Helmet",
+    image:
+      "https://images.pexels.com/photos/4386366/pexels-photo-4386366.jpeg?auto=compress&cs=tinysrgb&w=600",
     icon: <Monitor className="h-5 w-5" />,
-    shortDesc: "Connected helmet with GPS and communication features",
+    shortDesc: "Smart helmet with GPS, camera, and Bluetooth communication",
+    realWorldUse:
+      "Motorcycle enthusiasts and professional racers use this helmet for navigation, recording rides, communicating with team members, and safety monitoring.",
     fullDesc:
-      "An advanced motorcycle/racing helmet with built-in GPS, camera, display, and Bluetooth connectivity. Optimized for navigation, real-time monitoring, and integrated communication with rider safety features.",
+      "This advanced helmet has everything a rider needs - built-in GPS for navigation, a camera to record the journey, a display for speed and directions, and Bluetooth to communicate with your phone and other riders.",
     details: [
-      "TI OMAP 4430 board bring-up",
-      "Bluetooth 3 to 4 upgrade",
-      "Camera resolution and display optimization",
-      "GPS navigation implementation",
-      "Real-time speed and direction display",
-      "Voice command integration",
-      "Emergency contact notifications",
+      "Clear display showing speed and navigation",
+      "Built-in GPS for turn-by-turn directions",
+      "Camera records your ride",
+      "Bluetooth for phone calls and team chat",
+      "Voice commands for hands-free control",
+      "Emergency alerts to contacts if needed",
+      "Connect with other riders wirelessly",
     ],
-    technologies: ["Automotive", "GPS", "Bluetooth", "Display"],
+    technologies: ["Automotive", "GPS", "Bluetooth", "Camera"],
   },
   {
     id: 8,
     category: "Automotive & Industrial",
-    title: "Commercial RO",
-    image: "https://images.pexels.com/photos/3825581/pexels-photo-3825581.jpeg",
+    title: "Smart Water Purification System",
+    image:
+      "https://images.pexels.com/photos/3825581/pexels-photo-3825581.jpeg?auto=compress&cs=tinysrgb&w=600",
     icon: <Cpu className="h-5 w-5" />,
-    shortDesc: "Reverse osmosis system with IoT monitoring",
+    shortDesc:
+      "Industrial water system that monitors quality and alerts about maintenance",
+    realWorldUse:
+      "Hospitals, industrial facilities, and commercial buildings use this to ensure water quality, track consumption, and get alerts before problems occur.",
     fullDesc:
-      "An industrial-grade water treatment system with comprehensive IoT connectivity. Monitors water quality parameters, tracks consumption, and enables remote diagnostics and control via GSM/GPS/WiFi.",
+      "This intelligent water purification system continuously monitors water quality, measures consumption, and predicts maintenance needs. Managers can check status from anywhere and get alerts if water quality drops or filters need replacement.",
     details: [
-      "TI MSP432E401Y microcontroller",
-      "I2C TDS sensors and ADC temperature monitoring",
-      "GPIO water flow measurement",
-      "GSM/GPS/WiFi module integration",
-      "Real-time water quality metrics",
-      "Predictive maintenance alerts",
-      "Cloud data logging and analytics",
+      "Continuously monitors water quality",
+      "Tracks how much water is being used",
+      "Alerts when filters need replacement",
+      "GPS location tracking of the system",
+      "Works with cellular, WiFi, and satellite",
+      "Stores data for analysis and trending",
+      "Prevents problems before they start",
     ],
-    technologies: ["IoT", "Industrial", "Sensors", "Connectivity"],
+    technologies: ["IoT", "Industrial", "Sensors", "Monitoring"],
   },
   {
     id: 9,
     category: "Automotive & Industrial",
-    title: "Smart YogiFi Yoga Mat",
-    image: "https://images.pexels.com/photos/4498318/pexels-photo-4498318.jpeg",
+    title: "Smart Yoga Mat",
+    image:
+      "https://images.pexels.com/photos/4498318/pexels-photo-4498318.jpeg?auto=compress&cs=tinysrgb&w=600",
     icon: <Lightbulb className="h-5 w-5" />,
-    shortDesc: "Intelligent yoga mat with posture analysis",
+    shortDesc:
+      "Intelligent mat that guides your yoga form and prevents injuries",
+    realWorldUse:
+      "Yoga practitioners, fitness instructors, and physical therapists use this mat to get real-time feedback on their form, preventing common mistakes and injuries.",
     fullDesc:
-      "An innovative yoga mat embedded with sensors for real-time posture analysis. Provides instant feedback via Bluetooth to mobile apps, helping users perfect their yoga technique and prevent injuries.",
+      "This smart yoga mat has sensors embedded throughout to detect your body position. It sends real-time feedback to your phone about your posture - telling you if you're aligned correctly or need to adjust. Perfect for learning proper technique.",
     details: [
-      "MSP432P401R + Raspberry Pi 0 platform",
-      "22 ADC channels for mat sensor data",
-      "UART communication architecture",
-      "Posture analysis via Bluetooth to mobile",
-      "Real-time form correction feedback",
-      "Session recording and playback",
-      "Integration with yoga training apps",
+      "Detects body position on the mat",
+      "Provides real-time posture feedback",
+      "Alerts if you're misaligned",
+      "Guides you through poses correctly",
+      "Records your sessions for review",
+      "Prevents common yoga injuries",
+      "Works with yoga training apps",
     ],
-    technologies: ["Fitness", "Sensors", "Bluetooth", "AI/ML"],
+    technologies: ["Fitness", "Sensors", "Bluetooth", "Wellness"],
   },
 ];
 
@@ -243,9 +274,9 @@ export default function Projects() {
                 Projects
               </h1>
               <p className="mt-3 text-muted-foreground max-w-2xl">
-                Explore our diverse portfolio of successful embedded systems
-                projects. Click on any project to see detailed technical
-                specifications and implementation details.
+                From smart wearables to IoT systems and connected vehicles -
+                explore real products we've built. Click any project to discover
+                what it does and who uses it.
               </p>
             </div>
             <img
@@ -275,11 +306,11 @@ export default function Projects() {
           <h2 className="text-2xl md:text-3xl font-bold mb-2">{category}</h2>
           <p className="text-muted-foreground mb-8">
             {category === "Medical & Wearables" &&
-              "Regulated medical devices and consumer health monitoring solutions."}
+              "Devices that help people stay healthy - from fitness trackers to medical-grade monitors. All built with precision and care."}
             {category === "IoT & Consumer" &&
-              "Smart home and IoT connectivity solutions."}
+              "Smart devices that make life easier - controlling homes, securing doors, and automating daily tasks."}
             {category === "Automotive & Industrial" &&
-              "Automotive embedded systems and industrial IoT solutions."}
+              "Connected systems for vehicles and industry - from smart helmets to water treatment systems with predictive maintenance."}
           </p>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {projects
@@ -341,17 +372,26 @@ export default function Projects() {
                   className="w-full h-64 object-cover rounded-lg border"
                 />
 
+                {(selectedProjectData as any).realWorldUse && (
+                  <div className="rounded-lg bg-primary/10 border border-primary/30 p-4">
+                    <h3 className="text-sm font-bold text-primary mb-2">
+                      💡 Real-World Use
+                    </h3>
+                    <p className="text-sm text-foreground leading-relaxed">
+                      {(selectedProjectData as any).realWorldUse}
+                    </p>
+                  </div>
+                )}
+
                 <div>
-                  <h3 className="text-lg font-semibold mb-2">Overview</h3>
+                  <h3 className="text-lg font-semibold mb-2">What It Does</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">
                     {selectedProjectData.fullDesc}
                   </p>
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-semibold mb-3">
-                    Technical Details
-                  </h3>
+                  <h3 className="text-lg font-semibold mb-3">Key Features</h3>
                   <ul className="space-y-2">
                     {selectedProjectData.details.map((detail) => (
                       <li
@@ -373,7 +413,7 @@ export default function Projects() {
                     {selectedProjectData.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="px-3 py-1 rounded-full border bg-primary/10 text-primary text-xs font-medium"
+                        className="px-3 py-1.5 rounded-full border bg-gradient-to-r from-primary/15 to-accent/15 text-foreground text-xs font-semibold hover:border-primary/50 transition-colors"
                       >
                         {tech}
                       </span>
@@ -389,31 +429,32 @@ export default function Projects() {
       {/* Success Story */}
       <Section className="bg-secondary/40">
         <h2 className="text-2xl md:text-3xl font-bold mb-2">
-          Extended End-to-End Engineering
+          Complete Partnership Example
         </h2>
         <p className="text-muted-foreground mb-8">
-          Comprehensive success story with a global chipset company.
+          How we partner with a major global chipset company - handling
+          everything from concept to market.
         </p>
         <div className="rounded-lg border p-8 bg-card/60 backdrop-blur">
           <div className="grid gap-8 md:grid-cols-2">
             <div>
               <h3 className="font-bold text-lg mb-4">
-                Global Chipset Company Partnership
+                What We Do for Our Clients
               </h3>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 {[
-                  "Firmware development and new features",
-                  "Customer feature implementation",
-                  "SDK testing and release",
-                  "Customer support and escalation",
-                  "Application notes and documentation",
-                  "Product teardown and analysis",
-                  "Comparative market analysis",
-                  "PCB design, layout, and fabrication",
-                  "Engineering samples manufacturing",
-                  "Board bring-up and integration",
-                  "Industrial design and optimization",
-                  "Assembly and sample production",
+                  "Build new features and capabilities",
+                  "Test features with real customers",
+                  "Complete quality assurance",
+                  "Provide customer support and help",
+                  "Create detailed documentation and guides",
+                  "Analyze competitor products",
+                  "Design circuit boards and layouts",
+                  "Manufacture and test samples",
+                  "Optimize designs for reliability",
+                  "Assembly and quality control",
+                  "Help clients launch products",
+                  "Ongoing technical support",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-2">
                     <CheckCircle className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
@@ -428,14 +469,17 @@ export default function Projects() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className="rounded-lg border bg-gradient-to-br from-primary/10 to-transparent p-8 text-center w-full"
+                className="rounded-lg border bg-gradient-to-br from-primary/20 via-accent/10 to-transparent p-8 text-center w-full hover:shadow-lg transition-all"
               >
-                <div className="text-5xl font-bold text-primary mb-2">360°</div>
-                <div className="font-semibold">
-                  Extended End-to-End Embedded Engineering Team
+                <div className="text-5xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-3">
+                  360°
                 </div>
-                <p className="text-sm text-muted-foreground mt-2">
-                  From concept through production and beyond
+                <div className="font-bold text-foreground text-lg">
+                  Complete Engineering Partnership
+                </div>
+                <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
+                  We handle the complete journey - from your idea through
+                  design, development, testing, manufacturing, and support.
                 </p>
               </motion.div>
             </div>
@@ -445,9 +489,15 @@ export default function Projects() {
 
       {/* Trusted By Section */}
       <Section>
-        <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center">
-          Trusted by Global Leaders
-        </h2>
+        <div className="text-center mb-12">
+          <h2 className="text-2xl md:text-3xl font-bold mb-3">
+            Trusted by Global Technology Leaders
+          </h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Fortune 500 companies and innovators worldwide rely on us to bring
+            their embedded systems to life
+          </p>
+        </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {clientLogos.map((logo) => (
             <motion.div
@@ -455,10 +505,11 @@ export default function Projects() {
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
+              whileHover={{ y: -6, boxShadow: "0 12px 32px rgba(0,0,0,0.1)" }}
               transition={{ duration: 0.4 }}
-              className={`rounded-lg border p-6 flex items-center justify-center h-24 bg-gradient-to-br ${logo.color} opacity-20 hover:opacity-30 transition-opacity`}
+              className={`rounded-lg border p-8 flex items-center justify-center min-h-32 bg-gradient-to-br ${logo.color} opacity-25 hover:opacity-40 transition-all cursor-default`}
             >
-              <span className="font-semibold text-foreground text-center text-sm">
+              <span className="font-bold text-foreground text-center text-sm">
                 {logo.name}
               </span>
             </motion.div>
@@ -486,39 +537,52 @@ function ProjectCard({
       initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      whileHover={{ y: -4 }}
+      whileHover={{ y: -6, boxShadow: "0 12px 32px rgba(0,0,0,0.15)" }}
       transition={{ duration: 0.4 }}
-      className={`relative overflow-hidden rounded-lg border text-left transition-all ${
-        isSelected ? "ring-2 ring-primary shadow-lg" : "hover:shadow-md"
+      className={`relative overflow-hidden rounded-2xl border text-left transition-all flex flex-col h-full ${
+        isSelected
+          ? "ring-2 ring-primary shadow-xl bg-primary/5"
+          : "hover:shadow-lg bg-card/40"
       }`}
     >
-      <img
-        src={project.image}
-        alt={project.title}
-        className="w-full h-48 object-cover opacity-60"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/60 to-background/20" />
-      <div className="absolute inset-0 p-5 md:p-6 flex flex-col justify-end">
-        <div className="flex items-center gap-3 mb-3">
-          <span className="grid h-9 w-9 place-items-center rounded-md bg-primary/20 text-primary">
-            {project.icon}
-          </span>
-          <div>
-            <div className="text-xs font-medium text-primary/80">
-              {project.category}
+      <div className="relative h-48 w-full overflow-hidden bg-secondary/50 flex-shrink-0">
+        <img
+          src={project.image}
+          alt={project.title}
+          loading="lazy"
+          decoding="async"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
+      </div>
+
+      <div className="flex flex-col justify-between flex-1 p-5 md:p-6">
+        <div>
+          <div className="flex items-start gap-3 mb-3">
+            <span className="grid h-10 w-10 place-items-center rounded-lg bg-gradient-to-br from-primary to-accent text-primary-foreground flex-shrink-0 shadow-md">
+              {project.icon}
+            </span>
+            <div className="flex-1 min-w-0">
+              <div className="text-xs font-bold text-primary/90 uppercase tracking-wide">
+                {project.category}
+              </div>
+              <h3 className="font-bold text-foreground text-base mt-1 line-clamp-2">
+                {project.title}
+              </h3>
             </div>
-            <h3 className="font-bold text-foreground">{project.title}</h3>
           </div>
+          <p className="text-sm text-foreground/75 leading-relaxed mb-4 line-clamp-2">
+            {project.shortDesc}
+          </p>
         </div>
-        <p className="text-sm text-foreground/80 leading-relaxed mb-3">
-          {project.shortDesc}
-        </p>
-        <div className="inline-flex items-center gap-1 w-fit rounded-md bg-background/70 px-2 py-1 text-xs font-semibold text-primary hover:bg-background transition-colors">
-          <span>Click to see details</span>
-          <span className="transition-transform group-hover:translate-x-0.5">
-            →
-          </span>
-        </div>
+
+        <motion.div
+          className="inline-flex items-center gap-1 w-fit rounded-lg bg-gradient-to-r from-primary/20 to-accent/20 px-3 py-1.5 text-xs font-bold text-primary border border-primary/30 hover:border-primary/60 transition-all"
+          whileHover={{ x: 2 }}
+        >
+          <span>View Details</span>
+          <span className="transition-transform">→</span>
+        </motion.div>
       </div>
     </motion.button>
   );

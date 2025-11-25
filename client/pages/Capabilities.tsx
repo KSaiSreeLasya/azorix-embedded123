@@ -3,7 +3,16 @@ import SiteFooter from "@/components/SiteFooter";
 import Section from "@/components/Section";
 import { motion } from "framer-motion";
 import SEO from "@/components/SEO";
-import { Package, Code2, LifeBuoy, CheckCircle2 } from "lucide-react";
+import { useState } from "react";
+import {
+  Package,
+  Code2,
+  CheckCircle2,
+  Lightbulb,
+  Zap,
+  Shield,
+  Users,
+} from "lucide-react";
 
 export default function Capabilities() {
   return (
@@ -42,50 +51,58 @@ export default function Capabilities() {
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           <Card
             icon={<Package className="h-5 w-5" />}
-            title="Product"
+            title="Hardware Design"
+            subtitle="Building the Physical Device"
+            description="We design and plan what the physical device will look like - from basic sketches to detailed blueprints, component selection, and manufacturing plans."
             items={[
-              "Requirement analysis",
-              "System design & review",
-              "Schematic design & review",
-              "PCB layout and review",
-              "BOM analysis and cleansing",
-              "Project planning and management",
+              "Planning and requirements",
+              "Design and schematics",
+              "Circuit board layout",
+              "Component selection",
+              "Quality checks",
+              "Manufacturing guidance",
             ]}
           />
           <Card
             icon={<Code2 className="h-5 w-5" />}
-            title="Software"
+            title="Software & Firmware"
+            subtitle="Making Devices Smart"
+            description="We write the code that makes devices work - everything from the core operating system to apps, connectivity, and how the device communicates."
             items={[
-              "Board bring‑up, bootloader, BSP, drivers",
-              "RTOS – Linux, QNX, VxWorks, Android",
-              "CAN, UDS, CAN FD, J1939, Autosar",
-              "Telematics, protocol stacks, RF/Network",
-              "Multimedia, applications, UI, debugging",
-              "Build integration, CI‑CD, system integration",
+              "Core system setup",
+              "Operating system selection",
+              "Communication standards",
+              "Connection capabilities",
+              "User interfaces",
+              "Integration & optimization",
             ]}
           />
           <Card
-            icon={<LifeBuoy className="h-5 w-5" />}
-            title="Testing"
+            icon={<Shield className="h-5 w-5" />}
+            title="Quality Testing"
+            subtitle="Ensuring Everything Works"
+            description="We test every aspect of the device thoroughly to ensure it works reliably, safely, and meets all required standards before reaching customers."
             items={[
-              "Test framework development",
-              "Test automation",
-              "Test case creation and execution",
-              "Test failure analysis",
-              "Black‑box testing",
-              "Functional, stability, verification testing",
+              "Test planning",
+              "Automated testing",
+              "Manual testing",
+              "Problem analysis",
+              "Stability verification",
+              "Standards compliance",
             ]}
           />
           <Card
-            icon={<LifeBuoy className="h-5 w-5" />}
-            title="Support"
+            icon={<Users className="h-5 w-5" />}
+            title="Support & Training"
+            subtitle="Helping You Succeed"
+            description="We provide ongoing support, technical expertise, and training to ensure your team can manage and evolve the product long-term."
             items={[
-              "In‑house lab for embedded",
-              "Resource augmentation",
-              "ODC/Statement of work",
-              "Successful execution model",
-              "Strong leadership",
-              "Hands‑on training in labs",
+              "Technical lab support",
+              "Team augmentation",
+              "Project management",
+              "Knowledge transfer",
+              "Staff training",
+              "Long-term guidance",
             ]}
           />
         </div>
@@ -94,23 +111,26 @@ export default function Capabilities() {
       {/* Platform & Processor Expertise */}
       <Section className="bg-secondary/40">
         <h2 className="text-2xl md:text-3xl font-bold mb-2">
-          Platform & Processor Expertise
+          Devices We Work With
         </h2>
         <p className="text-muted-foreground mb-8">
-          Deep expertise across leading processor families and platforms.
+          We have deep expertise with the leading chip brands and operating
+          systems used to power devices worldwide.
         </p>
         <div className="grid gap-6 md:grid-cols-2">
-          <ExpertiseGroup title="Processors & SoCs">
+          <ExpertiseGroup title="Processor Chips">
+            <p className="text-sm text-muted-foreground mb-4">
+              The "brains" of devices - the chips that make everything run. We
+              work with all major brands.
+            </p>
             <div className="grid grid-cols-2 gap-3">
               {[
-                "x86",
-                "TI-OMAP",
-                "NXP",
-                "Qualcomm",
-                "STM32",
+                "Intel",
+                "ARM (NXP, Qualcomm)",
+                "Texas Instruments",
+                "STMicroelectronics",
                 "Nordic",
-                "ESP32",
-                "ATMEL",
+                "Espressif (ESP32)",
                 "Microchip",
                 "Renesas",
                 "Infineon",
@@ -124,16 +144,19 @@ export default function Capabilities() {
               ))}
             </div>
           </ExpertiseGroup>
-          <ExpertiseGroup title="Operating Systems & RTOS">
+          <ExpertiseGroup title="Operating Systems & Software Platforms">
+            <p className="text-sm text-muted-foreground mb-4">
+              The system software that manages how devices work - similar to
+              Windows or Mac for computers.
+            </p>
             <div className="grid grid-cols-2 gap-3">
               {[
                 "Linux",
                 "Android",
-                "FreeRTOS",
+                "Real-Time OS",
                 "VxWorks",
                 "QNX",
-                "ThreadX",
-                "uCOS",
+                "Custom RTOS",
               ].map((os) => (
                 <span
                   key={os}
@@ -147,49 +170,68 @@ export default function Capabilities() {
         </div>
       </Section>
 
-      {/* Protocols & Standards */}
+      {/* Connectivity & Communication */}
       <Section>
         <h2 className="text-2xl md:text-3xl font-bold mb-2">
-          Protocols & Standards
+          Ways Devices Connect & Communicate
         </h2>
         <p className="text-muted-foreground mb-8">
-          Expertise in automotive, industrial, and connectivity standards.
+          Devices need standard ways to talk to each other, follow rules, and
+          connect securely. We expertise in all major standards.
         </p>
         <div className="grid gap-6 md:grid-cols-3">
-          <ExpertiseGroup title="Automotive Protocols">
-            <ul className="space-y-2">
-              {["CAN", "CAN FD", "UDS", "J1939", "Autosar", "MISRA C/C++"].map(
-                (p) => (
-                  <li key={p} className="flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-primary" />
-                    <span className="text-sm">{p}</span>
-                  </li>
-                ),
-              )}
-            </ul>
-          </ExpertiseGroup>
-          <ExpertiseGroup title="Wireless Connectivity">
+          <ExpertiseGroup title="Car & Vehicle Systems">
+            <p className="text-xs text-muted-foreground mb-3">
+              Special standards for automotive safety, diagnostics, and
+              communication.
+            </p>
             <ul className="space-y-2">
               {[
-                "Bluetooth / BLE",
-                "Wi-Fi",
-                "Zigbee",
-                "LoRaWAN",
-                "NB-IoT",
-                "5G/LTE",
+                "CAN Network (vehicle data bus)",
+                "Diagnostics & troubleshooting",
+                "J1939 (heavy trucks)",
+                "Safety standards",
               ].map((p) => (
-                <li key={p} className="flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-primary" />
+                <li key={p} className="flex items-start gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
                   <span className="text-sm">{p}</span>
                 </li>
               ))}
             </ul>
           </ExpertiseGroup>
-          <ExpertiseGroup title="Interface Protocols">
+          <ExpertiseGroup title="Wireless Connectivity">
+            <p className="text-xs text-muted-foreground mb-3">
+              Technologies to connect devices wirelessly - like WiFi for phones
+              or Bluetooth for wearables.
+            </p>
             <ul className="space-y-2">
-              {["TCP/IP", "UART", "I2C", "SPI", "USB", "Ethernet"].map((p) => (
-                <li key={p} className="flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-primary" />
+              {[
+                "Bluetooth (headphones, watches)",
+                "Wi-Fi (internet connection)",
+                "Cellular (mobile networks)",
+                "Long-range wireless (LoRaWAN)",
+              ].map((p) => (
+                <li key={p} className="flex items-start gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-sm">{p}</span>
+                </li>
+              ))}
+            </ul>
+          </ExpertiseGroup>
+          <ExpertiseGroup title="Physical Connections">
+            <p className="text-xs text-muted-foreground mb-3">
+              How components inside devices talk to each other - the physical
+              communication paths.
+            </p>
+            <ul className="space-y-2">
+              {[
+                "USB (universal standard)",
+                "Ethernet (wired networks)",
+                "Serial connections",
+                "Sensor communication",
+              ].map((p) => (
+                <li key={p} className="flex items-start gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
                   <span className="text-sm">{p}</span>
                 </li>
               ))}
@@ -201,23 +243,27 @@ export default function Capabilities() {
       {/* Services & Engagement */}
       <Section className="bg-secondary/40">
         <h2 className="text-2xl md:text-3xl font-bold mb-2">
-          Services & Engagement Models
+          How We Work With You
         </h2>
         <p className="text-muted-foreground mb-8">
-          Flexible models to support your project needs and business goals.
+          We offer flexible ways to partner with you based on what your project
+          needs.
         </p>
         <div className="grid gap-6 md:grid-cols-3">
           <ServiceCard
-            title="Project / SoW"
-            desc="Complete project delivery with defined scope of work, timeline, and deliverables. Ideal for specific feature development or product launches."
+            icon="📋"
+            title="Project-Based"
+            desc="You define what needs to be built, and we deliver it. Perfect when you have a specific goal - like launching a new product feature."
           />
           <ServiceCard
-            title="Resource Augmentation"
-            desc="Scale your team with skilled engineers working seamlessly as part of your extended team. Flexible duration and skill mix."
+            icon="👥"
+            title="Team Expansion"
+            desc="Boost your team with our skilled engineers. They work like your own employees - same goals, same team, no separate management needed."
           />
           <ServiceCard
-            title="Build Operate Transfer"
-            desc="Build capability on your product, operate services, then transfer knowledge and responsibility to your team."
+            icon="🚀"
+            title="Build & Transfer"
+            desc="We build the capability you need, run it for a while, then hand it over completely to your team so you're fully independent."
           />
         </div>
       </Section>
@@ -225,30 +271,33 @@ export default function Capabilities() {
       {/* Quality & Process */}
       <Section>
         <h2 className="text-2xl md:text-3xl font-bold mb-2">
-          Quality & Execution
+          Why You Can Trust Us
         </h2>
         <p className="text-muted-foreground mb-8">
-          Our approach ensures reliable, high-quality delivery.
+          We're committed to delivering quality work and being a true partner in
+          your success.
         </p>
         <div className="grid gap-6 md:grid-cols-2">
           <QualityCard
-            title="Quality Focus"
+            icon="✓"
+            title="Quality & Reliability"
             items={[
-              "Reliable execution on every project",
-              "Technology and quality-focused",
-              "MISRA compliance for automotive",
-              "In-house testing lab",
-              "Comprehensive documentation",
+              "Everything gets tested thoroughly",
+              "We follow industry best practices",
+              "Safety standards are never compromised",
+              "Our own testing lab on-site",
+              "Complete documentation for your team",
             ]}
           />
           <QualityCard
-            title="Team & Culture"
+            icon="🤝"
+            title="Experienced Team"
             items={[
-              "25+ years leadership experience",
-              "Senior technical expertise",
-              "Adapt and embrace client culture",
-              "Work as extended team",
-              "Hands-on training and mentoring",
+              "25+ years of proven track record",
+              "Senior engineers, not junior staff",
+              "We adapt to your company culture",
+              "Work like your own team members",
+              "We invest time in teaching your team",
             ]}
           />
         </div>
@@ -261,36 +310,70 @@ export default function Capabilities() {
 
 function Card({
   title,
+  subtitle,
+  description,
   items,
   icon,
 }: {
   title: string;
+  subtitle?: string;
+  description?: string;
   items: string[];
   icon?: React.ReactNode;
 }) {
+  const [expanded, setExpanded] = useState(false);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      whileHover={{ y: -2, boxShadow: "0 8px 24px rgba(0,0,0,0.08)" }}
+      whileHover={{ y: -4, boxShadow: "0 12px 32px rgba(0,0,0,0.1)" }}
       transition={{ duration: 0.4 }}
-      className="rounded-lg border p-6 bg-card/60 backdrop-blur"
+      className="rounded-lg border p-6 bg-card/60 backdrop-blur cursor-pointer overflow-hidden"
+      onClick={() => setExpanded(!expanded)}
     >
-      <div className="flex items-center gap-2 font-semibold mb-3 text-foreground">
-        <span className="grid h-8 w-8 place-items-center rounded-md bg-primary/15 text-primary">
+      <div className="flex items-start gap-3 mb-3">
+        <span className="grid h-10 w-10 place-items-center rounded-lg bg-gradient-to-br from-primary to-primary/60 text-primary-foreground flex-shrink-0 shadow-md">
           {icon}
         </span>
-        <span>{title}</span>
+        <div className="flex-1">
+          <h3 className="font-bold text-foreground">{title}</h3>
+          {subtitle && (
+            <p className="text-xs text-primary font-semibold mt-0.5">
+              {subtitle}
+            </p>
+          )}
+        </div>
       </div>
-      <ul className="space-y-2 text-sm text-muted-foreground">
-        {items.map((i) => (
-          <li key={i} className="flex items-start gap-2">
-            <CheckCircle2 className="mt-0.5 h-4 w-4 text-primary flex-shrink-0" />
-            <span>{i}</span>
-          </li>
-        ))}
-      </ul>
+
+      <motion.div
+        initial={{ opacity: 0, height: 0 }}
+        animate={{
+          opacity: expanded ? 1 : 0.7,
+          height: expanded ? "auto" : "auto",
+        }}
+        transition={{ duration: 0.3 }}
+        className={expanded ? "block" : "hidden sm:block"}
+      >
+        {description && (
+          <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+            {description}
+          </p>
+        )}
+        <ul className="space-y-2 text-sm text-muted-foreground">
+          {items.map((i) => (
+            <li key={i} className="flex items-start gap-2">
+              <CheckCircle2 className="mt-0.5 h-4 w-4 text-primary flex-shrink-0" />
+              <span>{i}</span>
+            </li>
+          ))}
+        </ul>
+      </motion.div>
+
+      <div className="mt-3 text-xs text-primary font-semibold sm:hidden">
+        {expanded ? "Show less" : "Show details"}
+      </div>
     </motion.div>
   );
 }
@@ -316,32 +399,53 @@ function ExpertiseGroup({
   );
 }
 
-function ServiceCard({ title, desc }: { title: string; desc: string }) {
+function ServiceCard({
+  icon,
+  title,
+  desc,
+}: {
+  icon?: string;
+  title: string;
+  desc: string;
+}) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      whileHover={{ y: -2 }}
+      whileHover={{ y: -4, boxShadow: "0 12px 32px rgba(0,0,0,0.1)" }}
       transition={{ duration: 0.4 }}
       className="rounded-lg border p-6 bg-card/60 backdrop-blur hover:shadow-md transition-all"
     >
-      <h3 className="font-semibold mb-2">{title}</h3>
-      <p className="text-sm text-muted-foreground">{desc}</p>
+      {icon && <div className="text-3xl mb-3">{icon}</div>}
+      <h3 className="font-bold mb-2 text-foreground">{title}</h3>
+      <p className="text-sm text-muted-foreground leading-relaxed">{desc}</p>
     </motion.div>
   );
 }
 
-function QualityCard({ title, items }: { title: string; items: string[] }) {
+function QualityCard({
+  icon,
+  title,
+  items,
+}: {
+  icon?: string;
+  title: string;
+  items: string[];
+}) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
+      whileHover={{ y: -4, boxShadow: "0 12px 32px rgba(0,0,0,0.1)" }}
       transition={{ duration: 0.4 }}
-      className="rounded-lg border p-6 bg-card/60 backdrop-blur"
+      className="rounded-lg border p-6 bg-card/60 backdrop-blur hover:shadow-md transition-all"
     >
-      <h3 className="font-semibold mb-4">{title}</h3>
+      <div className="flex items-center gap-2 mb-4">
+        {icon && <span className="text-2xl">{icon}</span>}
+        <h3 className="font-bold text-foreground">{title}</h3>
+      </div>
       <ul className="space-y-2">
         {items.map((item) => (
           <li key={item} className="flex items-start gap-2 text-sm">

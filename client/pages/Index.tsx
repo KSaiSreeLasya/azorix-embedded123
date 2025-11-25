@@ -209,7 +209,6 @@ export default function Index() {
             to="/capabilities"
             title="Capabilities"
             desc="End‑to‑end product engineering across hardware, software, and test."
-            image="https://images.pexels.com/photos/3938016/pexels-photo-3938016.jpeg"
             icon={<Layers className="h-5 w-5" />}
             delay={0}
           />
@@ -217,7 +216,6 @@ export default function Index() {
             to="/projects"
             title="Projects"
             desc="Selected work across medical, industrial, consumer and automotive."
-            image="https://images.pexels.com/photos/7974/pexels-photo-7974.jpeg"
             icon={<Award className="h-5 w-5" />}
             delay={0.1}
           />
@@ -225,7 +223,6 @@ export default function Index() {
             to="/contact"
             title="Contact"
             desc="Talk to our team about your product or resource needs."
-            image="https://images.pexels.com/photos/8728429/pexels-photo-8728429.jpeg"
             icon={<Wrench className="h-5 w-5" />}
             delay={0.2}
           />
@@ -447,42 +444,36 @@ export default function Index() {
               to="/domains/iot"
               title="IoT"
               desc="Firmware design, embedded applications, web services, hardware, mobile apps, platform integration"
-              image="https://images.pexels.com/photos/159304/network-cable-ethernet-computer-159304.jpeg"
               icon={<Wifi className="h-5 w-5" />}
             />
             <DomainCard
               to="/domains/medical"
               title="Medical"
               desc="Regulated devices, sensors, connectivity, R&D, clinical processes, firmware"
-              image="https://images.pexels.com/photos/7108177/pexels-photo-7108177.jpeg"
               icon={<Stethoscope className="h-5 w-5" />}
             />
             <DomainCard
               to="/domains/automotive"
               title="Automotive"
               desc="BSP, telematics, CAN/UDS/J1939, firmware, connectivity, compliance"
-              image="https://images.pexels.com/photos/18968756/pexels-photo-18968756.jpeg"
               icon={<Car className="h-5 w-5" />}
             />
             <DomainCard
               to="/domains/soc"
               title="SoC"
               desc="BSP, bootloaders, drivers, connectivity, audio, silicon design"
-              image="https://images.pexels.com/photos/3665442/pexels-photo-3665442.jpeg"
               icon={<Cpu className="h-5 w-5" />}
             />
             <DomainCard
               to="/domains/hardware"
               title="Hardware"
               desc="Schematics, PCB layout, bring‑up, testing, manufacturing support"
-              image="https://images.pexels.com/photos/6755088/pexels-photo-6755088.jpeg"
               icon={<CircuitBoard className="h-5 w-5" />}
             />
             <DomainCard
               to="/domains/testing"
               title="Testing"
               desc="Automation, stability, verification, functional testing, frameworks"
-              image="https://images.pexels.com/photos/3913031/pexels-photo-3913031.jpeg"
               icon={<Wrench className="h-5 w-5" />}
             />
           </div>
@@ -849,67 +840,35 @@ function LinkCard({
   to,
   title,
   desc,
-  image,
   icon,
   delay = 0,
 }: {
   to: string;
   title: string;
   desc: string;
-  image: string;
   icon: React.ReactNode;
   delay?: number;
 }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30, scale: 0.95 }}
-      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.6, delay, type: "spring", stiffness: 100 }}
+      transition={{ duration: 0.5, delay }}
     >
       <Link
         to={to}
-        className="group relative overflow-hidden rounded-3xl border-2 border-primary/30 h-64 hover:shadow-2xl transition-all duration-300 bg-gradient-to-br from-background to-background/80"
+        className="group relative rounded-2xl border border-primary/15 bg-gradient-to-br from-primary/5 via-background to-accent/5 p-7 shadow-lg hover:shadow-xl transition-all overflow-hidden block"
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-        <img
-          src={image}
-          alt=""
-          loading="lazy"
-          decoding="async"
-          className="absolute inset-0 h-full w-full object-cover opacity-50 transition-transform duration-500 group-hover:scale-120"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-background/98 via-background/60 to-background/5 group-hover:from-background/99 group-hover:via-background/70 transition-all duration-300" />
-        <div className="absolute inset-0 rounded-3xl border-2 border-transparent bg-gradient-to-br from-primary/40 via-transparent to-accent/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-        <div className="relative z-10 h-full p-7 md:p-10 flex flex-col justify-end">
-          <div className="flex items-center gap-4 font-bold text-xl">
-            <motion.span
-              className="grid h-14 w-14 place-items-center rounded-xl bg-gradient-to-br from-primary to-accent text-primary-foreground shadow-lg group-hover:shadow-2xl transition-all"
-              whileHover={{ scale: 1.1, rotate: 5 }}
-              transition={{ type: "spring", stiffness: 200 }}
-            >
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        <div className="relative">
+          <div className="flex items-center gap-3 font-bold mb-3 text-lg">
+            <span className="grid h-10 w-10 place-items-center rounded-lg bg-gradient-to-br from-primary to-accent text-primary-foreground shadow-md">
               {icon}
-            </motion.span>
-            <span className="group-hover:text-primary transition-colors duration-300">
-              {title}
             </span>
+            {title}
           </div>
-          <p className="mt-4 text-base text-foreground/70 leading-relaxed font-medium">
-            {desc}
-          </p>
-          <motion.div
-            className="mt-5 inline-flex items-center gap-2 w-fit rounded-lg bg-gradient-to-r from-primary/25 to-accent/25 px-5 py-2.5 text-sm font-bold text-primary border-2 border-primary/50 hover:border-primary/80 transition-all"
-            whileHover={{ x: 4 }}
-            transition={{ type: "spring", stiffness: 200 }}
-          >
-            <span className="group-hover:text-primary/90">Learn more</span>
-            <span
-              aria-hidden
-              className="transition-transform duration-300 group-hover:translate-x-1"
-            >
-              →
-            </span>
-          </motion.div>
+          <p className="text-base text-foreground/65 leading-relaxed">{desc}</p>
         </div>
       </Link>
     </motion.div>
@@ -920,13 +879,11 @@ function DomainCard({
   to,
   title,
   desc,
-  image,
   icon,
 }: {
   to: string;
   title: string;
   desc: string;
-  image: string;
   icon: React.ReactNode;
 }) {
   return (
@@ -938,37 +895,17 @@ function DomainCard({
     >
       <Link
         to={to}
-        className="group relative overflow-hidden rounded-2xl border border-primary/20 h-56 hover:shadow-2xl transition-all duration-300"
+        className="group relative rounded-2xl border border-primary/15 bg-gradient-to-br from-primary/5 via-background to-accent/5 p-7 shadow-lg hover:shadow-xl transition-all overflow-hidden block"
       >
-        <img
-          src={image}
-          alt={title}
-          loading="lazy"
-          decoding="async"
-          className="absolute inset-0 h-full w-full object-cover opacity-60 transition-transform duration-500 group-hover:scale-110"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/50 to-background/10 group-hover:from-background/97 group-hover:via-background/60 transition-all" />
-        <div className="relative z-10 h-full p-6 md:p-8 flex flex-col justify-end">
-          <div className="flex items-center gap-3 font-bold text-lg">
-            <span className="grid h-12 w-12 place-items-center rounded-lg bg-gradient-to-br from-primary to-accent text-primary-foreground shadow-lg group-hover:shadow-xl transition-all">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        <div className="relative">
+          <div className="flex items-center gap-3 font-bold mb-3 text-lg">
+            <span className="grid h-10 w-10 place-items-center rounded-lg bg-gradient-to-br from-primary to-accent text-primary-foreground shadow-md">
               {icon}
             </span>
-            <span className="group-hover:text-primary transition-colors">
-              {title}
-            </span>
+            {title}
           </div>
-          <p className="mt-3 text-base text-foreground/75 leading-relaxed">
-            {desc}
-          </p>
-          <div className="mt-4 inline-flex items-center gap-2 w-fit rounded-lg bg-gradient-to-r from-primary/20 to-accent/20 px-4 py-2 text-sm font-bold text-primary border border-primary/30 hover:border-primary/60 transition-all">
-            <span className="group-hover:text-primary/90">Learn more</span>
-            <span
-              aria-hidden
-              className="transition-transform group-hover:translate-x-1"
-            >
-              →
-            </span>
-          </div>
+          <p className="text-base text-foreground/65 leading-relaxed">{desc}</p>
         </div>
       </Link>
     </motion.div>

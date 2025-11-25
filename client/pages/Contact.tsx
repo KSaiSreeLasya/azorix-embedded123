@@ -95,7 +95,7 @@ export default function Contact() {
               Get In Touch
             </motion.span>
           </div>
-          <h1 className="text-4xl md:text-5xl font-black bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent tracking-tight">
+          <h1 className="text-4xl md:text-5xl font-black bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent tracking-tight pb-6">
             Let's Build Something Great
           </h1>
           <p className="mt-4 text-lg text-foreground/70 max-w-2xl leading-relaxed font-medium">

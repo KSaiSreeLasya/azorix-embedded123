@@ -512,31 +512,39 @@ function ProjectCard({
       viewport={{ once: true }}
       whileHover={{ y: -6, boxShadow: "0 12px 32px rgba(0,0,0,0.15)" }}
       transition={{ duration: 0.4 }}
-      className={`relative overflow-hidden rounded-2xl border text-left transition-all h-full ${
+      className={`relative overflow-hidden rounded-2xl border text-left transition-all flex flex-col h-full ${
         isSelected ? "ring-2 ring-primary shadow-xl bg-primary/5" : "hover:shadow-lg bg-card/40"
       }`}
     >
-      <img
-        src={project.image}
-        alt={project.title}
-        className="w-full h-48 object-cover opacity-60 hover:opacity-75 transition-opacity"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-background/98 via-background/70 to-background/20" />
-      <div className="absolute inset-0 p-5 md:p-6 flex flex-col justify-end">
-        <div className="flex items-start gap-3 mb-3">
-          <span className="grid h-10 w-10 place-items-center rounded-lg bg-gradient-to-br from-primary to-accent text-primary-foreground flex-shrink-0 shadow-md">
-            {project.icon}
-          </span>
-          <div className="flex-1 min-w-0">
-            <div className="text-xs font-bold text-primary/90 uppercase tracking-wide">
-              {project.category}
+      <div className="relative h-48 w-full overflow-hidden bg-secondary/50 flex-shrink-0">
+        <img
+          src={project.image}
+          alt={project.title}
+          loading="lazy"
+          decoding="async"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
+      </div>
+
+      <div className="flex flex-col justify-between flex-1 p-5 md:p-6">
+        <div>
+          <div className="flex items-start gap-3 mb-3">
+            <span className="grid h-10 w-10 place-items-center rounded-lg bg-gradient-to-br from-primary to-accent text-primary-foreground flex-shrink-0 shadow-md">
+              {project.icon}
+            </span>
+            <div className="flex-1 min-w-0">
+              <div className="text-xs font-bold text-primary/90 uppercase tracking-wide">
+                {project.category}
+              </div>
+              <h3 className="font-bold text-foreground text-base mt-1 line-clamp-2">{project.title}</h3>
             </div>
-            <h3 className="font-bold text-foreground text-base mt-1 line-clamp-2">{project.title}</h3>
           </div>
+          <p className="text-sm text-foreground/75 leading-relaxed mb-4 line-clamp-2">
+            {project.shortDesc}
+          </p>
         </div>
-        <p className="text-sm text-foreground/75 leading-relaxed mb-4 line-clamp-2">
-          {project.shortDesc}
-        </p>
+
         <motion.div
           className="inline-flex items-center gap-1 w-fit rounded-lg bg-gradient-to-r from-primary/20 to-accent/20 px-3 py-1.5 text-xs font-bold text-primary border border-primary/30 hover:border-primary/60 transition-all"
           whileHover={{ x: 2 }}

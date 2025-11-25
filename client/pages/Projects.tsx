@@ -107,7 +107,7 @@ const projects = [
     id: 5,
     category: "IoT & Consumer",
     title: "Smart Lock System",
-    image: "https://images.pexels.com/photos/5632663/pexels-photo-5632663.jpeg",
+    image: "https://images.pexels.com/photos/279810/pexels-photo-279810.jpeg?auto=compress&cs=tinysrgb&w=600",
     icon: <Lightbulb className="h-5 w-5" />,
     shortDesc: "Control your door lock from anywhere - phone or computer",
     realWorldUse: "Homeowners, landlords, and property managers use this to lock/unlock doors remotely. You can give access to guests without being home, track who entered and when.",

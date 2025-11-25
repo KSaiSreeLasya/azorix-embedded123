@@ -608,26 +608,29 @@ function CoECard({
 }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 16 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      whileHover={{ y: -4 }}
-      transition={{ duration: 0.4 }}
-      className="rounded-lg border bg-background/70 p-6 shadow-sm hover:shadow-md transition-all"
+      whileHover={{ y: -6, boxShadow: "0 24px 48px rgba(0,0,0,0.12)" }}
+      transition={{ duration: 0.5 }}
+      className="relative rounded-2xl border border-primary/15 bg-gradient-to-br from-primary/5 via-background to-accent/5 p-8 shadow-lg hover:shadow-xl transition-all group overflow-hidden"
     >
-      <div className="text-4xl mb-3">{emoji}</div>
-      <h3 className="font-bold mb-1">{title}</h3>
-      <p className="text-xs font-medium text-primary/70 mb-2">{highlight}</p>
-      <p className="text-sm text-muted-foreground mb-4">{desc}</p>
-      <div className="flex flex-wrap gap-1.5">
-        {topics.map((topic) => (
-          <span
-            key={topic}
-            className="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary/80"
-          >
-            {topic}
-          </span>
-        ))}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <div className="relative">
+        <div className="text-5xl mb-4 inline-block transform group-hover:scale-110 transition-transform duration-300">{emoji}</div>
+        <h3 className="font-bold text-xl mb-2">{title}</h3>
+        <p className="text-sm font-semibold text-primary/80 mb-3 uppercase tracking-wide">{highlight}</p>
+        <p className="text-base text-foreground/65 mb-5 leading-relaxed">{desc}</p>
+        <div className="flex flex-wrap gap-2">
+          {topics.map((topic) => (
+            <span
+              key={topic}
+              className="text-xs px-3 py-1.5 rounded-full bg-gradient-to-r from-primary/15 to-accent/15 text-foreground/75 font-medium border border-primary/20 hover:border-primary/40 transition-colors"
+            >
+              {topic}
+            </span>
+          ))}
+        </div>
       </div>
     </motion.div>
   );

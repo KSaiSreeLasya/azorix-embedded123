@@ -823,28 +823,31 @@ function IoTAppCard({
 }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 16 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      whileHover={{ y: -4 }}
-      transition={{ duration: 0.4 }}
-      className="rounded-lg border p-6 bg-background/70 hover:shadow-md transition-all"
+      whileHover={{ y: -6, boxShadow: "0 24px 48px rgba(0,0,0,0.12)" }}
+      transition={{ duration: 0.5 }}
+      className="relative rounded-2xl border border-primary/15 p-8 bg-gradient-to-br from-primary/5 via-background to-accent/5 hover:shadow-xl transition-all group overflow-hidden"
     >
-      <div className="mb-3 flex items-center justify-center h-12 w-12 rounded-lg bg-primary/15 text-primary">
-        {icon}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <div className="relative">
+        <div className="mb-4 flex items-center justify-center h-14 w-14 rounded-lg bg-gradient-to-br from-primary to-accent text-primary-foreground shadow-lg transform group-hover:scale-110 transition-transform">
+          {icon}
+        </div>
+        <h3 className="font-bold text-lg mb-3">{title}</h3>
+        <p className="text-base text-foreground/65 mb-5 leading-relaxed">{desc}</p>
+        {examples && (
+          <ul className="text-sm space-y-2.5">
+            {examples.map((ex) => (
+              <li key={ex} className="flex items-center gap-2 text-foreground/70 font-medium">
+                <span className="h-2 w-2 rounded-full bg-gradient-to-r from-primary to-accent flex-shrink-0" />
+                {ex}
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
-      <h3 className="font-semibold mb-2">{title}</h3>
-      <p className="text-sm text-muted-foreground mb-3">{desc}</p>
-      {examples && (
-        <ul className="text-xs space-y-1">
-          {examples.map((ex) => (
-            <li key={ex} className="flex items-center gap-1 text-primary/70">
-              <span className="h-1 w-1 rounded-full bg-primary" />
-              {ex}
-            </li>
-          ))}
-        </ul>
-      )}
     </motion.div>
   );
 }

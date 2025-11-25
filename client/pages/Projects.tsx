@@ -463,9 +463,14 @@ export default function Projects() {
 
       {/* Trusted By Section */}
       <Section>
-        <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center">
-          Trusted by Global Leaders
-        </h2>
+        <div className="text-center mb-12">
+          <h2 className="text-2xl md:text-3xl font-bold mb-3">
+            Trusted by Global Technology Leaders
+          </h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Fortune 500 companies and innovators worldwide rely on us to bring their embedded systems to life
+          </p>
+        </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {clientLogos.map((logo) => (
             <motion.div
@@ -473,10 +478,11 @@ export default function Projects() {
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
+              whileHover={{ y: -6, boxShadow: "0 12px 32px rgba(0,0,0,0.1)" }}
               transition={{ duration: 0.4 }}
-              className={`rounded-lg border p-6 flex items-center justify-center h-24 bg-gradient-to-br ${logo.color} opacity-20 hover:opacity-30 transition-opacity`}
+              className={`rounded-lg border p-8 flex items-center justify-center min-h-32 bg-gradient-to-br ${logo.color} opacity-25 hover:opacity-40 transition-all cursor-default`}
             >
-              <span className="font-semibold text-foreground text-center text-sm">
+              <span className="font-bold text-foreground text-center text-sm">
                 {logo.name}
               </span>
             </motion.div>

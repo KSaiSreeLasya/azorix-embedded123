@@ -6,6 +6,7 @@ import { Wifi, Smartphone, Cloud, Zap, Radio, Lock } from "lucide-react";
 import { motion } from "framer-motion";
 import SEO from "@/components/SEO";
 import { CheckCircle2 } from "lucide-react";
+import { AnimatedCard } from "@/components/AnimatedCard";
 
 export default function Iot() {
   return (

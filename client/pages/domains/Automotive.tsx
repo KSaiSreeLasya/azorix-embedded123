@@ -125,6 +125,7 @@ export default function Automotive() {
         </p>
         <div className="grid gap-6 md:grid-cols-3">
           <SoftwareCard
+            index={0}
             title="RTOS & OS"
             items={[
               "Linux (custom BSP)",
@@ -135,6 +136,7 @@ export default function Automotive() {
             ]}
           />
           <SoftwareCard
+            index={1}
             title="Languages & Standards"
             items={[
               "C/C++ with MISRA compliance",
@@ -144,6 +146,7 @@ export default function Automotive() {
             ]}
           />
           <SoftwareCard
+            index={2}
             title="Development Tools"
             items={[
               "Vector CANoe & CANalyzer",

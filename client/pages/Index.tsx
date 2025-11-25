@@ -73,21 +73,31 @@ export default function Index() {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="mt-8 flex flex-wrap gap-4"
               >
-                <Button
-                  asChild
-                  size="lg"
-                  className="h-12 px-8 text-base font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-200"
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                 >
-                  <a href="/contact">Get Started</a>
-                </Button>
-                <Button
-                  asChild
-                  variant="outline"
-                  size="lg"
-                  className="h-12 px-8 text-base font-semibold rounded-lg border-2 hover:border-primary"
+                  <Button
+                    asChild
+                    size="lg"
+                    className="h-12 px-8 text-base font-semibold rounded-lg shadow-lg hover:shadow-2xl transition-all duration-200 bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90"
+                  >
+                    <a href="/contact">Get Started</a>
+                  </Button>
+                </motion.div>
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                 >
-                  <a href="/capabilities">Explore Capabilities</a>
-                </Button>
+                  <Button
+                    asChild
+                    variant="outline"
+                    size="lg"
+                    className="h-12 px-8 text-base font-semibold rounded-lg border-2 border-primary/50 hover:border-primary hover:bg-primary/5 transition-all duration-200"
+                  >
+                    <a href="/capabilities">Explore Capabilities</a>
+                  </Button>
+                </motion.div>
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -115,16 +125,22 @@ export default function Index() {
               initial={{ opacity: 0, scale: 0.9, rotateY: 20 }}
               animate={{ opacity: 1, scale: 1, rotateY: 0 }}
               transition={{ duration: 0.7, delay: 0.2, type: "spring" }}
-              className="relative"
+              whileHover={{ y: -8 }}
+              className="relative group"
             >
-              <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-2xl blur opacity-20" />
+              <motion.div
+                className="absolute -inset-2 bg-gradient-to-r from-primary via-accent to-primary rounded-3xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity duration-300"
+                animate={{ rotate: 360 }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              />
+              <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-2xl blur opacity-20 group-hover:opacity-40 transition-opacity duration-300" />
               <img
                 src="https://images.pexels.com/photos/3825581/pexels-photo-3825581.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800"
                 alt="Embedded device PCB and components"
                 loading="eager"
                 fetchpriority="high"
                 decoding="async"
-                className="relative rounded-2xl border-2 border-primary/30 shadow-2xl object-cover w-full h-[280px] md:h-[360px] lg:h-[480px]"
+                className="relative rounded-2xl border-2 border-primary/30 shadow-2xl object-cover w-full h-[280px] md:h-[360px] lg:h-[480px] group-hover:border-primary/50 transition-all duration-300"
               />
             </motion.div>
           </div>
@@ -162,21 +178,25 @@ export default function Index() {
             icon={<Rocket className="h-5 w-5" />}
             title="Full-Stack Expertise"
             desc="Hardware design, firmware, software, testing, and support"
+            index={0}
           />
           <OverviewCard
             icon={<Shield className="h-5 w-5" />}
             title="Reliable Execution"
             desc="Quality and technology-focused with proven track record"
+            index={1}
           />
           <OverviewCard
             icon={<Globe className="h-5 w-5" />}
             title="Global Reach"
             desc="Serving multinational companies and startups worldwide"
+            index={2}
           />
           <OverviewCard
             icon={<Zap className="h-5 w-5" />}
             title="Extended Teams"
             desc="Resource augmentation and flexible engagement models"
+            index={3}
           />
         </div>
       </Section>
@@ -265,6 +285,7 @@ export default function Index() {
               "Low-power design",
               "User apps",
             ]}
+            index={0}
           />
           <CoECard
             emoji="🏥"
@@ -278,6 +299,7 @@ export default function Index() {
               "Sensor integration",
               "Data security",
             ]}
+            index={1}
           />
           <CoECard
             emoji="🚗"
@@ -291,6 +313,7 @@ export default function Index() {
               "Telematics",
               "Real-time control",
             ]}
+            index={2}
           />
           <CoECard
             emoji="⚙️"
@@ -299,6 +322,7 @@ export default function Index() {
             highlight="Chip Design"
             desc="Enabling next-generation processors"
             topics={["Bootloaders", "Drivers", "Performance", "Validation"]}
+            index={3}
           />
         </div>
       </Section>
@@ -339,6 +363,7 @@ export default function Index() {
               "Component selection",
               "Quality assurance",
             ]}
+            index={0}
           />
           <ExpertiseCard
             icon="💻"
@@ -352,6 +377,7 @@ export default function Index() {
               "User interfaces",
               "Cloud integration",
             ]}
+            index={1}
           />
           <ExpertiseCard
             icon="✓"
@@ -365,6 +391,7 @@ export default function Index() {
               "Reliability testing",
               "Compliance verification",
             ]}
+            index={2}
           />
           <ExpertiseCard
             icon="🤝"
@@ -378,6 +405,7 @@ export default function Index() {
               "Escalation support",
               "Knowledge transfer",
             ]}
+            index={3}
           />
         </div>
       </Section>
@@ -513,6 +541,7 @@ export default function Index() {
               "Production optimization",
               "Equipment monitoring",
             ]}
+            index={0}
           />
           <IoTAppCard
             title="🏥 Medical IoT"
@@ -523,24 +552,28 @@ export default function Index() {
               "Patient alerts",
               "Remote diagnosis",
             ]}
+            index={1}
           />
           <IoTAppCard
             title="🏙️ Smart City"
             desc="Cities that work efficiently - traffic flows better, utilities use less energy"
             icon={<Globe className="h-6 w-6" />}
             examples={["Traffic management", "Energy saving", "Public safety"]}
+            index={2}
           />
           <IoTAppCard
             title="🚗 Automotive IoT"
             desc="Cars that are smarter and safer - connected and aware of their surroundings"
             icon={<Car className="h-6 w-6" />}
             examples={["Navigation", "Safety features", "Remote control"]}
+            index={3}
           />
           <IoTAppCard
             title="📱 Consumer IoT"
             desc="Home devices that listen and respond - making life simpler and more connected"
             icon={<Smartphone className="h-6 w-6" />}
             examples={["Smart home", "Wearables", "Personal devices"]}
+            index={4}
           />
         </div>
       </Section>
@@ -691,28 +724,39 @@ function OverviewCard({
   icon,
   title,
   desc,
+  index = 0,
 }: {
   icon: React.ReactNode;
   title: string;
   desc: string;
+  index?: number;
 }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      whileHover={{ y: -6, boxShadow: "0 24px 48px rgba(0,0,0,0.12)" }}
-      transition={{ duration: 0.5 }}
-      className="relative rounded-2xl border border-primary/15 bg-gradient-to-br from-primary/5 via-background to-accent/5 p-7 shadow-lg hover:shadow-xl transition-all group overflow-hidden"
+      whileHover={{ y: -8, boxShadow: "0 32px 64px rgba(0,0,0,0.15)" }}
+      transition={{ duration: 0.5, delay: index * 0.08 }}
+      className="relative rounded-2xl border border-primary/15 bg-gradient-to-br from-primary/5 via-background to-accent/5 p-7 shadow-lg hover:shadow-xl hover:border-primary/40 transition-all group overflow-hidden"
     >
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <motion.div className="absolute top-0 right-0 h-40 w-40 bg-gradient-to-bl from-primary/20 via-transparent to-transparent rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       <div className="relative">
-        <div className="flex items-center gap-3 font-bold mb-3 text-lg">
-          <span className="grid h-10 w-10 place-items-center rounded-lg bg-gradient-to-br from-primary to-accent text-primary-foreground shadow-md">
+        <motion.div
+          className="flex items-center gap-3 font-bold mb-3 text-lg"
+          whileHover={{ x: 4 }}
+          transition={{ duration: 0.2 }}
+        >
+          <motion.span
+            className="grid h-10 w-10 place-items-center rounded-lg bg-gradient-to-br from-primary to-accent text-primary-foreground shadow-md"
+            whileHover={{ scale: 1.1, rotate: 5 }}
+            transition={{ duration: 0.2 }}
+          >
             {icon}
-          </span>
+          </motion.span>
           {title}
-        </div>
+        </motion.div>
         <p className="text-base text-foreground/65 leading-relaxed">{desc}</p>
       </div>
     </motion.div>
@@ -726,6 +770,7 @@ function CoECard({
   highlight,
   desc,
   topics,
+  index = 0,
 }: {
   emoji: string;
   icon: React.ReactNode;
@@ -733,21 +778,27 @@ function CoECard({
   highlight: string;
   desc: string;
   topics: string[];
+  index?: number;
 }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      whileHover={{ y: -6, boxShadow: "0 24px 48px rgba(0,0,0,0.12)" }}
-      transition={{ duration: 0.5 }}
-      className="relative rounded-2xl border border-primary/15 bg-gradient-to-br from-primary/5 via-background to-accent/5 p-8 shadow-lg hover:shadow-xl transition-all group overflow-hidden"
+      whileHover={{ y: -8, boxShadow: "0 32px 64px rgba(0,0,0,0.15)" }}
+      transition={{ duration: 0.5, delay: index * 0.08 }}
+      className="relative rounded-2xl border border-primary/15 bg-gradient-to-br from-primary/5 via-background to-accent/5 p-8 shadow-lg hover:shadow-xl hover:border-primary/40 transition-all group overflow-hidden"
     >
       <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <motion.div className="absolute -top-10 -right-10 h-40 w-40 bg-gradient-to-bl from-accent/20 via-transparent to-transparent rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       <div className="relative">
-        <div className="text-5xl mb-4 inline-block transform group-hover:scale-110 transition-transform duration-300">
+        <motion.div
+          className="text-5xl mb-4 inline-block"
+          whileHover={{ scale: 1.2, rotate: 10 }}
+          transition={{ duration: 0.3 }}
+        >
           {emoji}
-        </div>
+        </motion.div>
         <h3 className="font-bold text-xl mb-2">{title}</h3>
         <p className="text-sm font-semibold text-primary/80 mb-3 uppercase tracking-wide">
           {highlight}
@@ -756,13 +807,21 @@ function CoECard({
           {desc}
         </p>
         <div className="flex flex-wrap gap-2">
-          {topics.map((topic) => (
-            <span
+          {topics.map((topic, idx) => (
+            <motion.span
               key={topic}
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.3, delay: idx * 0.05 }}
+              whileHover={{
+                scale: 1.05,
+                backgroundColor: "rgba(var(--primary-rgb), 0.2)",
+              }}
               className="text-xs px-3 py-1.5 rounded-full bg-gradient-to-r from-primary/15 to-accent/15 text-foreground/75 font-medium border border-primary/20 hover:border-primary/40 transition-colors"
             >
               {topic}
-            </span>
+            </motion.span>
           ))}
         </div>
       </div>
@@ -776,27 +835,34 @@ function ExpertiseCard({
   subtitle,
   desc,
   items,
+  index = 0,
 }: {
   icon: string;
   title: string;
   subtitle: string;
   desc: string;
   items: string[];
+  index?: number;
 }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      whileHover={{ y: -6, boxShadow: "0 24px 48px rgba(0,0,0,0.12)" }}
-      transition={{ duration: 0.5 }}
-      className="relative rounded-2xl border border-primary/15 p-8 bg-gradient-to-br from-primary/5 via-background to-accent/5 backdrop-blur hover:shadow-xl transition-all group overflow-hidden"
+      whileHover={{ y: -8, boxShadow: "0 32px 64px rgba(0,0,0,0.15)" }}
+      transition={{ duration: 0.5, delay: index * 0.08 }}
+      className="relative rounded-2xl border border-primary/15 p-8 bg-gradient-to-br from-primary/5 via-background to-accent/5 backdrop-blur hover:shadow-xl hover:border-primary/40 transition-all group overflow-hidden"
     >
       <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <motion.div className="absolute -bottom-10 -right-10 h-40 w-40 bg-gradient-to-tl from-primary/20 via-transparent to-transparent rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       <div className="relative">
-        <div className="text-5xl mb-4 transform group-hover:scale-110 transition-transform duration-300">
+        <motion.div
+          className="text-5xl mb-4"
+          whileHover={{ scale: 1.15, rotate: -5 }}
+          transition={{ duration: 0.3 }}
+        >
           {icon}
-        </div>
+        </motion.div>
         <h3 className="font-bold text-2xl mb-2">{title}</h3>
         <p className="text-sm font-semibold text-primary/80 mb-4 uppercase tracking-wide">
           {subtitle}
@@ -805,11 +871,23 @@ function ExpertiseCard({
           {desc}
         </p>
         <ul className="space-y-3">
-          {items.map((item) => (
-            <li key={item} className="flex items-start gap-3 text-sm">
-              <span className="h-2 w-2 rounded-full bg-gradient-to-r from-primary to-accent mt-2 flex-shrink-0" />
+          {items.map((item, idx) => (
+            <motion.li
+              key={item}
+              className="flex items-start gap-3 text-sm"
+              initial={{ opacity: 0, x: -10 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.3, delay: idx * 0.05 }}
+            >
+              <motion.span
+                className="h-2 w-2 rounded-full bg-gradient-to-r from-primary to-accent mt-2 flex-shrink-0"
+                whileInView={{ scale: [0, 1.2, 1] }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: idx * 0.05 + 0.2 }}
+              />
               <span className="text-foreground/70 font-medium">{item}</span>
-            </li>
+            </motion.li>
           ))}
         </ul>
       </div>
@@ -917,40 +995,56 @@ function IoTAppCard({
   desc,
   icon,
   examples,
+  index = 0,
 }: {
   title: string;
   desc: string;
   icon: React.ReactNode;
   examples?: string[];
+  index?: number;
 }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      whileHover={{ y: -6, boxShadow: "0 24px 48px rgba(0,0,0,0.12)" }}
-      transition={{ duration: 0.5 }}
-      className="relative rounded-2xl border border-primary/15 p-8 bg-gradient-to-br from-primary/5 via-background to-accent/5 hover:shadow-xl transition-all group overflow-hidden"
+      whileHover={{ y: -8, boxShadow: "0 32px 64px rgba(0,0,0,0.15)" }}
+      transition={{ duration: 0.5, delay: index * 0.08 }}
+      className="relative rounded-2xl border border-primary/15 p-8 bg-gradient-to-br from-primary/5 via-background to-accent/5 hover:shadow-xl hover:border-primary/40 transition-all group overflow-hidden"
     >
       <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <motion.div className="absolute -top-10 -left-10 h-40 w-40 bg-gradient-to-br from-accent/20 via-transparent to-transparent rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       <div className="relative">
-        <div className="mb-4 flex items-center justify-center h-14 w-14 rounded-lg bg-gradient-to-br from-primary to-accent text-primary-foreground shadow-lg transform group-hover:scale-110 transition-transform">
+        <motion.div
+          className="mb-4 flex items-center justify-center h-14 w-14 rounded-lg bg-gradient-to-br from-primary to-accent text-primary-foreground shadow-lg"
+          whileHover={{ scale: 1.2, rotate: 10 }}
+          transition={{ duration: 0.3 }}
+        >
           {icon}
-        </div>
+        </motion.div>
         <h3 className="font-bold text-lg mb-3">{title}</h3>
         <p className="text-base text-foreground/65 mb-5 leading-relaxed">
           {desc}
         </p>
         {examples && (
           <ul className="text-sm space-y-2.5">
-            {examples.map((ex) => (
-              <li
+            {examples.map((ex, idx) => (
+              <motion.li
                 key={ex}
                 className="flex items-center gap-2 text-foreground/70 font-medium"
+                initial={{ opacity: 0, x: -10 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3, delay: idx * 0.05 }}
               >
-                <span className="h-2 w-2 rounded-full bg-gradient-to-r from-primary to-accent flex-shrink-0" />
+                <motion.span
+                  className="h-2 w-2 rounded-full bg-gradient-to-r from-primary to-accent flex-shrink-0"
+                  whileInView={{ scale: [0, 1.2, 1] }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: idx * 0.05 + 0.1 }}
+                />
                 {ex}
-              </li>
+              </motion.li>
             ))}
           </ul>
         )}

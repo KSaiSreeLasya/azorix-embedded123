@@ -205,18 +205,23 @@ export default function Contact() {
                 <label className="text-sm font-medium text-foreground">
                   Budget
                 </label>
-                <select
-                  className="mt-2 w-full rounded-lg border border-primary/20 bg-background px-4 py-3 text-foreground transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/80"
+                <motion.select
+                  className="mt-2 w-full rounded-lg border border-primary/20 bg-background px-4 py-3 text-foreground transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/80 hover:border-primary/40"
                   value={budget}
                   onChange={(e) => setBudget(e.target.value)}
                   disabled={isLoading}
+                  whileHover={{ borderColor: "hsl(var(--primary) / 0.4)" }}
+                  whileFocus={{
+                    boxShadow: "0 0 20px rgba(var(--primary-rgb), 0.2)",
+                    borderColor: "hsl(var(--primary) / 0.8)",
+                  }}
                 >
                   <option value="">Select range</option>
                   <option value="< $10k">Less than $10k</option>
                   <option value="$10k–$50k">$10k–$50k</option>
                   <option value="$50k–$200k">$50k–$200k</option>
                   <option value="> $200k">More than $200k</option>
-                </select>
+                </motion.select>
               </div>
             </motion.div>
 
@@ -230,18 +235,23 @@ export default function Contact() {
                 <label className="text-sm font-medium text-foreground">
                   Timeline
                 </label>
-                <select
-                  className="mt-2 w-full rounded-lg border border-primary/20 bg-background px-4 py-3 text-foreground transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/80"
+                <motion.select
+                  className="mt-2 w-full rounded-lg border border-primary/20 bg-background px-4 py-3 text-foreground transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/80 hover:border-primary/40"
                   value={timeline}
                   onChange={(e) => setTimeline(e.target.value)}
                   disabled={isLoading}
+                  whileHover={{ borderColor: "hsl(var(--primary) / 0.4)" }}
+                  whileFocus={{
+                    boxShadow: "0 0 20px rgba(var(--primary-rgb), 0.2)",
+                    borderColor: "hsl(var(--primary) / 0.8)",
+                  }}
                 >
                   <option value="">Select timeline</option>
                   <option value="ASAP">ASAP</option>
                   <option value="1–3 months">1–3 months</option>
                   <option value="3–6 months">3–6 months</option>
                   <option value="> 6 months">More than 6 months</option>
-                </select>
+                </motion.select>
               </div>
             </motion.div>
           </div>
@@ -318,39 +328,53 @@ export default function Contact() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="mt-10 grid gap-6 md:grid-cols-2 text-sm text-muted-foreground"
         >
-          <div className="rounded-xl border bg-card/60 p-5">
+          <motion.div
+            className="rounded-xl border border-primary/15 bg-card/60 p-5 hover:border-primary/40 transition-all hover:shadow-lg"
+            whileHover={{ y: -4 }}
+          >
             <div className="font-medium text-foreground">Offices</div>
             <div className="mt-2 space-y-1">
-              <div className="flex items-center gap-2">
+              <motion.div
+                className="flex items-center gap-2"
+                whileHover={{ x: 4 }}
+              >
                 <MapPin className="h-4 w-4" /> Troy, MI, USA
-              </div>
-              <div className="flex items-center gap-2">
+              </motion.div>
+              <motion.div
+                className="flex items-center gap-2"
+                whileHover={{ x: 4 }}
+              >
                 <MapPin className="h-4 w-4" /> Hyderabad, India
-              </div>
+              </motion.div>
             </div>
-          </div>
-          <div className="rounded-xl border bg-card/60 p-5 grid gap-3">
+          </motion.div>
+          <motion.div
+            className="rounded-xl border border-primary/15 bg-card/60 p-5 grid gap-3 hover:border-primary/40 transition-all hover:shadow-lg"
+            whileHover={{ y: -4 }}
+          >
             <div>
               <div className="font-medium text-foreground">Website</div>
-              <a
-                className="inline-flex items-center gap-2 underline"
+              <motion.a
+                className="inline-flex items-center gap-2 underline hover:text-primary transition-colors"
                 href="https://www.azorixembedded.com"
                 target="_blank"
                 rel="noreferrer"
+                whileHover={{ x: 4 }}
               >
                 <Globe className="h-4 w-4" /> www.azorixembedded.com
-              </a>
+              </motion.a>
             </div>
             <div>
               <div className="font-medium text-foreground">Email</div>
-              <a
-                className="inline-flex items-center gap-2 underline"
+              <motion.a
+                className="inline-flex items-center gap-2 underline hover:text-primary transition-colors"
                 href="mailto:info@azorixembedded.com"
+                whileHover={{ x: 4 }}
               >
                 <Mail className="h-4 w-4" /> info@azorixembedded.com
-              </a>
+              </motion.a>
             </div>
-          </div>
+          </motion.div>
         </motion.div>
       </Section>
       <SiteFooter />

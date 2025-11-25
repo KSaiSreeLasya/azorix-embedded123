@@ -62,6 +62,7 @@ export default function Capabilities() {
               "Quality checks",
               "Manufacturing guidance",
             ]}
+            index={0}
           />
           <Card
             icon={<Code2 className="h-5 w-5" />}
@@ -76,6 +77,7 @@ export default function Capabilities() {
               "User interfaces",
               "Integration & optimization",
             ]}
+            index={1}
           />
           <Card
             icon={<Shield className="h-5 w-5" />}
@@ -90,6 +92,7 @@ export default function Capabilities() {
               "Stability verification",
               "Standards compliance",
             ]}
+            index={2}
           />
           <Card
             icon={<Users className="h-5 w-5" />}
@@ -104,6 +107,7 @@ export default function Capabilities() {
               "Staff training",
               "Long-term guidance",
             ]}
+            index={3}
           />
         </div>
       </Section>
@@ -118,7 +122,7 @@ export default function Capabilities() {
           systems used to power devices worldwide.
         </p>
         <div className="grid gap-6 md:grid-cols-2">
-          <ExpertiseGroup title="Processor Chips">
+          <ExpertiseGroup title="Processor Chips" index={0}>
             <p className="text-sm text-muted-foreground mb-4">
               The "brains" of devices - the chips that make everything run. We
               work with all major brands.
@@ -134,17 +138,28 @@ export default function Capabilities() {
                 "Microchip",
                 "Renesas",
                 "Infineon",
-              ].map((p) => (
-                <span
+              ].map((p, idx) => (
+                <motion.span
                   key={p}
-                  className="px-3 py-2 rounded-md bg-card/60 text-sm border"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: idx * 0.05 }}
+                  whileHover={{
+                    scale: 1.05,
+                    backgroundColor: "rgba(var(--primary-rgb), 0.1)",
+                  }}
+                  className="px-3 py-2 rounded-md bg-card/60 text-sm border border-primary/15 hover:border-primary/40 transition-all cursor-pointer"
                 >
                   {p}
-                </span>
+                </motion.span>
               ))}
             </div>
           </ExpertiseGroup>
-          <ExpertiseGroup title="Operating Systems & Software Platforms">
+          <ExpertiseGroup
+            title="Operating Systems & Software Platforms"
+            index={1}
+          >
             <p className="text-sm text-muted-foreground mb-4">
               The system software that manages how devices work - similar to
               Windows or Mac for computers.
@@ -157,13 +172,21 @@ export default function Capabilities() {
                 "VxWorks",
                 "QNX",
                 "Custom RTOS",
-              ].map((os) => (
-                <span
+              ].map((os, idx) => (
+                <motion.span
                   key={os}
-                  className="px-3 py-2 rounded-md bg-card/60 text-sm border"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: idx * 0.05 }}
+                  whileHover={{
+                    scale: 1.05,
+                    backgroundColor: "rgba(var(--primary-rgb), 0.1)",
+                  }}
+                  className="px-3 py-2 rounded-md bg-card/60 text-sm border border-primary/15 hover:border-primary/40 transition-all cursor-pointer"
                 >
                   {os}
-                </span>
+                </motion.span>
               ))}
             </div>
           </ExpertiseGroup>
@@ -180,7 +203,7 @@ export default function Capabilities() {
           connect securely. We expertise in all major standards.
         </p>
         <div className="grid gap-6 md:grid-cols-3">
-          <ExpertiseGroup title="Car & Vehicle Systems">
+          <ExpertiseGroup title="Car & Vehicle Systems" index={0}>
             <p className="text-xs text-muted-foreground mb-3">
               Special standards for automotive safety, diagnostics, and
               communication.
@@ -191,15 +214,29 @@ export default function Capabilities() {
                 "Diagnostics & troubleshooting",
                 "J1939 (heavy trucks)",
                 "Safety standards",
-              ].map((p) => (
-                <li key={p} className="flex items-start gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+              ].map((p, idx) => (
+                <motion.li
+                  key={p}
+                  className="flex items-start gap-2"
+                  initial={{ opacity: 0, x: -10 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: idx * 0.05 }}
+                >
+                  <motion.span
+                    className="h-4 w-4 text-primary flex-shrink-0 mt-0.5"
+                    whileInView={{ scale: [0, 1.2, 1] }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: idx * 0.05 + 0.1 }}
+                  >
+                    <CheckCircle2 className="h-4 w-4" />
+                  </motion.span>
                   <span className="text-sm">{p}</span>
-                </li>
+                </motion.li>
               ))}
             </ul>
           </ExpertiseGroup>
-          <ExpertiseGroup title="Wireless Connectivity">
+          <ExpertiseGroup title="Wireless Connectivity" index={1}>
             <p className="text-xs text-muted-foreground mb-3">
               Technologies to connect devices wirelessly - like WiFi for phones
               or Bluetooth for wearables.
@@ -210,15 +247,29 @@ export default function Capabilities() {
                 "Wi-Fi (internet connection)",
                 "Cellular (mobile networks)",
                 "Long-range wireless (LoRaWAN)",
-              ].map((p) => (
-                <li key={p} className="flex items-start gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+              ].map((p, idx) => (
+                <motion.li
+                  key={p}
+                  className="flex items-start gap-2"
+                  initial={{ opacity: 0, x: -10 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: idx * 0.05 }}
+                >
+                  <motion.span
+                    className="h-4 w-4 text-primary flex-shrink-0 mt-0.5"
+                    whileInView={{ scale: [0, 1.2, 1] }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: idx * 0.05 + 0.1 }}
+                  >
+                    <CheckCircle2 className="h-4 w-4" />
+                  </motion.span>
                   <span className="text-sm">{p}</span>
-                </li>
+                </motion.li>
               ))}
             </ul>
           </ExpertiseGroup>
-          <ExpertiseGroup title="Physical Connections">
+          <ExpertiseGroup title="Physical Connections" index={2}>
             <p className="text-xs text-muted-foreground mb-3">
               How components inside devices talk to each other - the physical
               communication paths.
@@ -229,11 +280,25 @@ export default function Capabilities() {
                 "Ethernet (wired networks)",
                 "Serial connections",
                 "Sensor communication",
-              ].map((p) => (
-                <li key={p} className="flex items-start gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+              ].map((p, idx) => (
+                <motion.li
+                  key={p}
+                  className="flex items-start gap-2"
+                  initial={{ opacity: 0, x: -10 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: idx * 0.05 }}
+                >
+                  <motion.span
+                    className="h-4 w-4 text-primary flex-shrink-0 mt-0.5"
+                    whileInView={{ scale: [0, 1.2, 1] }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: idx * 0.05 + 0.1 }}
+                  >
+                    <CheckCircle2 className="h-4 w-4" />
+                  </motion.span>
                   <span className="text-sm">{p}</span>
-                </li>
+                </motion.li>
               ))}
             </ul>
           </ExpertiseGroup>
@@ -254,16 +319,19 @@ export default function Capabilities() {
             icon="📋"
             title="Project-Based"
             desc="You define what needs to be built, and we deliver it. Perfect when you have a specific goal - like launching a new product feature."
+            index={0}
           />
           <ServiceCard
             icon="👥"
             title="Team Expansion"
             desc="Boost your team with our skilled engineers. They work like your own employees - same goals, same team, no separate management needed."
+            index={1}
           />
           <ServiceCard
             icon="🚀"
             title="Build & Transfer"
             desc="We build the capability you need, run it for a while, then hand it over completely to your team so you're fully independent."
+            index={2}
           />
         </div>
       </Section>
@@ -288,6 +356,7 @@ export default function Capabilities() {
               "Our own testing lab on-site",
               "Complete documentation for your team",
             ]}
+            index={0}
           />
           <QualityCard
             icon="🤝"
@@ -299,6 +368,7 @@ export default function Capabilities() {
               "Work like your own team members",
               "We invest time in teaching your team",
             ]}
+            index={1}
           />
         </div>
       </Section>
@@ -314,12 +384,14 @@ function Card({
   description,
   items,
   icon,
+  index = 0,
 }: {
   title: string;
   subtitle?: string;
   description?: string;
   items: string[];
   icon?: React.ReactNode;
+  index?: number;
 }) {
   const [expanded, setExpanded] = useState(false);
 
@@ -328,51 +400,72 @@ function Card({
       initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      whileHover={{ y: -4, boxShadow: "0 12px 32px rgba(0,0,0,0.1)" }}
-      transition={{ duration: 0.4 }}
-      className="rounded-lg border p-6 bg-card/60 backdrop-blur cursor-pointer overflow-hidden"
+      whileHover={{ y: -6, boxShadow: "0 20px 40px rgba(0,0,0,0.12)" }}
+      transition={{ duration: 0.4, delay: index * 0.06 }}
+      className="rounded-lg border border-primary/15 p-6 bg-card/60 backdrop-blur cursor-pointer overflow-hidden hover:border-primary/40 transition-all group"
       onClick={() => setExpanded(!expanded)}
     >
-      <div className="flex items-start gap-3 mb-3">
-        <span className="grid h-10 w-10 place-items-center rounded-lg bg-gradient-to-br from-primary to-primary/60 text-primary-foreground flex-shrink-0 shadow-md">
-          {icon}
-        </span>
-        <div className="flex-1">
-          <h3 className="font-bold text-foreground">{title}</h3>
-          {subtitle && (
-            <p className="text-xs text-primary font-semibold mt-0.5">
-              {subtitle}
+      <motion.div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <div className="relative">
+        <div className="flex items-start gap-3 mb-3">
+          <motion.span
+            className="grid h-10 w-10 place-items-center rounded-lg bg-gradient-to-br from-primary to-primary/60 text-primary-foreground flex-shrink-0 shadow-md"
+            whileHover={{ scale: 1.1, rotate: 5 }}
+            transition={{ duration: 0.2 }}
+          >
+            {icon}
+          </motion.span>
+          <div className="flex-1">
+            <h3 className="font-bold text-foreground">{title}</h3>
+            {subtitle && (
+              <p className="text-xs text-primary font-semibold mt-0.5">
+                {subtitle}
+              </p>
+            )}
+          </div>
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, height: 0 }}
+          animate={{
+            opacity: expanded ? 1 : 0.7,
+            height: expanded ? "auto" : "auto",
+          }}
+          transition={{ duration: 0.3 }}
+          className={expanded ? "block" : "hidden sm:block"}
+        >
+          {description && (
+            <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+              {description}
             </p>
           )}
+          <ul className="space-y-2 text-sm text-muted-foreground">
+            {items.map((i, idx) => (
+              <motion.li
+                key={i}
+                className="flex items-start gap-2"
+                initial={{ opacity: 0, x: -10 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3, delay: idx * 0.05 }}
+              >
+                <motion.span
+                  className="mt-0.5 h-4 w-4 text-primary flex-shrink-0"
+                  whileInView={{ scale: [0, 1.2, 1] }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: idx * 0.05 + 0.1 }}
+                >
+                  <CheckCircle2 className="h-4 w-4" />
+                </motion.span>
+                <span>{i}</span>
+              </motion.li>
+            ))}
+          </ul>
+        </motion.div>
+
+        <div className="mt-3 text-xs text-primary font-semibold sm:hidden">
+          {expanded ? "Show less" : "Show details"}
         </div>
-      </div>
-
-      <motion.div
-        initial={{ opacity: 0, height: 0 }}
-        animate={{
-          opacity: expanded ? 1 : 0.7,
-          height: expanded ? "auto" : "auto",
-        }}
-        transition={{ duration: 0.3 }}
-        className={expanded ? "block" : "hidden sm:block"}
-      >
-        {description && (
-          <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
-            {description}
-          </p>
-        )}
-        <ul className="space-y-2 text-sm text-muted-foreground">
-          {items.map((i) => (
-            <li key={i} className="flex items-start gap-2">
-              <CheckCircle2 className="mt-0.5 h-4 w-4 text-primary flex-shrink-0" />
-              <span>{i}</span>
-            </li>
-          ))}
-        </ul>
-      </motion.div>
-
-      <div className="mt-3 text-xs text-primary font-semibold sm:hidden">
-        {expanded ? "Show less" : "Show details"}
       </div>
     </motion.div>
   );
@@ -381,20 +474,24 @@ function Card({
 function ExpertiseGroup({
   title,
   children,
+  index = 0,
 }: {
   title: string;
   children: React.ReactNode;
+  index?: number;
 }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.4 }}
-      className="rounded-lg border p-6 bg-card/60 backdrop-blur"
+      whileHover={{ y: -4, boxShadow: "0 16px 40px rgba(0,0,0,0.1)" }}
+      transition={{ duration: 0.4, delay: index * 0.08 }}
+      className="rounded-lg border border-primary/15 p-6 bg-card/60 backdrop-blur hover:border-primary/40 transition-all group"
     >
-      <h3 className="font-semibold mb-4">{title}</h3>
-      {children}
+      <motion.div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg" />
+      <h3 className="font-semibold mb-4 relative text-foreground">{title}</h3>
+      <div className="relative">{children}</div>
     </motion.div>
   );
 }
@@ -403,23 +500,36 @@ function ServiceCard({
   icon,
   title,
   desc,
+  index = 0,
 }: {
   icon?: string;
   title: string;
   desc: string;
+  index?: number;
 }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      whileHover={{ y: -4, boxShadow: "0 12px 32px rgba(0,0,0,0.1)" }}
-      transition={{ duration: 0.4 }}
-      className="rounded-lg border p-6 bg-card/60 backdrop-blur hover:shadow-md transition-all"
+      whileHover={{ y: -6, boxShadow: "0 20px 40px rgba(0,0,0,0.12)" }}
+      transition={{ duration: 0.4, delay: index * 0.08 }}
+      className="rounded-lg border border-primary/15 p-6 bg-card/60 backdrop-blur hover:shadow-md hover:border-primary/40 transition-all group overflow-hidden"
     >
-      {icon && <div className="text-3xl mb-3">{icon}</div>}
-      <h3 className="font-bold mb-2 text-foreground">{title}</h3>
-      <p className="text-sm text-muted-foreground leading-relaxed">{desc}</p>
+      <motion.div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <div className="relative">
+        {icon && (
+          <motion.div
+            className="text-3xl mb-3"
+            whileHover={{ scale: 1.2, rotate: 10 }}
+            transition={{ duration: 0.3 }}
+          >
+            {icon}
+          </motion.div>
+        )}
+        <h3 className="font-bold mb-2 text-foreground">{title}</h3>
+        <p className="text-sm text-muted-foreground leading-relaxed">{desc}</p>
+      </div>
     </motion.div>
   );
 }
@@ -428,32 +538,59 @@ function QualityCard({
   icon,
   title,
   items,
+  index = 0,
 }: {
   icon?: string;
   title: string;
   items: string[];
+  index?: number;
 }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      whileHover={{ y: -4, boxShadow: "0 12px 32px rgba(0,0,0,0.1)" }}
-      transition={{ duration: 0.4 }}
-      className="rounded-lg border p-6 bg-card/60 backdrop-blur hover:shadow-md transition-all"
+      whileHover={{ y: -6, boxShadow: "0 20px 40px rgba(0,0,0,0.12)" }}
+      transition={{ duration: 0.4, delay: index * 0.08 }}
+      className="rounded-lg border border-primary/15 p-6 bg-card/60 backdrop-blur hover:shadow-md hover:border-primary/40 transition-all group overflow-hidden"
     >
-      <div className="flex items-center gap-2 mb-4">
-        {icon && <span className="text-2xl">{icon}</span>}
-        <h3 className="font-bold text-foreground">{title}</h3>
+      <motion.div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <div className="relative">
+        <div className="flex items-center gap-2 mb-4">
+          {icon && (
+            <motion.span
+              className="text-2xl"
+              whileHover={{ scale: 1.15, rotate: -5 }}
+              transition={{ duration: 0.3 }}
+            >
+              {icon}
+            </motion.span>
+          )}
+          <h3 className="font-bold text-foreground">{title}</h3>
+        </div>
+        <ul className="space-y-2">
+          {items.map((item, idx) => (
+            <motion.li
+              key={item}
+              className="flex items-start gap-2 text-sm"
+              initial={{ opacity: 0, x: -10 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.3, delay: idx * 0.05 }}
+            >
+              <motion.span
+                className="h-4 w-4 text-primary mt-0.5 flex-shrink-0"
+                whileInView={{ scale: [0, 1.2, 1] }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: idx * 0.05 + 0.1 }}
+              >
+                <CheckCircle2 className="h-4 w-4" />
+              </motion.span>
+              <span className="text-muted-foreground">{item}</span>
+            </motion.li>
+          ))}
+        </ul>
       </div>
-      <ul className="space-y-2">
-        {items.map((item) => (
-          <li key={item} className="flex items-start gap-2 text-sm">
-            <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
-            <span className="text-muted-foreground">{item}</span>
-          </li>
-        ))}
-      </ul>
     </motion.div>
   );
 }

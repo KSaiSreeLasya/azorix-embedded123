@@ -235,18 +235,23 @@ export default function Contact() {
                 <label className="text-sm font-medium text-foreground">
                   Timeline
                 </label>
-                <select
-                  className="mt-2 w-full rounded-lg border border-primary/20 bg-background px-4 py-3 text-foreground transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/80"
+                <motion.select
+                  className="mt-2 w-full rounded-lg border border-primary/20 bg-background px-4 py-3 text-foreground transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/80 hover:border-primary/40"
                   value={timeline}
                   onChange={(e) => setTimeline(e.target.value)}
                   disabled={isLoading}
+                  whileHover={{ borderColor: "hsl(var(--primary) / 0.4)" }}
+                  whileFocus={{
+                    boxShadow: "0 0 20px rgba(var(--primary-rgb), 0.2)",
+                    borderColor: "hsl(var(--primary) / 0.8)"
+                  }}
                 >
                   <option value="">Select timeline</option>
                   <option value="ASAP">ASAP</option>
                   <option value="1–3 months">1–3 months</option>
                   <option value="3–6 months">3–6 months</option>
                   <option value="> 6 months">More than 6 months</option>
-                </select>
+                </motion.select>
               </div>
             </motion.div>
           </div>

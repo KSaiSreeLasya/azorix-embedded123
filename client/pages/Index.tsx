@@ -885,13 +885,11 @@ function DomainCard({
   to,
   title,
   desc,
-  image,
   icon,
 }: {
   to: string;
   title: string;
   desc: string;
-  image: string;
   icon: React.ReactNode;
 }) {
   return (
@@ -903,37 +901,17 @@ function DomainCard({
     >
       <Link
         to={to}
-        className="group relative overflow-hidden rounded-2xl border border-primary/20 h-56 hover:shadow-2xl transition-all duration-300"
+        className="group relative rounded-2xl border border-primary/15 bg-gradient-to-br from-primary/5 via-background to-accent/5 p-7 shadow-lg hover:shadow-xl transition-all overflow-hidden block"
       >
-        <img
-          src={image}
-          alt={title}
-          loading="lazy"
-          decoding="async"
-          className="absolute inset-0 h-full w-full object-cover opacity-60 transition-transform duration-500 group-hover:scale-110"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/50 to-background/10 group-hover:from-background/97 group-hover:via-background/60 transition-all" />
-        <div className="relative z-10 h-full p-6 md:p-8 flex flex-col justify-end">
-          <div className="flex items-center gap-3 font-bold text-lg">
-            <span className="grid h-12 w-12 place-items-center rounded-lg bg-gradient-to-br from-primary to-accent text-primary-foreground shadow-lg group-hover:shadow-xl transition-all">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        <div className="relative">
+          <div className="flex items-center gap-3 font-bold mb-3 text-lg">
+            <span className="grid h-10 w-10 place-items-center rounded-lg bg-gradient-to-br from-primary to-accent text-primary-foreground shadow-md">
               {icon}
             </span>
-            <span className="group-hover:text-primary transition-colors">
-              {title}
-            </span>
+            {title}
           </div>
-          <p className="mt-3 text-base text-foreground/75 leading-relaxed">
-            {desc}
-          </p>
-          <div className="mt-4 inline-flex items-center gap-2 w-fit rounded-lg bg-gradient-to-r from-primary/20 to-accent/20 px-4 py-2 text-sm font-bold text-primary border border-primary/30 hover:border-primary/60 transition-all">
-            <span className="group-hover:text-primary/90">Learn more</span>
-            <span
-              aria-hidden
-              className="transition-transform group-hover:translate-x-1"
-            >
-              →
-            </span>
-          </div>
+          <p className="text-base text-foreground/65 leading-relaxed">{desc}</p>
         </div>
       </Link>
     </motion.div>

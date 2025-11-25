@@ -711,38 +711,38 @@ function LinkCard({
 }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 16 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.45 }}
+      transition={{ duration: 0.5 }}
     >
       <Link
         to={to}
-        className="group relative overflow-hidden rounded-xl border h-48 hover:shadow-lg transition-shadow"
+        className="group relative overflow-hidden rounded-2xl border border-primary/20 h-56 hover:shadow-2xl transition-all duration-300"
       >
         <img
           src={image}
           alt=""
           loading="lazy"
           decoding="async"
-          className="absolute inset-0 h-full w-full object-cover opacity-70 transition-transform duration-500 group-hover:scale-105"
+          className="absolute inset-0 h-full w-full object-cover opacity-60 transition-transform duration-500 group-hover:scale-110"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/60 to-background/20" />
-        <div className="relative z-10 h-full p-5 md:p-6 flex flex-col justify-end">
-          <div className="flex items-center gap-3 font-semibold">
-            <span className="grid h-9 w-9 place-items-center rounded-md bg-primary/20 text-primary">
+        <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/50 to-background/10 group-hover:from-background/97 group-hover:via-background/60 transition-all" />
+        <div className="relative z-10 h-full p-6 md:p-8 flex flex-col justify-end">
+          <div className="flex items-center gap-3 font-bold text-lg">
+            <span className="grid h-12 w-12 place-items-center rounded-lg bg-gradient-to-br from-primary to-accent text-primary-foreground shadow-lg group-hover:shadow-xl transition-all">
               {icon}
             </span>
-            <span>{title}</span>
+            <span className="group-hover:text-primary transition-colors">{title}</span>
           </div>
-          <p className="mt-1 text-sm text-foreground/80 leading-relaxed">
+          <p className="mt-3 text-base text-foreground/75 leading-relaxed">
             {desc}
           </p>
-          <div className="mt-3 inline-flex items-center gap-1 w-fit rounded-md bg-background/70 px-2 py-1 text-sm font-semibold text-primary">
-            <span className="group-hover:underline">Learn more</span>
+          <div className="mt-4 inline-flex items-center gap-2 w-fit rounded-lg bg-gradient-to-r from-primary/20 to-accent/20 px-4 py-2 text-sm font-bold text-primary border border-primary/30 hover:border-primary/60 transition-all">
+            <span className="group-hover:text-primary/90">Learn more</span>
             <span
               aria-hidden
-              className="transition-transform group-hover:translate-x-0.5"
+              className="transition-transform group-hover:translate-x-1"
             >
               →
             </span>

@@ -255,30 +255,32 @@ export default function Capabilities() {
       {/* Quality & Process */}
       <Section>
         <h2 className="text-2xl md:text-3xl font-bold mb-2">
-          Quality & Execution
+          Why You Can Trust Us
         </h2>
         <p className="text-muted-foreground mb-8">
-          Our approach ensures reliable, high-quality delivery.
+          We're committed to delivering quality work and being a true partner in your success.
         </p>
         <div className="grid gap-6 md:grid-cols-2">
           <QualityCard
-            title="Quality Focus"
+            icon="✓"
+            title="Quality & Reliability"
             items={[
-              "Reliable execution on every project",
-              "Technology and quality-focused",
-              "MISRA compliance for automotive",
-              "In-house testing lab",
-              "Comprehensive documentation",
+              "Everything gets tested thoroughly",
+              "We follow industry best practices",
+              "Safety standards are never compromised",
+              "Our own testing lab on-site",
+              "Complete documentation for your team",
             ]}
           />
           <QualityCard
-            title="Team & Culture"
+            icon="🤝"
+            title="Experienced Team"
             items={[
-              "25+ years leadership experience",
-              "Senior technical expertise",
-              "Adapt and embrace client culture",
-              "Work as extended team",
-              "Hands-on training and mentoring",
+              "25+ years of proven track record",
+              "Senior engineers, not junior staff",
+              "We adapt to your company culture",
+              "Work like your own team members",
+              "We invest time in teaching your team",
             ]}
           />
         </div>

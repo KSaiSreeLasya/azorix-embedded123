@@ -325,53 +325,76 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="mt-10 grid gap-6 md:grid-cols-2 text-sm text-muted-foreground"
+          className="mt-12 grid gap-6 md:grid-cols-2 text-sm text-muted-foreground"
         >
           <motion.div
-            className="rounded-xl border border-primary/15 bg-card/60 p-5 hover:border-primary/40 transition-all hover:shadow-lg"
-            whileHover={{ y: -4 }}
+            className="relative rounded-2xl border border-primary/20 bg-gradient-to-br from-primary/10 via-background to-accent/5 p-6 hover:border-primary/40 transition-all hover:shadow-xl group overflow-hidden"
+            whileHover={{ y: -6 }}
           >
-            <div className="font-medium text-foreground">Offices</div>
-            <div className="mt-2 space-y-1">
-              <motion.div
-                className="flex items-center gap-2"
-                whileHover={{ x: 4 }}
-              >
-                <MapPin className="h-4 w-4" /> Troy, MI, USA
-              </motion.div>
-              <motion.div
-                className="flex items-center gap-2"
-                whileHover={{ x: 4 }}
-              >
-                <MapPin className="h-4 w-4" /> Hyderabad, India
-              </motion.div>
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="relative">
+              <div className="flex items-center gap-2 mb-4">
+                <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
+                  <MapPin className="h-5 w-5 text-primary-foreground" />
+                </div>
+                <div className="font-semibold text-foreground text-base">Offices</div>
+              </div>
+              <div className="mt-4 space-y-3">
+                <motion.div
+                  className="flex items-center gap-3 text-foreground/80"
+                  whileHover={{ x: 6 }}
+                >
+                  <div className="h-2 w-2 rounded-full bg-gradient-to-r from-primary to-accent" />
+                  Troy, MI, USA
+                </motion.div>
+                <motion.div
+                  className="flex items-center gap-3 text-foreground/80"
+                  whileHover={{ x: 6 }}
+                >
+                  <div className="h-2 w-2 rounded-full bg-gradient-to-r from-primary to-accent" />
+                  Hyderabad, India
+                </motion.div>
+              </div>
             </div>
           </motion.div>
           <motion.div
-            className="rounded-xl border border-primary/15 bg-card/60 p-5 grid gap-3 hover:border-primary/40 transition-all hover:shadow-lg"
-            whileHover={{ y: -4 }}
+            className="relative rounded-2xl border border-primary/20 bg-gradient-to-br from-primary/10 via-background to-accent/5 p-6 grid gap-5 hover:border-primary/40 transition-all hover:shadow-xl group overflow-hidden"
+            whileHover={{ y: -6 }}
           >
-            <div>
-              <div className="font-medium text-foreground">Website</div>
-              <motion.a
-                className="inline-flex items-center gap-2 underline hover:text-primary transition-colors"
-                href="https://www.azorixembedded.com"
-                target="_blank"
-                rel="noreferrer"
-                whileHover={{ x: 4 }}
-              >
-                <Globe className="h-4 w-4" /> www.azorixembedded.com
-              </motion.a>
-            </div>
-            <div>
-              <div className="font-medium text-foreground">Email</div>
-              <motion.a
-                className="inline-flex items-center gap-2 underline hover:text-primary transition-colors"
-                href="mailto:info@azorixembedded.com"
-                whileHover={{ x: 4 }}
-              >
-                <Mail className="h-4 w-4" /> info@azorixembedded.com
-              </motion.a>
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="relative">
+              <div>
+                <div className="flex items-center gap-2 mb-3">
+                  <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
+                    <Globe className="h-5 w-5 text-primary-foreground" />
+                  </div>
+                  <div className="font-semibold text-foreground text-base">Website</div>
+                </div>
+                <motion.a
+                  className="inline-flex items-center gap-2 text-foreground/80 hover:text-primary transition-colors font-medium"
+                  href="https://www.azorixembedded.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  whileHover={{ x: 4 }}
+                >
+                  www.azorixembedded.com →
+                </motion.a>
+              </div>
+              <div>
+                <div className="flex items-center gap-2 mb-3">
+                  <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
+                    <Mail className="h-5 w-5 text-primary-foreground" />
+                  </div>
+                  <div className="font-semibold text-foreground text-base">Email</div>
+                </div>
+                <motion.a
+                  className="inline-flex items-center gap-2 text-foreground/80 hover:text-primary transition-colors font-medium"
+                  href="mailto:info@azorixembedded.com"
+                  whileHover={{ x: 4 }}
+                >
+                  info@azorixembedded.com →
+                </motion.a>
+              </div>
             </div>
           </motion.div>
         </motion.div>

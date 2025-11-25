@@ -510,39 +510,40 @@ function ProjectCard({
       initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      whileHover={{ y: -4 }}
+      whileHover={{ y: -6, boxShadow: "0 12px 32px rgba(0,0,0,0.15)" }}
       transition={{ duration: 0.4 }}
-      className={`relative overflow-hidden rounded-lg border text-left transition-all ${
-        isSelected ? "ring-2 ring-primary shadow-lg" : "hover:shadow-md"
+      className={`relative overflow-hidden rounded-2xl border text-left transition-all h-full ${
+        isSelected ? "ring-2 ring-primary shadow-xl bg-primary/5" : "hover:shadow-lg bg-card/40"
       }`}
     >
       <img
         src={project.image}
         alt={project.title}
-        className="w-full h-48 object-cover opacity-60"
+        className="w-full h-48 object-cover opacity-60 hover:opacity-75 transition-opacity"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/60 to-background/20" />
+      <div className="absolute inset-0 bg-gradient-to-t from-background/98 via-background/70 to-background/20" />
       <div className="absolute inset-0 p-5 md:p-6 flex flex-col justify-end">
-        <div className="flex items-center gap-3 mb-3">
-          <span className="grid h-9 w-9 place-items-center rounded-md bg-primary/20 text-primary">
+        <div className="flex items-start gap-3 mb-3">
+          <span className="grid h-10 w-10 place-items-center rounded-lg bg-gradient-to-br from-primary to-accent text-primary-foreground flex-shrink-0 shadow-md">
             {project.icon}
           </span>
-          <div>
-            <div className="text-xs font-medium text-primary/80">
+          <div className="flex-1 min-w-0">
+            <div className="text-xs font-bold text-primary/90 uppercase tracking-wide">
               {project.category}
             </div>
-            <h3 className="font-bold text-foreground">{project.title}</h3>
+            <h3 className="font-bold text-foreground text-base mt-1 line-clamp-2">{project.title}</h3>
           </div>
         </div>
-        <p className="text-sm text-foreground/80 leading-relaxed mb-3">
+        <p className="text-sm text-foreground/75 leading-relaxed mb-4 line-clamp-2">
           {project.shortDesc}
         </p>
-        <div className="inline-flex items-center gap-1 w-fit rounded-md bg-background/70 px-2 py-1 text-xs font-semibold text-primary hover:bg-background transition-colors">
-          <span>Click to see details</span>
-          <span className="transition-transform group-hover:translate-x-0.5">
-            →
-          </span>
-        </div>
+        <motion.div
+          className="inline-flex items-center gap-1 w-fit rounded-lg bg-gradient-to-r from-primary/20 to-accent/20 px-3 py-1.5 text-xs font-bold text-primary border border-primary/30 hover:border-primary/60 transition-all"
+          whileHover={{ x: 2 }}
+        >
+          <span>View Details</span>
+          <span className="transition-transform">→</span>
+        </motion.div>
       </div>
     </motion.button>
   );

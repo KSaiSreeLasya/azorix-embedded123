@@ -6,6 +6,7 @@ import { Car, Zap, Shield, Radio } from "lucide-react";
 import { motion } from "framer-motion";
 import SEO from "@/components/SEO";
 import { CheckCircle2 } from "lucide-react";
+import { AnimatedCard } from "@/components/AnimatedCard";
 
 export default function Automotive() {
   return (
@@ -32,21 +33,25 @@ export default function Automotive() {
         </h2>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           <CapabilityCard
+            index={0}
             icon={<Zap className="h-6 w-6" />}
             title="BSP & Bootloaders"
             desc="Board support packages, bootloaders, and system initialization"
           />
           <CapabilityCard
+            index={1}
             icon={<Radio className="h-6 w-6" />}
             title="Communication Protocols"
             desc="CAN, CAN FD, UDS, J1939, Autosar, LIN, FlexRay"
           />
           <CapabilityCard
+            index={2}
             icon={<Shield className="h-6 w-6" />}
             title="Safety & Compliance"
             desc="MISRA C/C++, ISO 26262, functional safety, diagnostics"
           />
           <CapabilityCard
+            index={3}
             icon={<Car className="h-6 w-6" />}
             title="Connectivity"
             desc="Telematics, V2X, cellular (LTE/5G), WiFi, Bluetooth"
@@ -64,6 +69,7 @@ export default function Automotive() {
         </p>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           <ProtocolCard
+            index={0}
             title="CAN Family"
             items={[
               "CAN",
@@ -74,6 +80,7 @@ export default function Automotive() {
             ]}
           />
           <ProtocolCard
+            index={1}
             title="Diagnostics"
             items={[
               "UDS (ISO 14229)",
@@ -84,6 +91,7 @@ export default function Automotive() {
             ]}
           />
           <ProtocolCard
+            index={2}
             title="Industrial"
             items={[
               "J1939 (Heavy duty)",
@@ -94,6 +102,7 @@ export default function Automotive() {
             ]}
           />
           <ProtocolCard
+            index={3}
             title="Telematics"
             items={[
               "GPRS/3G/LTE",
@@ -116,6 +125,7 @@ export default function Automotive() {
         </p>
         <div className="grid gap-6 md:grid-cols-3">
           <SoftwareCard
+            index={0}
             title="RTOS & OS"
             items={[
               "Linux (custom BSP)",
@@ -126,6 +136,7 @@ export default function Automotive() {
             ]}
           />
           <SoftwareCard
+            index={1}
             title="Languages & Standards"
             items={[
               "C/C++ with MISRA compliance",
@@ -135,6 +146,7 @@ export default function Automotive() {
             ]}
           />
           <SoftwareCard
+            index={2}
             title="Development Tools"
             items={[
               "Vector CANoe & CANalyzer",
@@ -156,7 +168,7 @@ export default function Automotive() {
           Comprehensive automotive testing and validation.
         </p>
         <div className="grid gap-6 md:grid-cols-2">
-          <Card title="Hardware Testing">
+          <Card index={0} title="Hardware Testing">
             <ul className="space-y-2">
               {[
                 "CAN message analysis and validation",
@@ -165,15 +177,22 @@ export default function Automotive() {
                 "System integration testing",
                 "Environmental & stress testing",
                 "Compliance verification",
-              ].map((t) => (
-                <li key={t} className="flex items-start gap-2 text-sm">
+              ].map((t, idx) => (
+                <motion.li
+                  key={t}
+                  className="flex items-start gap-2 text-sm"
+                  initial={{ opacity: 0, x: -10 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: idx * 0.05 }}
+                >
                   <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
                   <span className="text-muted-foreground">{t}</span>
-                </li>
+                </motion.li>
               ))}
             </ul>
           </Card>
-          <Card title="Functional Testing">
+          <Card index={1} title="Functional Testing">
             <ul className="space-y-2">
               {[
                 "Automated test case development",
@@ -182,11 +201,18 @@ export default function Automotive() {
                 "Regression testing",
                 "Performance benchmarking",
                 "Documentation & traceability",
-              ].map((t) => (
-                <li key={t} className="flex items-start gap-2 text-sm">
+              ].map((t, idx) => (
+                <motion.li
+                  key={t}
+                  className="flex items-start gap-2 text-sm"
+                  initial={{ opacity: 0, x: -10 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: idx * 0.05 }}
+                >
                   <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
                   <span className="text-muted-foreground">{t}</span>
-                </li>
+                </motion.li>
               ))}
             </ul>
           </Card>
@@ -200,26 +226,32 @@ export default function Automotive() {
         </h2>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           <ApplicationCard
+            index={0}
             title="Engine Control"
             desc="Fuel injection, ignition timing, emission control, diagnostics"
           />
           <ApplicationCard
+            index={1}
             title="Transmission Control"
             desc="Gear selection, shift logic, torque management, adaptive learning"
           />
           <ApplicationCard
+            index={2}
             title="Body & Comfort"
             desc="Lighting, climate control, door locks, seat adjustment, infotainment"
           />
           <ApplicationCard
+            index={3}
             title="Powertrain"
             desc="Battery management, motor control, hybrid/EV power conversion"
           />
           <ApplicationCard
+            index={4}
             title="Autonomous Driving"
             desc="Sensor fusion, perception, path planning, vehicle control"
           />
           <ApplicationCard
+            index={5}
             title="Connected Services"
             desc="OTA updates, cloud connectivity, telematics, V2X communication"
           />
@@ -235,110 +267,122 @@ function CapabilityCard({
   icon,
   title,
   desc,
+  index = 0,
 }: {
   icon: React.ReactNode;
   title: string;
   desc: string;
+  index?: number;
 }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      whileHover={{ y: -2 }}
-      transition={{ duration: 0.4 }}
-      className="rounded-lg border p-6 bg-card/60 backdrop-blur hover:shadow-md transition-all"
-    >
+    <AnimatedCard variant="hover-glow" index={index}>
       <div className="flex items-center gap-3 mb-3">
-        <span className="grid h-10 w-10 place-items-center rounded-lg bg-primary/15 text-primary">
+        <motion.span
+          className="grid h-10 w-10 place-items-center rounded-lg bg-primary/15 text-primary"
+          whileHover={{ scale: 1.1, rotate: 5 }}
+          transition={{ type: "spring", stiffness: 400, damping: 10 }}
+        >
           {icon}
-        </span>
+        </motion.span>
         <h3 className="font-semibold">{title}</h3>
       </div>
       <p className="text-sm text-muted-foreground">{desc}</p>
-    </motion.div>
+    </AnimatedCard>
   );
 }
 
-function ProtocolCard({ title, items }: { title: string; items: string[] }) {
+function ProtocolCard({
+  title,
+  items,
+  index = 0,
+}: {
+  title: string;
+  items: string[];
+  index?: number;
+}) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      whileHover={{ y: -2 }}
-      transition={{ duration: 0.4 }}
-      className="rounded-lg border p-6 bg-card/60 backdrop-blur hover:shadow-md transition-all"
-    >
+    <AnimatedCard variant="hover-glow" index={index}>
       <h3 className="font-semibold text-foreground mb-4">{title}</h3>
       <ul className="space-y-2">
-        {items.map((item) => (
-          <li key={item} className="flex items-start gap-2 text-sm">
+        {items.map((item, idx) => (
+          <motion.li
+            key={item}
+            className="flex items-start gap-2 text-sm"
+            initial={{ opacity: 0, x: -10 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.3, delay: idx * 0.05 }}
+          >
             <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
             <span className="text-muted-foreground">{item}</span>
-          </li>
+          </motion.li>
         ))}
       </ul>
-    </motion.div>
+    </AnimatedCard>
   );
 }
 
-function SoftwareCard({ title, items }: { title: string; items: string[] }) {
+function SoftwareCard({
+  title,
+  items,
+  index = 0,
+}: {
+  title: string;
+  items: string[];
+  index?: number;
+}) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      whileHover={{ y: -2 }}
-      transition={{ duration: 0.4 }}
-      className="rounded-lg border p-6 bg-card/60 backdrop-blur hover:shadow-md transition-all"
-    >
+    <AnimatedCard variant="hover-glow" index={index}>
       <h3 className="font-semibold text-foreground mb-4">{title}</h3>
       <ul className="space-y-2">
-        {items.map((item) => (
-          <li key={item} className="flex items-start gap-2 text-sm">
+        {items.map((item, idx) => (
+          <motion.li
+            key={item}
+            className="flex items-start gap-2 text-sm"
+            initial={{ opacity: 0, x: -10 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.3, delay: idx * 0.05 }}
+          >
             <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
             <span className="text-muted-foreground">{item}</span>
-          </li>
+          </motion.li>
         ))}
       </ul>
-    </motion.div>
+    </AnimatedCard>
   );
 }
 
 function Card({
   title,
   children,
+  index = 0,
 }: {
   title: string;
   children: React.ReactNode;
+  index?: number;
 }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.4 }}
-      className="rounded-lg border p-6 bg-card/60 backdrop-blur"
-    >
+    <AnimatedCard variant="default" index={index}>
       <h3 className="font-semibold text-foreground mb-4">{title}</h3>
       {children}
-    </motion.div>
+    </AnimatedCard>
   );
 }
 
-function ApplicationCard({ title, desc }: { title: string; desc: string }) {
+function ApplicationCard({
+  title,
+  desc,
+  index = 0,
+}: {
+  title: string;
+  desc: string;
+  index?: number;
+}) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      whileHover={{ y: -2 }}
-      transition={{ duration: 0.4 }}
-      className="rounded-lg border p-6 bg-card/60 backdrop-blur hover:shadow-md transition-all"
-    >
+    <AnimatedCard variant="hover-glow" index={index}>
       <h3 className="font-semibold text-foreground mb-2">{title}</h3>
       <p className="text-sm text-muted-foreground">{desc}</p>
-    </motion.div>
+    </AnimatedCard>
   );
 }

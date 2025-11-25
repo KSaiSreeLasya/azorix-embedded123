@@ -6,6 +6,7 @@ import { Wifi, Smartphone, Cloud, Zap, Radio, Lock } from "lucide-react";
 import { motion } from "framer-motion";
 import SEO from "@/components/SEO";
 import { CheckCircle2 } from "lucide-react";
+import { AnimatedCard } from "@/components/AnimatedCard";
 
 export default function Iot() {
   return (
@@ -219,20 +220,10 @@ function Card({
   index?: number;
 }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      whileHover={{ y: -4, boxShadow: "0 12px 32px rgba(0,0,0,0.12)" }}
-      transition={{ duration: 0.4, delay: index * 0.08 }}
-      className="rounded-lg border border-primary/15 p-6 bg-card/60 backdrop-blur hover:border-primary/40 transition-all group overflow-hidden"
-    >
-      <motion.div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-      <div className="relative">
-        <h3 className="font-semibold text-foreground mb-4">{title}</h3>
-        {children}
-      </div>
-    </motion.div>
+    <AnimatedCard variant="hover-glow" index={index}>
+      <h3 className="font-semibold text-foreground mb-4">{title}</h3>
+      {children}
+    </AnimatedCard>
   );
 }
 
@@ -292,19 +283,9 @@ function ApplicationCard({
   index?: number;
 }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      whileHover={{ y: -8, boxShadow: "0 16px 40px rgba(0,0,0,0.12)" }}
-      transition={{ duration: 0.4, delay: index * 0.08 }}
-      className="rounded-lg border border-primary/15 p-6 bg-card/60 backdrop-blur hover:border-primary/40 hover:shadow-lg transition-all group overflow-hidden"
-    >
-      <motion.div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-      <div className="relative">
-        <h3 className="font-semibold text-foreground mb-2">{title}</h3>
-        <p className="text-sm text-muted-foreground">{desc}</p>
-      </div>
-    </motion.div>
+    <AnimatedCard variant="hover-glow" index={index}>
+      <h3 className="font-semibold text-foreground mb-2">{title}</h3>
+      <p className="text-sm text-muted-foreground">{desc}</p>
+    </AnimatedCard>
   );
 }

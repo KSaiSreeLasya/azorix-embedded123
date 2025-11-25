@@ -6,6 +6,7 @@ import { CircuitBoard, Zap, Cpu, Wrench } from "lucide-react";
 import { motion } from "framer-motion";
 import SEO from "@/components/SEO";
 import { CheckCircle2 } from "lucide-react";
+import { AnimatedCard } from "@/components/AnimatedCard";
 
 export default function Hardware() {
   return (
@@ -32,21 +33,25 @@ export default function Hardware() {
         </h2>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           <CapabilityCard
+            index={0}
             icon={<Zap className="h-6 w-6" />}
             title="Schematic Design"
             desc="Component selection, circuit design, design reviews"
           />
           <CapabilityCard
+            index={1}
             icon={<CircuitBoard className="h-6 w-6" />}
             title="PCB Layout"
             desc="Multi-layer design, signal integrity, power distribution"
           />
           <CapabilityCard
+            index={2}
             icon={<Wrench className="h-6 w-6" />}
             title="Bring-Up Support"
             desc="Board validation, firmware integration, debugging"
           />
           <CapabilityCard
+            index={3}
             icon={<Cpu className="h-6 w-6" />}
             title="Manufacturing"
             desc="Vendor coordination, assembly, testing, QA"
@@ -61,7 +66,7 @@ export default function Hardware() {
           Complete design support with quality and manufacturability focus.
         </p>
         <div className="grid gap-6 md:grid-cols-2">
-          <Card title="Schematic & Design">
+          <Card index={0} title="Schematic & Design">
             <ul className="space-y-2">
               {[
                 "Requirements analysis and specification",
@@ -78,7 +83,7 @@ export default function Hardware() {
               ))}
             </ul>
           </Card>
-          <Card title="PCB Layout & Manufacturing">
+          <Card index={1} title="PCB Layout & Manufacturing">
             <ul className="space-y-2">
               {[
                 "Multi-layer PCB design (up to 20+ layers)",
@@ -108,14 +113,17 @@ export default function Hardware() {
         </p>
         <div className="grid gap-6 md:grid-cols-3">
           <ProcessorCard
+            index={0}
             title="ARM Processors"
             items={["Cortex-A Series", "Cortex-M Series", "Cortex-R Series"]}
           />
           <ProcessorCard
+            index={1}
             title="x86/x64"
             items={["Intel processors", "AMD EPYC", "Custom x86 boards"]}
           />
           <ProcessorCard
+            index={2}
             title="Custom SoCs"
             items={[
               "Application-specific chips",
@@ -133,6 +141,7 @@ export default function Hardware() {
         </h2>
         <div className="grid gap-6 md:grid-cols-2">
           <ServiceCard
+            index={0}
             title="Prototype Assembly"
             items={[
               "PCB fabrication vendor coordination",
@@ -143,6 +152,7 @@ export default function Hardware() {
             ]}
           />
           <ServiceCard
+            index={1}
             title="Board Bring-Up"
             items={[
               "Power-up sequence validation",
@@ -166,14 +176,17 @@ export default function Hardware() {
         </p>
         <div className="grid gap-6 md:grid-cols-3">
           <SupportCard
+            index={0}
             title="Production Planning"
             desc="Design for manufacturing optimization, process planning, test fixture design"
           />
           <SupportCard
+            index={1}
             title="Quality Assurance"
             desc="Test procedure development, in-circuit testing, functional testing, compliance"
           />
           <SupportCard
+            index={2}
             title="Supply Chain"
             desc="Vendor qualification, component sourcing, supply chain management"
           />
@@ -233,110 +246,122 @@ function CapabilityCard({
   icon,
   title,
   desc,
+  index = 0,
 }: {
   icon: React.ReactNode;
   title: string;
   desc: string;
+  index?: number;
 }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      whileHover={{ y: -2 }}
-      transition={{ duration: 0.4 }}
-      className="rounded-lg border p-6 bg-card/60 backdrop-blur hover:shadow-md transition-all"
-    >
+    <AnimatedCard variant="hover-glow" index={index}>
       <div className="flex items-center gap-3 mb-3">
-        <span className="grid h-10 w-10 place-items-center rounded-lg bg-primary/15 text-primary">
+        <motion.span
+          className="grid h-10 w-10 place-items-center rounded-lg bg-primary/15 text-primary"
+          whileHover={{ scale: 1.1, rotate: 5 }}
+          transition={{ type: "spring", stiffness: 400, damping: 10 }}
+        >
           {icon}
-        </span>
+        </motion.span>
         <h3 className="font-semibold">{title}</h3>
       </div>
       <p className="text-sm text-muted-foreground">{desc}</p>
-    </motion.div>
+    </AnimatedCard>
   );
 }
 
 function Card({
   title,
   children,
+  index = 0,
 }: {
   title: string;
   children: React.ReactNode;
+  index?: number;
 }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.4 }}
-      className="rounded-lg border p-6 bg-card/60 backdrop-blur"
-    >
+    <AnimatedCard variant="default" index={index}>
       <h3 className="font-semibold text-foreground mb-4">{title}</h3>
       {children}
-    </motion.div>
+    </AnimatedCard>
   );
 }
 
-function ProcessorCard({ title, items }: { title: string; items: string[] }) {
+function ProcessorCard({
+  title,
+  items,
+  index = 0,
+}: {
+  title: string;
+  items: string[];
+  index?: number;
+}) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      whileHover={{ y: -2 }}
-      transition={{ duration: 0.4 }}
-      className="rounded-lg border p-6 bg-card/60 backdrop-blur hover:shadow-md transition-all"
-    >
+    <AnimatedCard variant="hover-glow" index={index}>
       <h3 className="font-semibold text-foreground mb-4">{title}</h3>
       <ul className="space-y-2">
-        {items.map((item) => (
-          <li key={item} className="flex items-start gap-2 text-sm">
+        {items.map((item, idx) => (
+          <motion.li
+            key={item}
+            className="flex items-start gap-2 text-sm"
+            initial={{ opacity: 0, x: -10 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.3, delay: idx * 0.05 }}
+          >
             <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
             <span className="text-muted-foreground">{item}</span>
-          </li>
+          </motion.li>
         ))}
       </ul>
-    </motion.div>
+    </AnimatedCard>
   );
 }
 
-function ServiceCard({ title, items }: { title: string; items: string[] }) {
+function ServiceCard({
+  title,
+  items,
+  index = 0,
+}: {
+  title: string;
+  items: string[];
+  index?: number;
+}) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      whileHover={{ y: -2 }}
-      transition={{ duration: 0.4 }}
-      className="rounded-lg border p-6 bg-card/60 backdrop-blur hover:shadow-md transition-all"
-    >
+    <AnimatedCard variant="hover-glow" index={index}>
       <h3 className="font-semibold text-foreground mb-4">{title}</h3>
       <ul className="space-y-2">
-        {items.map((item) => (
-          <li key={item} className="flex items-start gap-2 text-sm">
+        {items.map((item, idx) => (
+          <motion.li
+            key={item}
+            className="flex items-start gap-2 text-sm"
+            initial={{ opacity: 0, x: -10 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.3, delay: idx * 0.05 }}
+          >
             <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
             <span className="text-muted-foreground">{item}</span>
-          </li>
+          </motion.li>
         ))}
       </ul>
-    </motion.div>
+    </AnimatedCard>
   );
 }
 
-function SupportCard({ title, desc }: { title: string; desc: string }) {
+function SupportCard({
+  title,
+  desc,
+  index = 0,
+}: {
+  title: string;
+  desc: string;
+  index?: number;
+}) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      whileHover={{ y: -2 }}
-      transition={{ duration: 0.4 }}
-      className="rounded-lg border p-6 bg-card/60 backdrop-blur hover:shadow-md transition-all"
-    >
+    <AnimatedCard variant="hover-glow" index={index}>
       <h3 className="font-semibold text-foreground mb-2">{title}</h3>
       <p className="text-sm text-muted-foreground">{desc}</p>
-    </motion.div>
+    </AnimatedCard>
   );
 }

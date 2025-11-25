@@ -295,6 +295,7 @@ export default function Capabilities() {
               "Our own testing lab on-site",
               "Complete documentation for your team",
             ]}
+            index={0}
           />
           <QualityCard
             icon="🤝"

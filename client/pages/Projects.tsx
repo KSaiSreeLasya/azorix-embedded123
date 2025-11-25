@@ -350,8 +350,17 @@ export default function Projects() {
                   className="w-full h-64 object-cover rounded-lg border"
                 />
 
+                {(selectedProjectData as any).realWorldUse && (
+                  <div className="rounded-lg bg-primary/10 border border-primary/30 p-4">
+                    <h3 className="text-sm font-bold text-primary mb-2">💡 Real-World Use</h3>
+                    <p className="text-sm text-foreground leading-relaxed">
+                      {(selectedProjectData as any).realWorldUse}
+                    </p>
+                  </div>
+                )}
+
                 <div>
-                  <h3 className="text-lg font-semibold mb-2">Overview</h3>
+                  <h3 className="text-lg font-semibold mb-2">What It Does</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">
                     {selectedProjectData.fullDesc}
                   </p>
@@ -359,7 +368,7 @@ export default function Projects() {
 
                 <div>
                   <h3 className="text-lg font-semibold mb-3">
-                    Technical Details
+                    Key Features
                   </h3>
                   <ul className="space-y-2">
                     {selectedProjectData.details.map((detail) => (
@@ -382,7 +391,7 @@ export default function Projects() {
                     {selectedProjectData.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="px-3 py-1 rounded-full border bg-primary/10 text-primary text-xs font-medium"
+                        className="px-3 py-1.5 rounded-full border bg-gradient-to-r from-primary/15 to-accent/15 text-foreground text-xs font-semibold hover:border-primary/50 transition-colors"
                       >
                         {tech}
                       </span>

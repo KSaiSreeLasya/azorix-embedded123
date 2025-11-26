@@ -145,7 +145,7 @@ export default function Index() {
             transition={{ duration: 0.5 }}
             className="text-3xl md:text-4xl font-black bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent"
           >
-            About Embinsys
+            About Azorix Embedded
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
